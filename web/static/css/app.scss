@@ -1,13 +1,24 @@
-/*** PHONE ***/
-
+/*** General **/
 body {
   font-size: 16px;
 }
 
+.hidden {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+/*** PHONE ***/
 .container {
-  padding: 0.3em 0.5em 0;
+  h2 {
+    font-size: 2em;
+  }
+
+  padding: 0.7em 0.7em 0;
 
   .header {
+    padding-bottom: 1.5em;
 
     h1.logo  {
       background: #fff url("/images/elixir-logo.png") no-repeat right top;
@@ -16,6 +27,31 @@ body {
       height: 5em;
       width: 5em;
       text-indent: -9999px;
+    }
+
+    ul.navs {
+      padding: 0.5em 0.5em 0;
+      font-size: 1.2em;
+
+      li {
+        display: inline-block;
+        margin: 0 0.4em;
+      }
+    }
+  }
+
+  .content {
+    .lead {
+      padding-bottom: 1em;
+      text-align: center;
+
+      h2 {
+        margin: 0.3em 0 0.1em;
+      }
+
+      p {
+        font-size: 0.9em;
+      }
     }
   }
 }

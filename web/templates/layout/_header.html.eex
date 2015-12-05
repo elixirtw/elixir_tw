@@ -1,0 +1,14 @@
+<!-- header -->
+<div class="header">
+  <!-- logo -->
+  <h1 class="logo">
+    Elixir 台北
+  </h1> <!-- /logo -->
+
+  <ul class="navs">
+    <li>資源</li>
+    <li>團體</li>
+    <li>工作</li>
+    <li>尋求協助</li>
+  </ul>
+</div><!-- /header -->

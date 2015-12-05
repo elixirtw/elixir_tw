@@ -15,13 +15,8 @@
   <body>
     <!-- container -->
     <div class="container" role="main">
-      <!-- header -->
-      <div class="header">
-        <!-- logo -->
-        <h1 class="logo">
-          Elixir 台北
-        </h1> <!-- /logo -->
-      </div><!-- /header -->
+
+      <%= render "_header.html" %>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
@@ -31,6 +26,7 @@
         <%= @inner %>
       </div><!-- /content -->
 
+      <%= render "_footer.html" %>
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
