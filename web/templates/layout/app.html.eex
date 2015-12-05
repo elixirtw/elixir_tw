@@ -13,17 +13,23 @@
   </head>
 
   <body>
+    <!-- container -->
     <div class="container" role="main">
+      <!-- header -->
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-        </ul>
-      </div>
+        <!-- logo -->
+        <h1 class="logo">
+          Elixir 台北
+        </h1> <!-- /logo -->
+      </div><!-- /header -->
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
-      <%= @inner %>
+      <!-- content -->
+      <div class="content">
+        <%= @inner %>
+      </div><!-- /content -->
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>

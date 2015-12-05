@@ -1,0 +1,21 @@
+/*** PHONE ***/
+
+body {
+  font-size: 16px;
+}
+
+.container {
+  padding: 0.3em 0.5em 0;
+
+  .header {
+
+    h1.logo  {
+      background: #fff url("/images/elixir-logo.png") no-repeat right top;
+      background-size: cover;
+      display: inline-block;
+      height: 5em;
+      width: 5em;
+      text-indent: -9999px;
+    }
+  }
+}
