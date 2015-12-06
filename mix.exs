@@ -36,6 +36,8 @@ defmodule Elixirtaipei.Mixfile do
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:timex, "~> 0.19"},
+     {:websocket_client, github: "jeremyong/websocket_client"},
+     {:slacker, "~> 0.0.1"},
      {:cowboy, "~> 1.0"}]
   end
 
