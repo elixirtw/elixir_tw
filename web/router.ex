@@ -20,6 +20,8 @@ defmodule Elixirtaipei.Router do
     get "/resources", PageController, :resources
     get "/social_networks", PageController, :social_networks
     get "/helps", PageController, :helps
+
+    resources "/slack-archives", ArchiveController
   end
 
   # Other scopes may use custom stacks.
