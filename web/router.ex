@@ -18,8 +18,7 @@ defmodule Elixirtaipei.Router do
 
     get "/", PageController, :home
     get "/resources", PageController, :resources
-    get "/groups", PageController, :groups
-    get "/jobs", PageController, :jobs
+    get "/social_networks", PageController, :social_networks
     get "/helps", PageController, :helps
   end
 

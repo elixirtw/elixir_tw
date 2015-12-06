@@ -1,0 +1,17 @@
+<div class="lead">
+  <h2>尋求協助</h2>
+</div>
+
+<div class="meat">
+  <ul>
+    <li>
+      <a href="https://elixir-slackin.herokuapp.com/" target="_blank">Slack：https://elixir-slackin.herokuapp.com</a>
+    </li>
+    <li>
+      <a href="http://groups.google.com/group/phoenix-talk">Mailing list：http://groups.google.com/group/phoenix-talk</a>
+    </li>
+    <li>
+      <a href="http://webchat.freenode.net/?channels=elixir-lang">Elixir IRC：http://webchat.freenode.net/?channels=elixir-lang</a>
+    </li>
+  </ul>
+</div>
