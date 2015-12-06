@@ -2,7 +2,7 @@ defmodule ElixirTW.SandboxBot do
   use Slack
 
   def start_link(initial_state) do
-    Slack.start_link(__MODULE__, System.get_env("SLACK_BOT_TOKEN"), initial_state)
+    Slack.start_link(__MODULE__, FigaroElixir.env["slack_bot_token"], initial_state)
   end
 
   def init(initial_state, slack) do

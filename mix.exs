@@ -19,7 +19,7 @@ defmodule ElixirTW.Mixfile do
   def application do
     [mod: {ElixirTW, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex, :slack]]
+                    :phoenix_ecto, :postgrex, :slack, :figaro_elixir]]
   end
 
   # Specifies which paths to compile per environment.
@@ -35,6 +35,8 @@ defmodule ElixirTW.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
+     {:figaro_elixir, "~> 1.0.0"},
+     {:yamerl, github: "yakaz/yamerl"},
      {:slack, "~> 0.1.0"},
      {:timex, "~> 0.19"},
      {:websocket_client, github: "jeremyong/websocket_client"},
