@@ -1,7 +1,9 @@
 /*** General **/
-body {
+html, body {
   font-size: 16px;
   font-family: "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", "細明體", "MingLiU", "標楷體", "DFKai-sb", serif;
+  color: hsl(236, 53%, 13%);
+  height: 100%;
 }
 
 .hidden {
@@ -10,29 +12,50 @@ body {
   left: -9999px !important;
 }
 
+a {
+  color: hsl(277, 53%, 63%);
+  text-decoration: none;
+}
+
+a:hover {
+  color: hsl(277, 53%, 63%);
+}
+
+a:visited {
+  color: hsl(277, 53%, 63%);
+}
+
+h2 {
+  color: #6C0AFF;
+}
+
 /*** PHONE ***/
 .container {
+  padding: 0.7em 0.7em 0;
+  min-height: 100%;
+  margin-bottom: -1.5em;
+
   h2 {
     font-size: 2em;
   }
 
-  padding: 0.7em 0.7em 0;
+  h3 {
+    font-size: 1.25em;
+    padding: .5em 0;
+  }
 
   .header {
     padding-bottom: 1.5em;
+    margin: 0 0.5em;
+    height: 5em;
 
-    h1.logo  {
-      background: #fff url("/images/elixir-logo.png") no-repeat right top;
-      background-size: cover;
-      display: inline-block;
-      height: 5em;
-      width: 5em;
-      text-indent: -9999px;
+    .logo {
+      max-height: 4em;
     }
 
     ul.navs {
-      padding: 0.5em 0.5em 0;
-      font-size: 1.2em;
+      padding: 0.85em 0.5em 0;
+      font-size: 1.3em;
 
       li {
         display: inline-block;
@@ -42,8 +65,10 @@ body {
   }
 
   .content {
+    margin: 0 0.6em;
+
     .lead {
-      padding-bottom: 1em;
+      padding: 2em 0;
       text-align: center;
 
       h2 {
@@ -54,5 +79,20 @@ body {
         font-size: 0.9em;
       }
     }
+
+    .meat {
+      font-size: 1.3em;
+
+      ul {
+        li {
+          padding: 0.25em 0;
+        }
+      }
+    }
+  }
+
+  .footer {
+    height: 1.5em;
+    padding: 1em 0.25em;
   }
 }

@@ -16,7 +16,9 @@ defmodule Elixirtaipei.Router do
   scope "/", Elixirtaipei do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", PageController, :home
+    get "/resources", PageController, :resources
+    get "/groups", PageController, :groups
   end
 
   # Other scopes may use custom stacks.
