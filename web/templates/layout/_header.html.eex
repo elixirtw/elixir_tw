@@ -10,6 +10,5 @@
   <ul class="navs">
     <li><a href=" <%= page_path @conn, :resources %>">資源</a></li>
     <li><a href=" <%= page_path @conn, :social_networks %>">社群</a></li>
-    <li><a href=" <%= page_path @conn, :helps %>">尋求協助</a></li>
   </ul>
 </div><!-- /header -->

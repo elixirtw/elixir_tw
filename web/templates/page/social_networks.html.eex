@@ -6,6 +6,10 @@
   <h3>Elixir 相關</h3>
   <ul>
     <li>
+      <a href="https://elixir-slackin.herokuapp.com/" target="_blank">Slack：https://elixir-slackin.herokuapp.com</a>
+      請搜尋 #taipei
+    </li>
+    <li>
       <a href="https://www.facebook.com/groups/elixir.tw/" target="_blank">台灣FB：https://www.facebook.com/groups/elixir.tw/</a>
     </li>
     <li>
@@ -13,6 +17,12 @@
     </li>
     <li>
       <a href="https://twitter.com/elixirlang" target="_blank">推特：https://twitter.com/elixirlang</a>
+    </li>
+    <li>
+      <a href="http://webchat.freenode.net/?channels=elixir-lang">Elixir IRC：http://webchat.freenode.net/?channels=elixir-lang</a>
+    </li>
+    <li>
+      <a href="http://groups.google.com/group/phoenix-talk">Mailing list：http://groups.google.com/group/phoenix-talk</a>
     </li>
   </ul>
   <h3>Phoenix 相關</h3>
