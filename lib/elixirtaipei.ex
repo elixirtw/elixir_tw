@@ -13,6 +13,7 @@ defmodule Elixirtaipei do
       worker(Elixirtaipei.Repo, []),
       # Here you could define other workers and supervisors as children
       # worker(Elixirtaipei.Worker, [arg1, arg2, arg3]),
+      worker(Elixirtaipei.SandboxBot, [[]])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

@@ -10,6 +10,6 @@
   <ul class="navs">
     <li><a href=" <%= page_path @conn, :resources %>">資源</a></li>
     <li><a href=" <%= page_path @conn, :social_networks %>">社群</a></li>
-    <li> <a href=" <%= archive_path @conn, :index %>" target="_blank">Slack串</a></li>
+    <li> <a href=" <%= archive_path @conn, :index %>">Slack串</a></li>
   </ul>
 </div><!-- /header -->

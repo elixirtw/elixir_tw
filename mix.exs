@@ -19,7 +19,7 @@ defmodule Elixirtaipei.Mixfile do
   def application do
     [mod: {Elixirtaipei, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :slack]]
   end
 
   # Specifies which paths to compile per environment.
@@ -35,9 +35,9 @@ defmodule Elixirtaipei.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
+     {:slack, "~> 0.1.0"},
      {:timex, "~> 0.19"},
      {:websocket_client, github: "jeremyong/websocket_client"},
-     {:slacker, "~> 0.0.1"},
      {:cowboy, "~> 1.0"}]
   end
 
