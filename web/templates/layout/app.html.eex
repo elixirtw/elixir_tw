@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Elixir 台北</title>
+    <title>Elixir 台灣</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link rel="shortcut icon" type="image/x-icon" href=" <%= static_path(@conn, "/favicon.ico") %>">
   </head>
