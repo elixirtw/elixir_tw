@@ -6,12 +6,12 @@
 use Mix.Config
 
 # Configures the endpoint
-config :elixirtaipei, Elixirtaipei.Endpoint,
+config :elixir_tw, ElixirTW.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "7anaAlGhfjiGb1BN8R3iPcTU1AMriR6mtmk2RaxAKCNNVwgRZ2QokiJMYF5MwDF9",
   render_errors: [accepts: ~w(html json)],
-  pubsub: [name: Elixirtaipei.PubSub,
+  pubsub: [name: ElixirTW.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

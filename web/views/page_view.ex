@@ -1,3 +1,3 @@
-defmodule Elixirtaipei.PageView do
-  use Elixirtaipei.Web, :view
+defmodule ElixirTW.PageView do
+  use ElixirTW.Web, :view
 end

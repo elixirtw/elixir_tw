@@ -1,5 +1,5 @@
-defmodule Elixirtaipei.Message do
-  use Elixirtaipei.Web, :model
+defmodule ElixirTW.Message do
+  use ElixirTW.Web, :model
 
   schema "messages" do
     field :member, :string

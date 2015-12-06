@@ -1,3 +1,3 @@
-defmodule Elixirtaipei.ArchiveView do
-  use Elixirtaipei.Web, :view
+defmodule ElixirTW.ArchiveView do
+  use ElixirTW.Web, :view
 end

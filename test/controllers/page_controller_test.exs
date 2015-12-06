@@ -1,5 +1,5 @@
-defmodule Elixirtaipei.PageControllerTest do
-  use Elixirtaipei.ConnCase
+defmodule ElixirTW.PageControllerTest do
+  use ElixirTW.ConnCase
 
   test "GET /" do
     conn = get conn(), "/"

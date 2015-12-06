@@ -1,4 +1,4 @@
-defmodule Elixirtaipei.SandboxBot do
+defmodule ElixirTW.SandboxBot do
   use Slack
 
   def start_link(initial_state) do

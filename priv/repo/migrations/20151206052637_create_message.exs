@@ -1,4 +1,4 @@
-defmodule Elixirtaipei.Repo.Migrations.CreateMessage do
+defmodule ElixirTW.Repo.Migrations.CreateMessage do
   use Ecto.Migration
 
   def change do

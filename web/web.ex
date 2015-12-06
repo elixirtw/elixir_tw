@@ -1,12 +1,12 @@
-defmodule Elixirtaipei.Web do
+defmodule ElixirTW.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use Elixirtaipei.Web, :controller
-      use Elixirtaipei.Web, :view
+      use ElixirTW.Web, :controller
+      use ElixirTW.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -29,11 +29,11 @@ defmodule Elixirtaipei.Web do
     quote do
       use Phoenix.Controller
 
-      alias Elixirtaipei.Repo
+      alias ElixirTW.Repo
       import Ecto.Model
       import Ecto.Query, only: [from: 1, from: 2]
 
-      import Elixirtaipei.Router.Helpers
+      import ElixirTW.Router.Helpers
     end
   end
 
@@ -47,7 +47,7 @@ defmodule Elixirtaipei.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import Elixirtaipei.Router.Helpers
+      import ElixirTW.Router.Helpers
     end
   end
 
@@ -61,7 +61,7 @@ defmodule Elixirtaipei.Web do
     quote do
       use Phoenix.Channel
 
-      alias Elixirtaipei.Repo
+      alias ElixirTW.Repo
       import Ecto.Model
       import Ecto.Query, only: [from: 1, from: 2]
     end

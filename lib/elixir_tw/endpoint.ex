@@ -1,14 +1,14 @@
-defmodule Elixirtaipei.Endpoint do
-  use Phoenix.Endpoint, otp_app: :elixirtaipei
+defmodule ElixirTW.Endpoint do
+  use Phoenix.Endpoint, otp_app: :elixir_tw
 
-  socket "/socket", Elixirtaipei.UserSocket
+  socket "/socket", ElixirTW.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :elixirtaipei, gzip: false,
+    at: "/", from: :elixir_tw, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -35,5 +35,5 @@ defmodule Elixirtaipei.Endpoint do
     key: "_elixirtaipei_key",
     signing_salt: "92EJ4PWO"
 
-  plug Elixirtaipei.Router
+  plug ElixirTW.Router
 end

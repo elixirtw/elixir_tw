@@ -1,3 +1,3 @@
-defmodule Elixirtaipei.LayoutView do
-  use Elixirtaipei.Web, :view
+defmodule ElixirTW.LayoutView do
+  use ElixirTW.Web, :view
 end

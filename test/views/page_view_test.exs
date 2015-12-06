@@ -1,3 +1,3 @@
-defmodule Elixirtaipei.PageViewTest do
-  use Elixirtaipei.ConnCase, async: true
+defmodule ElixirTW.PageViewTest do
+  use ElixirTW.ConnCase, async: true
 end

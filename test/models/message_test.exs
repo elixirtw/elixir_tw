@@ -1,7 +1,7 @@
-defmodule Elixirtaipei.MessageTest do
-  use Elixirtaipei.ModelCase
+defmodule ElixirTW.MessageTest do
+  use ElixirTW.ModelCase
 
-  alias Elixirtaipei.Message
+  alias ElixirTW.Message
 
   @valid_attrs %{content: "some content", file_type: "some content", member: "some content"}
   @invalid_attrs %{}

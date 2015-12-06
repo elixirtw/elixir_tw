@@ -1,4 +1,4 @@
-# Elixirtaipei
+# Elixir Taiwan
 
 To start your Phoenix app:
 

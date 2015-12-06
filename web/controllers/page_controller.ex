@@ -1,5 +1,5 @@
-defmodule Elixirtaipei.PageController do
-  use Elixirtaipei.Web, :controller
+defmodule ElixirTW.PageController do
+  use ElixirTW.Web, :controller
 
   def home(conn, _params) do
     render conn, "home.html"

@@ -1,4 +1,4 @@
-defmodule Elixirtaipei.ConnCase do
+defmodule ElixirTW.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -20,20 +20,20 @@ defmodule Elixirtaipei.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias Elixirtaipei.Repo
+      alias ElixirTW.Repo
       import Ecto.Model
       import Ecto.Query, only: [from: 2]
 
-      import Elixirtaipei.Router.Helpers
+      import ElixirTW.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Elixirtaipei.Endpoint
+      @endpoint ElixirTW.Endpoint
     end
   end
 
   setup tags do
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Elixirtaipei.Repo, [])
+      Ecto.Adapters.SQL.restart_test_transaction(ElixirTW.Repo, [])
     end
 
     :ok

@@ -1,5 +1,5 @@
-defmodule Elixirtaipei.Router do
-  use Elixirtaipei.Web, :router
+defmodule ElixirTW.Router do
+  use ElixirTW.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,7 +13,7 @@ defmodule Elixirtaipei.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", Elixirtaipei do
+  scope "/", ElixirTW do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :home
@@ -25,7 +25,7 @@ defmodule Elixirtaipei.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Elixirtaipei do
+  # scope "/api", ElixirTW do
   #   pipe_through :api
   # end
 end

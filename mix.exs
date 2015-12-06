@@ -1,8 +1,8 @@
-defmodule Elixirtaipei.Mixfile do
+defmodule ElixirTW.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :elixirtaipei,
+    [app: :elixir_tw,
      version: "0.0.1",
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
@@ -17,7 +17,7 @@ defmodule Elixirtaipei.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {Elixirtaipei, []},
+    [mod: {ElixirTW, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
                     :phoenix_ecto, :postgrex, :slack]]
   end
