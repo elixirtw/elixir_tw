@@ -12,4 +12,12 @@ defmodule Elixirtaipei.PageController do
   def groups(conn, _params) do
     render conn, "groups.html"
   end
+
+  def jobs(conn, _params) do
+    render conn, "construction.html"
+  end
+
+  def helps(conn, _params) do
+    render conn, "construction.html"
+  end
 end

@@ -19,6 +19,8 @@ defmodule Elixirtaipei.Router do
     get "/", PageController, :home
     get "/resources", PageController, :resources
     get "/groups", PageController, :groups
+    get "/jobs", PageController, :jobs
+    get "/helps", PageController, :helps
   end
 
   # Other scopes may use custom stacks.
