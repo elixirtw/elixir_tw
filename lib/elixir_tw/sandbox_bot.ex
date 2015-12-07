@@ -1,6 +1,8 @@
 defmodule ElixirTW.SandboxBot do
   use Slack
 
+  alias ElixirTW.Message
+
   def start_link(initial_state) do
     Slack.start_link(__MODULE__, FigaroElixir.env["slack_bot_token"], initial_state)
   end
@@ -15,8 +17,15 @@ defmodule ElixirTW.SandboxBot do
   end
 
   def handle_message({:type, "message", response}, slack, state) do
-    IO.puts "message"
-    IO.inspect response
+    message = %Message{ member: response[:user], content: response[:text], file_type: response[:type]}
+
+    if Repo.insert!(message) do
+      IO.puts "message"
+      IO.inspect response
+    else
+      IO.puts "message"
+      IO.puts "Repo insert Failed"
+    end
 
     {:ok, state}
   end
