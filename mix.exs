@@ -40,7 +40,8 @@ defmodule ElixirTW.Mixfile do
      {:slack, "~> 0.1.0"},
      {:timex, "~> 0.19"},
      {:websocket_client, github: "jeremyong/websocket_client"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"}
+   ]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
