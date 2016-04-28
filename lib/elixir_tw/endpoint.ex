@@ -1,7 +1,7 @@
-defmodule ElixirTW.Endpoint do
+defmodule ElixirTw.Endpoint do
   use Phoenix.Endpoint, otp_app: :elixir_tw
 
-  socket "/socket", ElixirTW.UserSocket
+  socket "/socket", ElixirTw.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -32,8 +32,8 @@ defmodule ElixirTW.Endpoint do
 
   plug Plug.Session,
     store: :cookie,
-    key: "_elixirtaipei_key",
-    signing_salt: "92EJ4PWO"
+    key: "_elixir_tw_key",
+    signing_salt: "FlC//Xzo"
 
-  plug ElixirTW.Router
+  plug ElixirTw.Router
 end

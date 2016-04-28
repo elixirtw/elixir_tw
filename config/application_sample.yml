@@ -1,5 +1,0 @@
-dev:
-  slack_bot_token:
-
-prod:
-  slack_bot_token:

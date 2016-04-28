@@ -1,5 +1,5 @@
-defmodule ElixirTW.Router do
-  use ElixirTW.Web, :router
+defmodule ElixirTw.Router do
+  use ElixirTw.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,19 +13,14 @@ defmodule ElixirTW.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", ElixirTW do
+  scope "/", ElixirTw do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :home
-    get "/resources", PageController, :resources
-    get "/social_networks", PageController, :social_networks
-    get "/helps", PageController, :helps
-
-    resources "/slack-archives", ArchiveController
+    get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", ElixirTW do
+  # scope "/api", ElixirTw do
   #   pipe_through :api
   # end
 end

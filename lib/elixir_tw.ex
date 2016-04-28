@@ -1,4 +1,4 @@
-defmodule ElixirTW do
+defmodule ElixirTw do
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
@@ -8,24 +8,23 @@ defmodule ElixirTW do
 
     children = [
       # Start the endpoint when the application starts
-      supervisor(ElixirTW.Endpoint, []),
+      supervisor(ElixirTw.Endpoint, []),
       # Start the Ecto repository
-      worker(ElixirTW.Repo, []),
+      supervisor(ElixirTw.Repo, []),
       # Here you could define other workers and supervisors as children
-      # worker(ElixirTW.Worker, [arg1, arg2, arg3]),
-      worker(ElixirTW.SandboxBot, [[]])
+      # worker(ElixirTw.Worker, [arg1, arg2, arg3]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: ElixirTW.Supervisor]
+    opts = [strategy: :one_for_one, name: ElixirTw.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    ElixirTW.Endpoint.config_change(changed, removed)
+    ElixirTw.Endpoint.config_change(changed, removed)
     :ok
   end
 end

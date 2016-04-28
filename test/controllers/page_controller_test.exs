@@ -1,8 +1,8 @@
-defmodule ElixirTW.PageControllerTest do
-  use ElixirTW.ConnCase
+defmodule ElixirTw.PageControllerTest do
+  use ElixirTw.ConnCase
 
-  test "GET /" do
-    conn = get conn(), "/"
+  test "GET /", %{conn: conn} do
+    conn = get conn, "/"
     assert html_response(conn, 200) =~ "Welcome to Phoenix!"
   end
 end

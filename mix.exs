@@ -1,4 +1,4 @@
-defmodule ElixirTW.Mixfile do
+defmodule ElixirTw.Mixfile do
   use Mix.Project
 
   def project do
@@ -6,7 +6,7 @@ defmodule ElixirTW.Mixfile do
      version: "0.0.1",
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
-     compilers: [:phoenix] ++ Mix.compilers,
+     compilers: [:phoenix, :gettext] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      aliases: aliases,
@@ -17,9 +17,9 @@ defmodule ElixirTW.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {ElixirTW, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex, :slack, :figaro_elixir]]
+    [mod: {ElixirTw, []},
+     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
+                    :phoenix_ecto, :postgrex]]
   end
 
   # Specifies which paths to compile per environment.
@@ -30,18 +30,13 @@ defmodule ElixirTW.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.0.3"},
-     {:phoenix_ecto, "~> 1.1"},
+    [{:phoenix, "~> 1.1.4"},
      {:postgrex, ">= 0.0.0"},
-     {:phoenix_html, "~> 2.1"},
+     {:phoenix_ecto, "~> 2.0"},
+     {:phoenix_html, "~> 2.4"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:figaro_elixir, "~> 1.0.0"},
-     {:yamerl, github: "yakaz/yamerl"},
-     {:slack, "~> 0.1.0"},
-     {:timex, "~> 0.19"},
-     {:websocket_client, github: "jeremyong/websocket_client"},
-     {:cowboy, "~> 1.0"}
-   ]
+     {:gettext, "~> 0.9"},
+     {:cowboy, "~> 1.0"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

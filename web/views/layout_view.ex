@@ -1,3 +1,3 @@
-defmodule ElixirTW.LayoutView do
-  use ElixirTW.Web, :view
+defmodule ElixirTw.LayoutView do
+  use ElixirTw.Web, :view
 end

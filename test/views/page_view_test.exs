@@ -1,3 +1,3 @@
-defmodule ElixirTW.PageViewTest do
-  use ElixirTW.ConnCase, async: true
+defmodule ElixirTw.PageViewTest do
+  use ElixirTw.ConnCase, async: true
 end
