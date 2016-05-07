@@ -9,6 +9,7 @@
 
     <title>elixir |> taiwan</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   </head>
 
   <body>

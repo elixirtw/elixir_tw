@@ -3,7 +3,6 @@ exports.config = {
   files: {
     javascripts: {
       joinTo: "js/app.js"
-
       // To use a separate vendor.js bundle, specify two files path
       // https://github.com/brunch/brunch/blob/stable/docs/config.md#files
       // joinTo: {
@@ -22,6 +21,11 @@ exports.config = {
     },
     stylesheets: {
       joinTo: "css/app.css"
+      //joinTo: {
+        //"css/app.css": [
+          ///
+        //]
+      //}
     },
     templates: {
       joinTo: "js/app.js"
@@ -31,7 +35,7 @@ exports.config = {
   conventions: {
     // This option sets where we should place non-css and non-js assets in.
     assets: /^(web\/static\/assets)/,
-    ignored: /^web\/static\/vendor\/semantic\/.*\.less$/
+    //ignored: /^web\/static\/vendor\/semantic\/.*\.less$/
   },
 
   // Phoenix paths configuration
