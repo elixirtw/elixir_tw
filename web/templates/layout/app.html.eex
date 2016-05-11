@@ -19,14 +19,7 @@
       </div>
     </div>
     <div class="ui main container">
-      <div class="ui error message">
-        <i class="close icon"></i>
-        <%= get_flash(@conn, :error) %>
-      </div>
-      <div class="ui info message">
-        <i class="close icon"></i>
-        <%= get_flash(@conn, :info) %>
-      </div>
+      <%= show_flash(@conn) %>
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
