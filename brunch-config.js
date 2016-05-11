@@ -55,6 +55,12 @@ exports.config = {
     babel: {
       // Do not use ES6 compiler in vendor code
       ignore: [/web\/static\/vendor/]
+    },
+
+    copycat: {
+      "priv/static/css/themes": ["web/static/vendor/semantic/themes"],
+      verbose: true,
+      onlyChanged: true
     }
   },
 
@@ -71,9 +77,4 @@ exports.config = {
     whitelist: ["phoenix", "phoenix_html"]
   },
 
-  assetsmanager: {
-    copyTo: {
-      "priv/static/css/themes": ["web/static/vendor/semantic/themes/*"]
-    }
-  }
 };
