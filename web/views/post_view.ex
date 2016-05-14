@@ -1,4 +1,4 @@
-defmodule ElixirTw.PageView do
+defmodule ElixirTw.PostView do
   use ElixirTw.Web, :view
 
 end
