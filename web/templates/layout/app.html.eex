@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
-  <body>
+  <body class="Site">
     <div class="ui fixed purple inverted large menu">
       <div class="ui container">
         <a class="header item" href="#">Elixir 台灣</a>
@@ -26,11 +26,11 @@
       </main>
     </div>
 
-    <div class="ui inverted vertical footer segment">
+    <footer class="ui inverted vertical footer segment">
       <div class="ui container">
         I'm the footer
       </div>
-    </div>
+    </footer>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>

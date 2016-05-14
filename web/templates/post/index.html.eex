@@ -1,10 +1,10 @@
 <div class="ui column grid">
   <div class="twelve wide column">
-    <div class="ui top attached tertiary purple inverted segment"> This is the board </div>
+    <div class="ui top attached tertiary violet inverted segment"> This is the board </div>
     <div class="ui bottom attached padded segment"> Posts goes here </div>
   </div>
   <div class="four wide column">
-    <div class="ui top attached secondary purple inverted segment">
+    <div class="ui top attached secondary violet inverted segment">
       I'm the sidebar
     </div>
     <div class="ui attached segment">
