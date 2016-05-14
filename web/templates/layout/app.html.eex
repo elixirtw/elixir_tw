@@ -13,17 +13,24 @@
   </head>
 
   <body>
-    <div class="ui fixed inverted large menu">
+    <div class="ui fixed purple inverted large menu">
       <div class="ui container">
         <a class="header item" href="#">Elixir 台灣</a>
       </div>
     </div>
+
     <div class="ui main container">
       <%= show_flash(@conn) %>
 
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
+    </div>
+
+    <div class="ui inverted vertical footer segment">
+      <div class="ui container">
+        I'm the footer
+      </div>
     </div>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
