@@ -1,15 +1,27 @@
 <div class="ui column grid">
   <div class="twelve wide column">
-    <div class="ui top attached tertiary violet inverted segment"> This is the board </div>
-    <div class="ui bottom attached padded segment"> Posts goes here </div>
+    <div class="ui top attached secondary  violet inverted segment">
+      This is the board
+    </div>
+
+    <div class="ui bottom attached padded segment">
+      <div class="ui vertical segment">
+        <div class="ui images">
+          <img src="http://cdn.playbuzz.com/cdn/87cc47f5-74b4-49bc-9b47-297f4d61ab77/58aa40a7-835e-41c0-826b-8271e1d9097a.jpg" class="ui middle aligned tiny circular bordered image"/>
+        </div>
+        <div>
+          <p>some text</p>
+        </div>
+      </div>
+    </div>
   </div>
+
   <div class="four wide column">
-    <div class="ui top attached secondary violet inverted segment">
+    <div class="ui top attached tertiary violet inverted segment">
       I'm the sidebar
     </div>
     <div class="ui attached segment">
       sidebar content goes here
     </div>
-  </div>
   </div>
 </div>
