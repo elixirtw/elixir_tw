@@ -1,21 +1,35 @@
 <div class="ui column grid">
+  <!-- Posts Listing -->
   <div class="twelve wide column">
-    <div class="ui top attached secondary  violet inverted segment">
-      This is the board
-    </div>
 
-    <div class="ui bottom attached padded segment">
-      <div class="ui vertical segment">
-        <div class="ui images">
-          <img src="http://cdn.playbuzz.com/cdn/87cc47f5-74b4-49bc-9b47-297f4d61ab77/58aa40a7-835e-41c0-826b-8271e1d9097a.jpg" class="ui middle aligned tiny circular bordered image"/>
-        </div>
-        <div>
-          <p>some text</p>
-        </div>
-      </div>
-    </div>
-  </div>
+    <!-- Forumn Title -->
+    <div class="ui top attached secondary violet inverted segment"> This is the board </div>
 
+    <!-- Post Segment -->
+    <div class="ui attached bottom padded segment">
+      <div class="ui vertically divided grid">
+
+        <!-- Individual Post -->
+        <%= for post_id <- Enum.to_list(1..10) do %>
+          <div class="row">
+            <div class="three wide header column">
+              <img class="ui bordered tiny circular image" src="/images/elixir_taiwan_small.png">
+            </div>
+            <div class="eleven wide title column">
+              <h3> Post <%= post_id %> goes here oheoi ohei</h3>
+              <strong> ME</strong> @ some date
+            </div>
+            <div class="two wide comment_count column">
+              <div class="ui mini blue statistic">
+                <div class="value">
+                  10
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+  <!-- Sidebar -->
   <div class="four wide column">
     <div class="ui top attached tertiary violet inverted segment">
       I'm the sidebar
