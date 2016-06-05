@@ -21,9 +21,11 @@
     <div class="ui main container">
       <%= show_flash(@conn) %>
 
+      <!-- Main Section-->
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
+
     </div>
 
     <footer class="ui inverted vertical footer segment">
