@@ -28,6 +28,9 @@
             </div>
           </div>
         <% end %>
+      </div>
+    </div>
+  </div>
 
   <!-- Sidebar -->
   <div class="four wide column">
