@@ -4,12 +4,12 @@ defmodule ElixirTw.User do
   schema "users" do
     field :name, :string
     field :email, :string
-    field :encrypted_password, :string
+    field :crypted_password, :string
 
     timestamps
   end
 
-  @required_fields ~w(name email encrypted_password)
+  @required_fields ~w(name email crypted_password)
   @optional_fields ~w()
 
   @doc """
