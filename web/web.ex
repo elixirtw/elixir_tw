@@ -52,6 +52,8 @@ defmodule ElixirTw.Web do
       import ElixirTw.Router.Helpers
       import ElixirTw.ErrorHelpers
       import ElixirTw.Gettext
+
+      import Guardian.Plug, only: [current_resource: 1]
     end
   end
 
