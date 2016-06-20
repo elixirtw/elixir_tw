@@ -1,15 +1,15 @@
-defmodule ElixirTw.Uer do
+defmodule ElixirTw.User do
   use ElixirTw.Web, :model
 
   schema "users" do
-    field :display_name, :string
+    field :name, :string
     field :email, :string
-    field :password_hash, :string
+    field :encrypted_password, :string
 
     timestamps
   end
 
-  @required_fields ~w(display_name email password_hash)
+  @required_fields ~w(name email encrypted_password)
   @optional_fields ~w()
 
   @doc """
