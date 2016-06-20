@@ -15,6 +15,13 @@
     <div class="ui fixed purple inverted large menu">
       <div class="ui container">
         <a class="header item" href="#">Elixir 台灣</a>
+        <div class="right menu">
+          <%= if current_resource(@conn) do %>
+            <a class="item"> 登出</a>
+          <% else %>
+            <a class="item"> 登入</a>
+          <% end %>
+        </div>
       </div>
     </div>
 
