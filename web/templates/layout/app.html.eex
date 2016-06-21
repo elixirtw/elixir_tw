@@ -20,7 +20,7 @@
           <%= if current_resource(@conn) do %>
             <a class="item"> 登出</a>
           <% else %>
-            <a class="item"> 登入</a>
+            <a class="item" href="/login"> 登入</a>
           <% end %>
         </div>
       </div>

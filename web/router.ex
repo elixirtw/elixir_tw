@@ -19,6 +19,8 @@ defmodule ElixirTw.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PostController, :index
+
+    get "/login", SessionController, :new
   end
 
   # Other scopes may use custom stacks.

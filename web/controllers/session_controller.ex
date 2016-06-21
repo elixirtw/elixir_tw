@@ -13,6 +13,10 @@ defmodule ElixirTw.SessionController do
     #|> redirect(to: user_path(conn, :index))
   end
 
+  def new(conn, _params) do
+    render(conn, "new.html")
+  end
+
   def delete(conn, _params) do
     #Guardian.Plug.sign_out(conn)
     #|> put_flash(:info, "Logged out successfully")
