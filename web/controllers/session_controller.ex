@@ -1,10 +1,12 @@
 defmodule ElixirTw.SessionController do
   use ElixirTw.Web, :controller
 
+  plug Ueberauth
+  plug :scrub_params, "user" when action in [:create]
+
   alias ElixirTw.User
   alias ElixirTw.UserQuery
-
-  plug :scrub_params, "user" when action in [:create]
+  alias Ueberauth.Strategy.Helpers
 
   def create(conn, params = %{}) do
     #conn
@@ -21,5 +23,30 @@ defmodule ElixirTw.SessionController do
     #Guardian.Plug.sign_out(conn)
     #|> put_flash(:info, "Logged out successfully")
     #|> redirect(to: "/")
+  end
+
+  def request(conn, _params) do
+    require IEx; IEx.pry
+    render(conn, "request.html", callback_url: Helpers.callback_url(conn))
+  end
+
+  def callback(%{assigns: %{ueberauth_failure: _fails}} = conn, _params) do
+    conn
+    |> put_flash(:error, "驗證失敗！")
+    |> redirect(to: "/")
+  end
+
+  def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
+    case UserFromAuth.find_or_create(auth) do
+      {:ok, user} ->
+        conn
+        |> put_flash(:info, "驗證成功！")
+        |> put_session(:current_user, user)
+        |> redirect(to: "/")
+      {:error, reason} ->
+        conn
+        |> put_flash(:error, reason)
+        |> redirect(to: "/")
+    end
   end
 end
