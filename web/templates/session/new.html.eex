@@ -6,10 +6,10 @@
           <i class="github icon"></i>
           Github 登 入
         </div>
-        <div class="ui facebook button">
+        <a href="/oauth/facebook" class="ui facebook button">
           <i class="facebook icon"></i>
           Facebook 登 入
-        </div>
+        </a>
       </div>
       <div class="ui vertical divider"> 或是 </div>
       <div class="column">

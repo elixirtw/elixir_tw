@@ -21,6 +21,15 @@ defmodule ElixirTw.Router do
     get "/", PostController, :index
 
     get "/login", SessionController, :new
+    delete "/logout", SessionController, :delete
+  end
+
+  scope "/oauth", ElixirTw do
+    pipe_through :browser
+
+    get "/:provider", SessionController, :request
+    get "/:provider/callback", SessionController, :callback
+    post "/:provider/callback", SessionController, :callback
   end
 
   # Other scopes may use custom stacks.
