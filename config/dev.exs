@@ -11,7 +11,8 @@ config :elixir_tw, ElixirTw.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin"]]
+  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
+             cd: Path.expand("../", __DIR__)]]
 
 # Watch static and templates for browser reloading.
 config :elixir_tw, ElixirTw.Endpoint,
@@ -51,6 +52,6 @@ config :guardian, Guardian,
     "kty" => "EC",
     "x" => "AWXnRMCaj96pL33ZhTw5mW8vjcvYPRLbWLfIO21Aig5qBs7ymegVGZWAThWfZcBa13sgBXTBm6rv7RvKKTx8qZGW",
     "y" => "AFWQhP0skj9iODTS4zn8vGcAAouvJ5HkLoBl72TNlh9WM6p0Cpc4Cf1XwRYkMzi-vVLpCEq27M22vZu__8FEV9io"},
-  serializer: MyApp.GuardianSerializer
+  serializer: ElixirTw.GuardianSerializer
 
-import_config "dev.secret.exs"
+# import_config "dev.secret.exs"
