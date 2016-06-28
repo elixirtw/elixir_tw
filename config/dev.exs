@@ -54,4 +54,4 @@ config :guardian, Guardian,
     "y" => "AFWQhP0skj9iODTS4zn8vGcAAouvJ5HkLoBl72TNlh9WM6p0Cpc4Cf1XwRYkMzi-vVLpCEq27M22vZu__8FEV9io"},
   serializer: ElixirTw.GuardianSerializer
 
-# import_config "dev.secret.exs"
+import_config "dev.secret.exs"
