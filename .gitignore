@@ -23,3 +23,7 @@ erl_crash.dump
 # variables.
 /config/prod.secret.exs
 /config/dev.secret.exs
+
+# Ignore Semantic UI files
+/semantic
+semantic.json
