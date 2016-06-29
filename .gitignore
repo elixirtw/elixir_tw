@@ -26,4 +26,3 @@ erl_crash.dump
 
 # Ignore Semantic UI files
 /semantic
-semantic.json
