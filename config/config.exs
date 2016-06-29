@@ -33,3 +33,6 @@ import_config "#{Mix.env}.exs"
 config :phoenix, :generators,
   migration: true,
   binary_id: false
+
+# Ecto 2.0 config
+config :elixir_tw, ecto_repos: [ElixirTw.Repo]
