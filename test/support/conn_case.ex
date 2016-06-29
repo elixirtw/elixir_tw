@@ -33,10 +33,12 @@ defmodule ElixirTw.ConnCase do
   end
 
   setup tags do
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ElixirTw.Repo)
+
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(ElixirTw.Repo, [])
+      Ecto.Adapters.SQL.Sandbox.mode(ElixirTw.Repo, {:shared, self()})
     end
 
-    {:ok, conn: Phoenix.ConnTest.conn()}
+    {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end
