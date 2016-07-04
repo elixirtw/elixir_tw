@@ -32,10 +32,10 @@ defmodule ElixirTw.ChannelCase do
   end
 
   setup tags do
-    unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(ElixirTw.Repo, [])
-    end
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ElixirTw.Repo)
 
-    :ok
+    unless tags[:async] do
+      Ecto.Adapters.SQL.Sandbox.mode(ElixirTw.Repo, {:shared, self()})
+    end
   end
 end
