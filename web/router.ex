@@ -24,7 +24,7 @@ defmodule ElixirTw.Router do
     delete "/logout", SessionController, :delete
   end
 
-  scope "/oauth", ElixirTw do
+  scope "/auth", ElixirTw do
     pipe_through :browser
 
     get "/:provider", SessionController, :request

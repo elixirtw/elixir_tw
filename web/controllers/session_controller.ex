@@ -26,7 +26,7 @@ defmodule ElixirTw.SessionController do
   end
 
   def request(conn, _params) do
-    render(conn, "request.html", callback_url: "/oauth/#{conn.params["provider"]}/callback")
+    render(conn, "request.html", callback_url: "/auth/#{conn.params["provider"]}/callback")
   end
 
   def callback(%{assigns: %{ueberauth_failure: _fails}} = conn, _params) do
