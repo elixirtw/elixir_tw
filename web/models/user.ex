@@ -2,6 +2,7 @@ defmodule ElixirTw.User do
   use ElixirTw.Web, :model
 
   schema "users" do
+    has_many :oauth_providers, OauthProvider
     field :name, :string
     field :email, :string
     field :crypted_password, :string

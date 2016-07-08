@@ -36,7 +36,7 @@ defmodule ElixirTw.SessionController do
   end
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
-    case UserFromAuth.find_or_create(auth) do
+    case User.find_or_create(auth) do
       {:ok, user} ->
         conn
         |> put_flash(:info, "驗證成功！")
