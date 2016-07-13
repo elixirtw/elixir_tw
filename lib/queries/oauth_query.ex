@@ -1,4 +1,4 @@
-defmodule ElixirTw.OauthAuthentication do
+defmodule ElixirTw.OauthQuery do
   use ElixirTw.Web, :query
 
   alias ElixirTw.User
@@ -9,7 +9,6 @@ defmodule ElixirTw.OauthAuthentication do
             join: o in OauthInfo,
             where: o.uid == ^auth.uid and o.provider == ^Atom.to_string(auth.provider)
 
-    query
-    |> Repo.all
+    { Repo.one(query), auth }
   end
 end
