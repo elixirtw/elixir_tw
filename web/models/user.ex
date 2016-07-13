@@ -5,7 +5,7 @@ defmodule ElixirTw.User do
   alias ElixirTw.OauthAuthentication
 
   schema "users" do
-    has_many :oauth_providers, OauthProvider
+    has_many :oauth_infos, OauthInfo
     field :name, :string
     field :email, :string
     field :crypted_password, :string
@@ -31,6 +31,4 @@ defmodule ElixirTw.User do
     auth
     |> OauthAuthentication.identify_user
   end
-
-
 end

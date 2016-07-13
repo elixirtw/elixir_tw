@@ -1,9 +1,9 @@
-defmodule ElixirTw.OauthCredential do
+defmodule ElixirTw.OauthInfo do
   use ElixirTw.Web, :model
 
-  schema "oauth_credentials" do
-    field :provider_name, :string
-    field :provider_id, :string
+  schema "oauth_infos" do
+    field :provider, :string
+    field :uid, :string
     belongs_to :user, ElixirTw.User
 
     timestamps()
