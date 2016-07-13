@@ -27,8 +27,4 @@ defmodule ElixirTw.User do
     |> cast(params, @required_fields, @optional_fields)
   end
 
-  def find_or_create(%Auth{} = auth) do
-    auth
-    |> OauthAuthentication.identify_user
-  end
 end

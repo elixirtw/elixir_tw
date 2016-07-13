@@ -36,6 +36,15 @@ defmodule ElixirTw.Web do
     end
   end
 
+  def command do
+    quote do
+      use Ecto.Schema
+
+      import Ecto
+      import Ecto.Changeset
+    end
+  end
+
   def controller do
     quote do
       use Phoenix.Controller
