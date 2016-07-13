@@ -1,6 +1,9 @@
 defmodule ElixirTw.User do
   use ElixirTw.Web, :model
 
+  alias Ueberauth.Auth
+  alias ElixirTw.OauthAuthentication
+
   schema "users" do
     has_many :oauth_providers, OauthProvider
     field :name, :string
@@ -23,5 +26,11 @@ defmodule ElixirTw.User do
     model
     |> cast(params, @required_fields, @optional_fields)
   end
+
+  def find_or_create(%Auth{} = auth) do
+    auth
+    |> OauthAuthentication.identify_user
+  end
+
 
 end
