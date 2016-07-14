@@ -22,7 +22,7 @@ config :logger, :console,
 # Uberauth's Oauth Settings
 config :ueberauth, Ueberauth,
   providers: [
-    facebook: { Ueberauth.Strategy.Facebook, [] }
+    facebook: { Ueberauth.Strategy.Facebook, [profile_fields: "email,name"] }
   ]
 
 # Import environment specific config. This must remain at the bottom

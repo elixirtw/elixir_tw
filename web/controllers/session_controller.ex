@@ -37,12 +37,11 @@ defmodule ElixirTw.SessionController do
   end
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
-    user = auth
+    user_result = auth
     |> OauthQuery.identify_user
-    |> IO.inspect
     |> OauthCommand.persist_user
 
-    case user do
+    case user_result do
       {:ok, user} ->
         conn
         |> put_flash(:info, "驗證成功！")

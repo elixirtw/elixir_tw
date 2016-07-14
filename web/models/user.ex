@@ -2,7 +2,7 @@ defmodule ElixirTw.User do
   use ElixirTw.Web, :model
 
   alias Ueberauth.Auth
-  alias ElixirTw.OauthAuthentication
+  alias ElixirTw.OauthInfo
 
   schema "users" do
     has_many :oauth_infos, OauthInfo
@@ -13,8 +13,7 @@ defmodule ElixirTw.User do
     timestamps
   end
 
-  @required_fields ~w(name email crypted_password)
-  @optional_fields ~w()
+  @allowed_fields ~w(name email)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
@@ -24,7 +23,8 @@ defmodule ElixirTw.User do
   """
   def changeset(model, params \\ %{}) do
     model
-    |> cast(params, @required_fields, @optional_fields)
+    |> cast(params, @allowed_fields)
+    |> validate_required([:name, :email])
   end
 
 end
