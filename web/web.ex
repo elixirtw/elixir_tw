@@ -40,6 +40,7 @@ defmodule ElixirTw.Web do
     quote do
       use Ecto.Schema
 
+      alias ElixirTw.Repo
       import Ecto
       import Ecto.Changeset
     end

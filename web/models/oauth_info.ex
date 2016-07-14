@@ -14,7 +14,7 @@ defmodule ElixirTw.OauthInfo do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:provider_name, :provider_id])
-    |> validate_required([:provider_name, :provider_id])
+    |> cast(params, [:uid, :provider])
+    |> validate_required([:provider, :uid])
   end
 end
