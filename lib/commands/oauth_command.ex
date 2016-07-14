@@ -2,10 +2,8 @@ defmodule ElixirTw.OauthCommand do
   use ElixirTw.Web, :command
 
   alias ElixirTw.User
-  alias ElixirTw.OauthInfo
-  alias Ueberauth.Auth
 
-  def persist_user({%User{} = user, auth}) do
+  def persist_user({%User{} = user, _}) do
     {:ok, user}
   end
 
