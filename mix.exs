@@ -45,6 +45,7 @@ defmodule ElixirTw.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:guardian, "~> 0.12.0"},
+     {:guardian_db, "~> 0.7.0"},
      {:ueberauth_facebook, "~> 0.3"},
      {:cowboy, "~> 1.0"}]
   end

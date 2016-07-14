@@ -36,3 +36,7 @@ config :phoenix, :generators,
 
 # Ecto 2.0 config
 config :elixir_tw, ecto_repos: [ElixirTw.Repo]
+
+config :guardian_db, GuardianDb,
+  repo: ElixirTw.Repo,
+  sweep_interval: 120
