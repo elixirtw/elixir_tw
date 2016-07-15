@@ -21,9 +21,9 @@ defmodule ElixirTw.SessionController do
   end
 
   def delete(conn, _params) do
-    #Guardian.Plug.sign_out(conn)
-    #|> put_flash(:info, "Logged out successfully")
-    #|> redirect(to: "/")
+    Guardian.Plug.sign_out(conn)
+    |> put_flash(:info, "Logged out successfully")
+    |> redirect(to: "/")
   end
 
   def request(conn, _params) do
@@ -44,6 +44,7 @@ defmodule ElixirTw.SessionController do
     case user_result do
       {:ok, user} ->
         conn
+        |> Guardian.Plug.sign_in(user)
         |> put_flash(:info, "驗證成功！")
         |> put_session(:current_user, user)
         |> redirect(to: "/")
