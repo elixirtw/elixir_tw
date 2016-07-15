@@ -60,9 +60,6 @@ config :logger, level: :info
 #
 #     config :elixir_tw, ElixirTw.Endpoint, root: "."
 
-# Guardian requires it's own set of JWK and JWT, please generate and keep in prod.secret.exs
-# jwk = JOSE.JWK.generate_key({:ec, "P-521"}) |> JOSE.JWK.to_map |> elem(1)
-
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 import_config "prod.secret.exs"
