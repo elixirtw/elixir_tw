@@ -47,6 +47,7 @@ defmodule ElixirTw.Mixfile do
      {:guardian, "~> 0.12.0"},
      {:guardian_db, "~> 0.7.0"},
      {:ueberauth_facebook, "~> 0.3"},
+     {:ueberauth_github, "~> 0.2"},
      {:cowboy, "~> 1.0"}]
   end
 

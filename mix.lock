@@ -31,4 +31,5 @@
   "ssl_verify_fun": {:hex, :ssl_verify_fun, "1.1.0", "edee20847c42e379bf91261db474ffbe373f8acb56e9079acb6038d4e0bf414f", [:rebar, :make], []},
   "ueberauth": {:hex, :ueberauth, "0.2.0", "9160c601b468c6692462a56be7ad8890d1a2d84519d7d9c4541da5b07d6495e1", [:mix], [{:plug, "~> 1.0", [hex: :plug, optional: false]}]},
   "ueberauth_facebook": {:hex, :ueberauth_facebook, "0.3.2", "2ae4870efa0a81ddbbd83828da8a182416f42e97f15dfd6a0aa1341be1efb36f", [:mix], [{:ueberauth, "~> 0.2", [hex: :ueberauth, optional: false]}, {:oauth2, "~> 0.5", [hex: :oauth2, optional: false]}]},
+  "ueberauth_github": {:hex, :ueberauth_github, "0.2.0", "fb999fedd70f9e818c3494bb4bf5f5985ecfb31a25e2c53806d1dd443a37aeb8", [:mix], [{:ueberauth, "~> 0.2", [hex: :ueberauth, optional: false]}, {:oauth2, "~> 0.5", [hex: :oauth2, optional: false]}]},
   "uuid": {:hex, :uuid, "1.1.4", "36c7734e4c8e357f2f67ba57fb61799d60c20a7f817b104896cca64b857e3686", [:mix], []}}
