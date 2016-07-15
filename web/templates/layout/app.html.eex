@@ -17,9 +17,9 @@
         <a class="header item" href="#">Elixir 台灣</a>
         <div class="right menu">
           <%= if current_resource(@conn) do %>
-            <a class="item"> 登出</a>
+            <%= link("登出", to: "/logout", class: "item", method: :delete)%>
           <% else %>
-            <a class="item" href="/login"> 登入</a>
+            <%= link("登入", to: "/login", class: "item" )%>
           <% end %>
         </div>
       </div>
