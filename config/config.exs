@@ -25,6 +25,15 @@ config :ueberauth, Ueberauth,
     facebook: { Ueberauth.Strategy.Facebook, [profile_fields: "email,name"] }
   ]
 
+config :guardian, Guardian,
+  allowed_algos: ["HS512"], # optional
+  verify_module: Guardian.JWT,  # optional
+  hooks: GuardianDb,
+  issuer: "ElixirTW",
+  ttl: { 30, :days },
+  verify_issuer: true,
+  serializer: ElixirTw.GuardianSerializer
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
@@ -39,4 +48,4 @@ config :elixir_tw, ecto_repos: [ElixirTw.Repo]
 
 config :guardian_db, GuardianDb,
   repo: ElixirTw.Repo,
-  sweep_interval: 120
+  sweep_interval: 120 # 120 min
