@@ -19,12 +19,6 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-# Uberauth's Oauth Settings
-config :ueberauth, Ueberauth,
-  providers: [
-    facebook: { Ueberauth.Strategy.Facebook, [profile_fields: "email,name"] }
-  ]
-
 config :guardian, Guardian,
   allowed_algos: ["HS512"], # optional
   verify_module: Guardian.JWT,  # optional
@@ -49,3 +43,10 @@ config :elixir_tw, ecto_repos: [ElixirTw.Repo]
 config :guardian_db, GuardianDb,
   repo: ElixirTw.Repo,
   sweep_interval: 120 # 120 min
+
+# Uberauth's Oauth Settings
+config :ueberauth, Ueberauth,
+  providers: [
+    facebook: { Ueberauth.Strategy.Facebook, [profile_fields: "email,name"] },
+    github: { Ueberauth.Strategy.Github, [] }
+  ]

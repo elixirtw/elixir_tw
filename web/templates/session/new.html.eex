@@ -1,41 +1,41 @@
 <div class="ui two column doubling centered grid">
   <div class="column">
-    <div class="ui two column stackable grid segment">
+    <div class="ui one column stackable grid segment">
       <div class="column">
-        <div class="ui github button">
-          <i class="github icon"></i>
-          Github 登 入
-        </div>
+        <%#<div class="ui github button">%>
+          <%#<i class="github icon"></i>%>
+          <%#Github 登 入%>
+        <%#</div>%>
         <a href="/auth/facebook" class="ui facebook button">
           <i class="facebook icon"></i>
           Facebook 登 入
         </a>
       </div>
-      <div class="ui vertical divider"> 或是 </div>
-      <div class="column">
-        <form class="ui large form">
-            <div class="field">
-              <div class="ui left icon input">
-                <i class="user icon"></i>
-                <input type="text" name="email" placeholder="E-mail">
-              </div>
-            </div>
-            <div class="field">
-              <div class="ui left icon input">
-                <i class="lock icon"></i>
-                <input type="password" name="password" placeholder="密碼">
-              </div>
-            </div>
-            <div class="ui fluid large violet submit button">登 入</div>
+      <%#<div class="ui vertical divider"> 或是 </div>%>
+      <%#<div class="column">%>
+        <%#<form class="ui large form">%>
+            <%#<div class="field">%>
+              <%#<div class="ui left icon input">%>
+                <%#<i class="user icon"></i>%>
+                <%#<input type="text" name="email" placeholder="E-mail">%>
+              <%#</div>%>
+            <%#</div>%>
+            <%#<div class="field">%>
+              <%#<div class="ui left icon input">%>
+                <%#<i class="lock icon"></i>%>
+                <%#<input type="password" name="password" placeholder="密碼">%>
+              <%#</div>%>
+            <%#</div>%>
+            <%#<div class="ui fluid large violet submit button">登 入</div>%>
 
-          <div class="ui error message"></div>
+          <%#<div class="ui error message"></div>%>
 
-        </form>
+        <%#</form>%>
 
-        <div class="ui message">
-          還沒有帳號嗎？ <a href="#">註 冊</a>
-        </div>
-      </div>
+        <%#<div class="ui message">%>
+          <%#還沒有帳號嗎？ <a href="#">註 冊</a>%>
+        <%#</div>%>
+      <%#</div>%>
     </div>
   </div>
 </div>
