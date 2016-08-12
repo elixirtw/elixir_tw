@@ -32,22 +32,8 @@
     </div>
   </div>
 
-  <!-- Sidebar -->
-  <div class="four wide column">
-    <div class="ui top attached tertiary violet inverted segment">
-    </div>
-    <div class="ui attached menu">
-      sidebar content goes here
-    </div>
-  </div>
-
-  <!-- Sample Sidebar -->
-  <div class="four wide column">
-    <div class="ui top attached tertiary violet inverted segment">
-      I'm the sidebar
-    </div>
-    <div class="ui attached segment">
-      sidebar content goes here
-    </div>
-  </div>
+  <!-- Sidebars -->
+  <%= if current_resource(@conn) do %>
+    <%= render(ElixirTw.LayoutView, "_user_sidebar.html", conn: @conn)%>
+  <% end %>
 </div>
