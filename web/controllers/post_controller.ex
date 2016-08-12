@@ -1,7 +1,8 @@
 defmodule ElixirTw.PostController do
   use ElixirTw.Web, :controller
+  use Guardian.Phoenix.Controller
 
-  def index(conn, _params) do
+  def index(conn, _params, _user, _claims) do
     conn
     |> render("index.html")
   end
