@@ -17,8 +17,6 @@ defmodule ElixirTw.SessionController do
   end
 
   def new(conn, params) do
-    require IEx; IEx.pry
-
     origin_url = params |> Map.get("origin_url") |> (&( &1 || "/")).()
 
     if current_resource(conn) do

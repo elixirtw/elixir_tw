@@ -12,29 +12,27 @@
   </head>
 
   <body class="Site">
-    <div class="ui fixed purple inverted large menu">
-      <div class="ui container">
-        <a class="header item" href="#">Elixir 台灣</a>
-        <div class="right menu">
+    <%= render "_main_nav.html", conn: @conn %>
+
+    <div class="ui main container">
+      <div class="ui column grid">
+        <%= show_flash(@conn) %>
+
+        <!-- Main Section-->
+        <main role="main" class="twelve wide column">
+          <%= render @view_module, @view_template, assigns %>
+        </main>
+
+        <!-- Sidebars -->
+        <div class="four wide column">
           <%= if current_resource(@conn) do %>
-            <%= link("登出", to: "/logout", class: "item", method: :delete)%>
-          <% else %>
-            <%= link("登入", to: "/login?origin=#{@conn.request_path}", class: "item" )%>
+            <%= render(ElixirTw.LayoutView, "_user_sidebar.html", conn: @conn)%>
           <% end %>
         </div>
       </div>
     </div>
 
-    <div class="ui main container">
-      <%= show_flash(@conn) %>
-
-      <!-- Main Section-->
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
-
-    </div>
-
+    <!-- Footer -->
     <footer class="ui inverted vertical footer segment">
       <div class="ui container">
         I'm the footer

@@ -1,39 +1,30 @@
-<div class="ui column grid">
-  <!-- Posts Listing -->
-  <div class="twelve wide column">
+<!-- Posts Listing -->
 
-    <!-- Forumn Title -->
-    <div class="ui top attached secondary violet inverted segment"> This is the board </div>
+<!-- Forumn Title -->
+<div class="ui top attached secondary violet inverted segment"> This is the board </div>
 
-    <!-- Post Segment -->
-    <div class="ui attached bottom padded segment">
-      <div class="ui vertically divided grid">
+<!-- Post Segment -->
+<div class="ui attached bottom padded segment">
+  <div class="ui vertically divided grid">
 
-        <!-- Individual Post -->
-        <%= for post_id <- Enum.to_list(1..10) do %>
-          <div class="row">
-            <div class="three wide header column">
-              <img class="ui bordered tiny circular image" src="/images/elixir_taiwan_small.png">
-            </div>
-            <div class="eleven wide title column">
-              <h3> Post <%= post_id %> goes here oheoi ohei</h3>
-              <strong> ME</strong> @ some date
-            </div>
-            <div class="two wide comment_count column">
-              <div class="ui mini blue statistic">
-                <div class="value">
-                  10
-                </div>
-              </div>
+    <!-- Individual Post -->
+    <%= for post_id <- Enum.to_list(1..10) do %>
+      <div class="row">
+        <div class="three wide header column">
+          <img class="ui bordered tiny circular image" src="/images/elixir_taiwan_small.png">
+        </div>
+        <div class="eleven wide title column">
+          <h3> Post <%= post_id %> goes here oheoi ohei</h3>
+          <strong> ME</strong> @ some date
+        </div>
+        <div class="two wide comment_count column">
+          <div class="ui mini blue statistic">
+            <div class="value">
+              10
             </div>
           </div>
-        <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
-
-  <!-- Sidebars -->
-  <%= if current_resource(@conn) do %>
-    <%= render(ElixirTw.LayoutView, "_user_sidebar.html", conn: @conn)%>
-  <% end %>
 </div>
