@@ -6,7 +6,7 @@
           <%#<i class="github icon"></i>%>
           <%#Github 登 入%>
         <%#</div>%>
-        <a href="/auth/facebook" class="ui facebook button">
+      <a href="/auth/facebook" class="ui facebook button">
           <i class="facebook icon"></i>
           Facebook 登 入
         </a>
