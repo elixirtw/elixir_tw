@@ -3,7 +3,7 @@
     控制板
   </div>
   <div class="ui attached segment">
-    <a href="/posts/new">新增文章</a>
+    <a href="/user/posts/new">新增文章</a>
   </div>
   <div class="ui attached segment">
     <a href="/user">個人首頁</a>
