@@ -23,6 +23,12 @@ defmodule ElixirTw.Router do
     get "/login", SessionController, :new
     delete "/logout", SessionController, :delete
 
+    resources "/posts", PostController, only: [:index, :show]
+  end
+
+  scope "/user", ElixirTw.User do
+    pipe_through :browser
+
     resources "/posts", PostController
   end
 
