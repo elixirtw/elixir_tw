@@ -41,5 +41,7 @@
     </footer>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <!-- Inline scripting -->
+    <%= render_existing @view_module, "scripts.html", assigns %>
   </body>
 </html>
