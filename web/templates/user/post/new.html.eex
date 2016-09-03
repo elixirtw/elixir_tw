@@ -1,2 +1,8 @@
 <div class="ui raised segment">
+  <h2>新增文章</h2>
+  <%= form_for @changeset, "/user/posts", fn f -> %>
+    <div class="ui fluid input">
+      <input type="text" placeholder="文章主題">
+    </div>
+  <% end %>
 </div>
