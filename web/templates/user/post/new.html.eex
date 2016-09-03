@@ -1,8 +1,28 @@
 <div class="ui raised segment">
-  <h2>新增文章</h2>
-  <%= form_for @changeset, "/user/posts", fn f -> %>
-    <div class="ui fluid input">
-      <input type="text" placeholder="文章主題">
+
+  <%= form_for @changeset, "/user/posts", [class: "ui large form"], fn f -> %>
+    <h2>新增文章</h2>
+
+    <div class="ui divider"></div>
+
+    <div class="field">
+      <%= text_input f, :title, placeholder: "文章主題" %>
+    </div>
+
+    <div class="field">
+      <select multiple="" class="ui dropdown">
+        <option value="">文章標籤</option>
+        <option value="AF">標籤一</option>
+        <option value="AX">標籤二</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <%= textarea f, :body, placeholder: "內容" %>
+    </div>
+
+    <div class="field">
+      <%= submit "儲存", class: "ui green button" %>
     </div>
   <% end %>
 </div>
