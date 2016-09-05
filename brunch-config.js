@@ -64,6 +64,7 @@ exports.config = {
 
     copycat: {
       "priv/static/css/themes": ["web/static/vendor/semantic/themes"],
+      "web/static/vendor/simplemde": ["node_modules/simplemde/dist"],
       verbose: true,
       onlyChanged: true
     }
@@ -77,9 +78,10 @@ exports.config = {
 
   npm: {
     enabled: true,
+    globals: { jQuery: 'jquery', $: "jquery"},
     // Whitelist the npm deps to be pulled in as front-end assets.
     // All other deps in package.json will be excluded from the bundle.
-    whitelist: ["phoenix", "phoenix_html"]
+    whitelist: ["phoenix", "phoenix_html", "jquery"]
   },
 
 };

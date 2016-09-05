@@ -1,0 +1,6 @@
+<script src="<%= static_path(@conn, "/vendor/simplemde/simplemde.min.js") %>"></script>
+<script type="text/javascript" charset="utf-8">
+  $('.ui.dropdown').dropdown()
+  var simplemde = new SimpleMDE()
+</script>
+

@@ -9,7 +9,8 @@
 
     <title>elixir |> taiwan</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <%= render_existing @view_module, "styles.html", assigns %>
+    <%= render_existing @view_module, @view_template |> String.replace_suffix(".html", "_styles.html"), assigns %>
   </head>
 
   <body class="Site">
@@ -41,7 +42,9 @@
     </footer>
 
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+
     <!-- Inline scripting -->
     <%= render_existing @view_module, "scripts.html", assigns %>
+    <%= render_existing @view_module, @view_template |> String.replace_suffix(".html", "_scripts.html"), assigns %>
   </body>
 </html>
