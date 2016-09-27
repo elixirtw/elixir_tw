@@ -13,8 +13,6 @@ defmodule ElixirTw.User do
     timestamps
   end
 
-  @allowed_fields ~w(name email)
-
   @doc """
   Creates a changeset based on the `model` and `params`.
 
@@ -23,7 +21,7 @@ defmodule ElixirTw.User do
   """
   def changeset(model, params \\ %{}) do
     model
-    |> cast(params, @allowed_fields)
+    |> cast(params, [:name, :email])
     |> validate_required([:name, :email])
   end
 
