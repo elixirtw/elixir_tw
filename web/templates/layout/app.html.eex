@@ -15,8 +15,8 @@
     <%= render "_main_nav.html", conn: @conn %>
 
     <div class="ui main container">
+      <%= show_flash(@conn) %>
       <div class="ui column grid">
-        <%= show_flash(@conn) %>
 
         <!-- Main Section-->
         <main role="main" class="twelve wide column">
