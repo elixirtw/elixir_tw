@@ -3,7 +3,7 @@ defmodule ElixirTw.OauthProviderTest do
 
   alias ElixirTw.OauthProvider
 
-  @valid_attrs %{provider_id: "some content", provider_name: "some content"}
+  @valid_attrs %{uid: "some content", provider: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
