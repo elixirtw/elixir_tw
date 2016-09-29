@@ -3,7 +3,7 @@ defmodule ElixirTw.PostTest do
 
   alias ElixirTw.Post
 
-  @valid_attrs %{body: "some content", excerpt: "some content", slug: "some content", title: "some content"}
+  @valid_attrs %{body: "some content", slug: "some content", title: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
