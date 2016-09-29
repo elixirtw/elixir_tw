@@ -21,11 +21,19 @@ defmodule ElixirTw.Post do
     |> unique_constraint(:slug)
   end
 
-  defp build_slug(%{slug: nil}=struct), do: Map.update!(struct, :slug, "#{slugify_time}-#{slugify_title(Map.get(struct, :title, ""))}")
-  defp build_slug(%{slug: _}=struct), do: struct
-  defp build_slug(struct), do: Map.put_new(struct, :slug, "#{slugify_time}-#{slugify_title(Map.get(struct, :title, ""))}")
+  defp build_slug(%{slug: slug} = struct) when not is_nil(slug) do
+    struct
+  end
 
+  defp build_slug(struct) do
+    title = Map.get(struct, :title, "")
+    Map.put(struct, :slug, "#{slugify_time}-#{slugify_title(title)}")
+  end
 
   defp slugify_time, do: DateTime.utc_now |> DateTime.to_unix |> to_string
-  defp slugify_title(title), do: title |> Phoenix.Naming.humanize |> String.replace(" ", "-")
+  
+  defp slugify_title(nil), do: slugify_title("")
+  defp slugify_title(title) do
+    title |> Phoenix.Naming.humanize |> String.replace(" ", "-")
+  end
 end
