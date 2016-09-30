@@ -8,14 +8,14 @@
   <div class="ui vertically divided grid">
 
     <!-- Individual Post -->
-    <%= for post_id <- Enum.to_list(1..10) do %>
-      <div class="row">
+    <%= for post <- Enum.to_list(@posts) do %>
+      <div class="row" id= <%= post.slug %>>
         <div class="three wide header column">
-          <img class="ui bordered tiny circular image" src="/images/elixir_taiwan_small.png">
+          <img class="ui bordered tiny circular image" src= <%= ElixirTw.LayoutView.avatar_url(@conn, post.user.email) %>> <%# Need to add User struct %>
         </div>
         <div class="eleven wide title column">
-          <h3> Post <%= post_id %> goes here oheoi ohei</h3>
-          <strong> ME</strong> @ some date
+          <h3> <%= post.title %></h3>
+          <strong> <%= post.user.name %></strong> @ <%= post.updated_at %>
         </div>
         <div class="two wide comment_count column">
           <div class="ui mini blue statistic">

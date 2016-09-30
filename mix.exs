@@ -48,7 +48,9 @@ defmodule ElixirTw.Mixfile do
      {:guardian_db, "~> 0.7.0"},
      {:ueberauth_facebook, "~> 0.3"},
      {:ueberauth_github, "~> 0.2"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:gravity, "~> 1.0"}
+   ]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

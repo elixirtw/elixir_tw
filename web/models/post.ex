@@ -17,8 +17,7 @@ defmodule ElixirTw.Post do
     params = build_slug(params)
     struct
     |> cast(params, [:title, :slug, :body])
-    |> validate_required(:title)
-    |> validate_required(:body)
+    |> validate_required([:title, :slug, :body])
     |> unique_constraint(:slug)
   end
 
