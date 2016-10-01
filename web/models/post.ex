@@ -17,7 +17,7 @@ defmodule ElixirTw.Post do
     params = build_slug(params)
     struct
     |> cast(params, [:title, :slug, :body])
-    |> validate_required([:title, :slug, :body])
+    |> validate_required(:slug)
     |> unique_constraint(:slug)
   end
 
@@ -34,6 +34,6 @@ defmodule ElixirTw.Post do
 
   defp slugify_title(nil), do: nil
   defp slugify_title(title) do
-    title |> Phoenix.Naming.humanize |> String.replace(" ", "-")
+    title |> Phoenix.Naming.humanize |> String.downcase |> String.replace(" ", "-")
   end
 end
