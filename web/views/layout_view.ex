@@ -7,11 +7,9 @@ defmodule ElixirTw.LayoutView do
     |> Enum.map(&flash_html/1)
   end
 
-  defp flash_html({level, message}) do
-    {:safe, "<div class='ui #{level} message'> <i class='close icon'></i> #{message} </div>"}
-  end
+  def flash_html({level, message}), do: {:safe, "<div class='ui #{level} message'> <i class='close icon'></i> #{message} </div>"}
+  def flash_html(_), do: nil
 
-  defp flash_html(_) do
-    nil
-  end
+  def avatar_url(conn, %ElixirTw.User{email: email}), do: Gravity.image(email, d: "#{ElixirTw.Router.Helpers.url(conn)}/images/elixir_taiwan_small.png")
+  def avatar_url(conn, _), do: "/images/elixir_taiwan_small.png"
 end

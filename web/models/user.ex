@@ -1,11 +1,11 @@
 defmodule ElixirTw.User do
   use ElixirTw.Web, :model
 
-  alias Ueberauth.Auth
-  alias ElixirTw.OauthProvider
+  # alias Ueberauth.Auth
 
   schema "users" do
-    has_many :oauth_infos, OauthProvider
+    has_many :oauth_infos, ElixirTw.OauthProvider
+    has_many :posts, ElixirTw.Post
     field :name, :string
     field :email, :string
     field :crypted_password, :string
