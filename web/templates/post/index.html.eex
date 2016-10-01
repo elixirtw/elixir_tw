@@ -8,7 +8,7 @@
   <div class="ui vertically divided grid">
 
     <!-- Individual Post -->
-    <%= for post <- Enum.to_list(@posts) do %>
+    <%= for post <- @posts do %>
       <div class="row" id= <%= post.slug %>>
         <div class="three wide header column">
           <img class="ui bordered tiny circular image" src= <%= ElixirTw.LayoutView.avatar_url(@conn, post.user) %>>
