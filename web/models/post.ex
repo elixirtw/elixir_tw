@@ -16,9 +16,10 @@ defmodule ElixirTw.Post do
   def changeset(struct, params \\ %{}) do
     params = build_slug(params)
     struct
-    |> cast(params, [:title, :slug, :body])
+    |> cast(params, [:title, :slug, :body, :user_id])
     |> validate_required(:slug)
     |> unique_constraint(:slug)
+    |> assoc_constraint(:user)
   end
 
   defp build_slug(%{slug: slug} = struct) when not is_nil(slug) do

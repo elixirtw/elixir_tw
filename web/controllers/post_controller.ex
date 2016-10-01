@@ -12,7 +12,6 @@ defmodule ElixirTw.PostController do
   defp fetch_posts do
     query = from p in Post,
             order_by: [asc: p.pinned, desc: p.inserted_at],
-            select: p,
             preload: [:user]
 
     Repo.all(query)
