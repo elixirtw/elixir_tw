@@ -23,8 +23,10 @@ defmodule ElixirTw.Post do
   end
 
   defp build_slug(changeset) do
-    build_slug(get_field(changeset, :slug), get_field(changeset, :title))
-    |> (&put_change(changeset, :slug, &1)).()
+    %{slug: slug, title: title} = changeset.changes
+    
+    build_slug(slug, title)
+    |> fn(slug) -> put_change(changeset, :slug, slug) end.()
   end
 
   defp build_slug(nil, title), do: "#{slugify_time}-#{slugify_title(title)}"
