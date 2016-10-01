@@ -11,7 +11,7 @@
     <%= for post <- Enum.to_list(@posts) do %>
       <div class="row" id= <%= post.slug %>>
         <div class="three wide header column">
-          <img class="ui bordered tiny circular image" src= <%= ElixirTw.LayoutView.avatar_url(@conn, post.user.email) %>> <%# Need to add User struct %>
+          <img class="ui bordered tiny circular image" src= <%= ElixirTw.LayoutView.avatar_url(@conn, post.user) %>>
         </div>
         <div class="eleven wide title column">
           <h3> <%= post.title %></h3>
