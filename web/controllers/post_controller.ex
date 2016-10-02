@@ -5,8 +5,13 @@ defmodule ElixirTw.PostController do
 
   def index(conn, _params) do
     posts = fetch_posts
-    conn
-    |> render("index.html", posts: posts)
+
+    render(conn, "index.html", posts: posts)
+  end
+
+  def show(conn, %{"id" => id}) do
+    post = Repo.get(Post, id)
+    render(conn, "new.html", post: post)
   end
 
   defp fetch_posts do
