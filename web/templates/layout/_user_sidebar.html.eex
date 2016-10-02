@@ -3,7 +3,7 @@
     控制板
   </div>
   <div class="ui attached segment">
-    <a href="/user/posts/new">新增文章</a>
+    <%= link "新增文章", to: user_post_path(@conn, :new) %>
   </div>
   <div class="ui attached segment">
     <a href="/user">個人首頁</a>

@@ -26,7 +26,7 @@ defmodule ElixirTw.Router do
     resources "/posts", PostController, only: [:index, :show]
   end
 
-  scope "/user", ElixirTw.User do
+  scope "/user", ElixirTw.User, as: :user do
     pipe_through :browser
 
     resources "/posts", PostController
