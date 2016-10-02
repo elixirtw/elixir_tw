@@ -15,7 +15,7 @@ defmodule ElixirTw.SessionController do
   # end
 
   def new(conn, params) do
-    origin_url = params |> Map.get("origin_url") |> (&( &1 || "/")).()
+    origin_url = Map.get(params, "origin_url", "/")
 
     if current_resource(conn) do
       redirect(conn, to: origin_url)
@@ -47,7 +47,7 @@ defmodule ElixirTw.SessionController do
     |> OauthQuery.identify_user
     |> OauthCommand.persist_user
 
-    redirect_url = conn |> get_session(:origin_url)
+    redirect_url = get_session(conn, :origin_url)
 
     case user_result do
       {:ok, user} ->
