@@ -49,7 +49,8 @@ defmodule ElixirTw.Mixfile do
      {:ueberauth_facebook, "~> 0.3"},
      {:ueberauth_github, "~> 0.2"},
      {:cowboy, "~> 1.0"},
-     {:gravity, "~> 1.0"}
+     {:gravity, "~> 1.0"},
+     {:pipe_to, "~> 0.1"},
    ]
   end
 
