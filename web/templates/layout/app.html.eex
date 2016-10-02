@@ -16,7 +16,7 @@
 
     <div class="ui main container">
       <%= show_flash(@conn) %>
-      <div class="ui column grid">
+      <div class="ui stackable grid">
 
         <!-- Main Section-->
         <main role="main" class="twelve wide column">

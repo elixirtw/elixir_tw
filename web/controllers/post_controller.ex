@@ -11,7 +11,7 @@ defmodule ElixirTw.PostController do
 
   def show(conn, %{"id" => id}) do
     post = Repo.get(Post, id)
-    render(conn, "new.html", post: post)
+    render(conn, "show.html", post: post)
   end
 
   defp fetch_posts do
