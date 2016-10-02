@@ -4,14 +4,10 @@ defmodule ElixirTw.User.PostController do
 
   alias ElixirTw.Post
 
-  def new(conn, _params, user, _claim) do
-    if user do
-      #tags = Repo.all(from t in Tag)
-      changeset = Post.changeset(%Post{})
-      conn |> render("new.html", changeset: changeset)
-    else
-      conn |> redirect(to: "/login?origin_url=\/posts\/new")
-    end
+  def new(conn, _params, %{id: _user_id}, _claim) do
+    changeset = Post.changeset(%Post{})
+
+    render(conn, "new.html", changeset: changeset)
   end
 
   def create(conn, params, user, _claim) do
