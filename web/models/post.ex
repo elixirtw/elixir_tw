@@ -22,15 +22,15 @@ defmodule ElixirTw.Post do
     |> assoc_constraint(:user)
   end
 
-  defp build_slug(changeset) do
-    %{slug: slug, title: title} = changeset.changes
-    
-    build_slug(slug, title)
-    |> fn(slug) -> put_change(changeset, :slug, slug) end.()
+  defp build_slug(changeset = %{changes: changes}) when changes == %{}, do: changeset
+  defp build_slug(changeset = %{changes: %{slug: slug}}) do
+    put_change(changeset, :slug, slug)
+  end
+  defp build_slug(changeset = %{changes: %{title: title}}) do
+    put_change(changeset, :slug, title_to_slug(title))
   end
 
-  defp build_slug(nil, title), do: "#{slugify_time}-#{slugify_title(title)}"
-  defp build_slug(slug, _), do: slug
+  defp title_to_slug(title), do: "#{slugify_time}-#{slugify_title(title)}"
 
   defp slugify_time, do: DateTime.utc_now |> DateTime.to_unix |> to_string
 
