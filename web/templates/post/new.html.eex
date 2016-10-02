@@ -1,0 +1,4 @@
+Title: <%= @post.title %>
+Author: <%= @post.user_id %>
+
+body: <%= @post.body %>

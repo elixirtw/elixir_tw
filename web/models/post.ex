@@ -15,18 +15,16 @@ defmodule ElixirTw.Post do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :slug, :body, :user_id])
+    |> cast(params, ~w/title body user_id/, ~w/slug/)
     |> build_slug
-    |> validate_required([:slug, :user_id])
+    |> validate_required([:title, :slug, :user_id])
     |> unique_constraint(:slug)
     |> assoc_constraint(:user)
   end
 
   defp build_slug(changeset = %{changes: changes}) when changes == %{}, do: changeset
-  defp build_slug(changeset = %{changes: %{slug: slug}}) do
-    put_change(changeset, :slug, slug)
-  end
-  defp build_slug(changeset = %{changes: %{title: title}}) do
+  defp build_slug(changeset = %{changes: %{slug: slug}}), do: changeset
+  defp build_slug(changeset = %{changes: %{ title: title}}) do
     put_change(changeset, :slug, title_to_slug(title))
   end
 
