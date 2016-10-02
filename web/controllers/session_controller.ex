@@ -4,17 +4,15 @@ defmodule ElixirTw.SessionController do
   plug Ueberauth
   plug :scrub_params, "user" when action in [:create]
 
-  alias ElixirTw.User
   alias ElixirTw.OauthQuery
   alias ElixirTw.OauthCommand
-  alias Ueberauth.Strategy.Helpers
 
-  def create(conn, params = %{}) do
-    #conn
-    #|> put_flash(:info, "Logged in.")
-    #|> Guardian.Plug.sign_in(verified_user)
-    #|> redirect(to: user_path(conn, :index))
-  end
+  # def create(conn, params = %{}) do
+    # conn
+    # |> put_flash(:info, "Logged in.")
+    # |> Guardian.Plug.sign_in(verified_user)
+    # |> redirect(to: user_path(conn, :index))
+  # end
 
   def new(conn, params) do
     origin_url = params |> Map.get("origin_url") |> (&( &1 || "/")).()
@@ -44,7 +42,7 @@ defmodule ElixirTw.SessionController do
     |> redirect(to: "/")
   end
 
-  def callback(%{assigns: %{ueberauth_auth: auth}} = conn, params) do
+  def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
     user_result = auth
     |> OauthQuery.identify_user
     |> OauthCommand.persist_user
