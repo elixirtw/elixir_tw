@@ -15,6 +15,10 @@ defmodule ElixirTw.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :auth do
+    plug Guardian.Plug.EnsureAuthenticated
+  end
+
   scope "/", ElixirTw do
     pipe_through :browser # Use the default browser stack
 
@@ -26,18 +30,18 @@ defmodule ElixirTw.Router do
     resources "/posts", PostController, only: [:index, :show]
   end
 
-  scope "/user", ElixirTw.User, as: :user do
-    pipe_through :browser
-
-    resources "/posts", PostController
-  end
-
   scope "/auth", ElixirTw do
     pipe_through :browser
 
     get "/:provider", SessionController, :request
     get "/:provider/callback", SessionController, :callback
     post "/:provider/callback", SessionController, :callback
+  end
+
+  scope "/user", ElixirTw.User, as: :user do
+    pipe_through [:browser, :auth]
+
+    resources "/posts", PostController
   end
 
   # Other scopes may use custom stacks.
