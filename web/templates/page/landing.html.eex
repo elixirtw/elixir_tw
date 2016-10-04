@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= render ElixirTw.LayoutView, "_head.html", conn: @conn %>
+  </head>
+
+  <body id="landing-page">
+    <div id="page-center" class="ui three column middle aligned centered doubling grid">
+      <div class="column">
+        <div id="landing-message" class="ui raised light purple inverted segment">
+          foobar!
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
