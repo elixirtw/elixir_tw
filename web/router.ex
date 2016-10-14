@@ -22,7 +22,8 @@ defmodule ElixirTw.Router do
   scope "/", ElixirTw do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PostController, :index
+    #get "/", PostController, :index
+    get "/", PageController, :landing
 
     get "/login", SessionController, :new
     delete "/logout", SessionController, :delete
