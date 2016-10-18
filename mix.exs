@@ -18,15 +18,24 @@ defmodule ElixirTw.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {ElixirTw, []},
-     applications: [:phoenix,
-                    :phoenix_pubsub,
-                    :phoenix_html,
-                    :cowboy,
-                    :logger,
-                    :gettext,
-                    :phoenix_ecto,
-                    :ueberauth_facebook,
-                    :postgrex]]
+     applications: [
+       :phoenix,
+       :phoenix_pubsub,
+       :phoenix_html,
+       :cowboy,
+       :logger,
+       :gettext,
+       :phoenix_ecto,
+       :ueberauth_facebook,
+       :postgrex],
+     included_applications: [
+       :gravity,
+       :guardian,
+       :guardian_db,
+       :pipe_to,
+       :ueberauth_github
+     ]
+   ]
   end
 
   # Specifies which paths to compile per environment.
@@ -48,6 +57,7 @@ defmodule ElixirTw.Mixfile do
      {:guardian_db, "~> 0.7.0"},
      {:ueberauth_facebook, "~> 0.3"},
      {:ueberauth_github, "~> 0.2"},
+     {:distillery, "~> 0.10"},
      {:cowboy, "~> 1.0"},
      {:gravity, "~> 1.0"},
      {:pipe_to, "~> 0.1"},
