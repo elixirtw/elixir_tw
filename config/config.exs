@@ -48,5 +48,5 @@ config :guardian_db, GuardianDb,
 config :ueberauth, Ueberauth,
   providers: [
     facebook: { Ueberauth.Strategy.Facebook, [profile_fields: "email,name"] },
-    github: { Ueberauth.Strategy.Github, [] }
+    github: { Ueberauth.Strategy.Github, [default_scope: "user:email,public_repo"] }
   ]
