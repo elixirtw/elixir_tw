@@ -9,7 +9,9 @@
       <div class="column">
         <div id="landing-message" class="ui raised purple segment">
           <h1> <i class="configure violet icon"></i> 建構中！</h1>
-          <button class="ui violet button">先來 slack 聊聊天吧</button>
+          <a href="https://elixirtw.herokuapp.com/" target="_blank">
+            <button class="ui violet button">先來 slack 聊聊天吧</button>
+          </a>
 
           <h3>學習資源</h3>
           <ul>

@@ -4,6 +4,6 @@ defmodule ElixirTw.PageController do
   def landing(conn, _params) do
     conn
     |> put_layout(false)
-    |> render "landing.html"
+    |> render("landing.html")
   end
 end
