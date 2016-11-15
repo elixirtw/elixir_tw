@@ -27,14 +27,14 @@ defmodule ElixirTw.Mixfile do
        :gettext,
        :phoenix_ecto,
        :ueberauth_facebook,
-       :postgrex],
-     included_applications: [
-       :gravity,
-       :guardian,
-       :guardian_db,
-       :pipe_to,
-       :ueberauth_github
-     ]
+       :postgrex]
+     #included_applications: [
+       #:gravity,
+       #:guardian,
+       #:guardian_db,
+       #:pipe_to,
+       #:ueberauth_github
+     #]
    ]
   end
 
@@ -53,7 +53,7 @@ defmodule ElixirTw.Mixfile do
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
-     {:guardian, "~> 0.12.0"},
+     {:guardian, "~> 0.13"},
      {:guardian_db, "~> 0.7.0"},
      {:ueberauth_facebook, "~> 0.3"},
      {:ueberauth_github, "~> 0.2"},
