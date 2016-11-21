@@ -1,5 +1,4 @@
 {
-  "repository": {},
   "scripts": {
     "postinstall": "mkdir -p priv/static/css/ && cp -r node_modules/semantic-ui-css/themes priv/static/css/"
   },
