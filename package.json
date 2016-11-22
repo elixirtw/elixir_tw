@@ -4,7 +4,7 @@
   },
   "dependencies": {
     "babel-brunch": "~6.0.0",
-    "brunch": "~2.7.4",
+    "brunch": "~2.9",
     "clean-css-brunch": "~1.8.0",
     "css-brunch": "~1.7.0",
     "javascript-brunch": "~1.8.0",
