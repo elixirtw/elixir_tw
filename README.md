@@ -12,7 +12,12 @@ To start your Phoenix app:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+<!--Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).-->
+## Building a release
+  * docker build -t elixir_tw .
+  * docker run -it -d elixir_tw:latest bash
+  * docker cp <IMAGE_ID>:/app/rel/elixir_tw/releases ./rel/docker_rel
+  * docker rm -f <IMAGE_ID>
 
 ## Learn more
 
