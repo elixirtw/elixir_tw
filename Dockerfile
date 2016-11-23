@@ -39,15 +39,12 @@ RUN apt-get update && sudo apt-get install -y yarn
 
 RUN mix local.hex --force
 RUN mix local.rebar
+RUN yarn global add brunch
 
 WORKDIR /app
 COPY . .
 
-#RUN npm install -g brunch
-#RUN npm install
-RUN yarn global add brunch
 RUN yarn
-#RUN mix deps.get
 
 RUN ./node_modules/brunch/bin/brunch b -p
 RUN MIX_ENV=prod mix do phoenix.digest, release --env=prod
