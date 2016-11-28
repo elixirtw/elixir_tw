@@ -32,19 +32,19 @@ RUN mix archive.install --force https://github.com/phoenixframework/archives/raw
 
 # install Node.js (>= 5.0.0) and NPM in order to satisfy brunch.io dependencies
 # See http://www.phoenixframework.org/docs/installation#section-node-js-5-0-0-
-RUN curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash - && apt-get install -y nodejs
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - && apt-get install -y nodejs
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+RUN echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get update && sudo apt-get install -y yarn
 
 RUN mix local.hex --force
 RUN mix local.rebar
+RUN yarn global add brunch
 
-COPY . ~
-WORKDIR ~/elixir_tw
+WORKDIR /app
+COPY . .
 
-RUN npm install -g brunch
-RUN npm install
-#RUN mix deps.get
+RUN yarn
 
 RUN ./node_modules/brunch/bin/brunch b -p
 RUN MIX_ENV=prod mix do phoenix.digest, release --env=prod
-
-CP rel/elixir_tw/releases rel/
