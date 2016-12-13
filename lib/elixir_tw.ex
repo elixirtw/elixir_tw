@@ -10,7 +10,7 @@ defmodule ElixirTw do
       # Start the endpoint when the application starts
       supervisor(ElixirTw.Endpoint, []),
       # Start the Ecto repository
-      # supervisor(ElixirTw.Repo, []),
+      supervisor(ElixirTw.Repo, []),
       # Here you could define other workers and supervisors as children
       # worker(ElixirTw.Worker, [arg1, arg2, arg3]),
       worker(GuardianDb.ExpiredSweeper, [])

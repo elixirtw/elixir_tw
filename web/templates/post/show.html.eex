@@ -1,4 +1,12 @@
-Title: <%= @post.title %>
-Author: <%= @post.user_id %>
+<div class="ui segment">
+  <div class="ui header">
+    <img class="ui bordered middle aligned tiny circular image" src=<%= ElixirTw.LayoutView.avatar_url(@conn, @post.user) %>>
+    <div class="content">
+      <h1> <%= @post.title %> </h1>
+      <div class="sub header"> <%= @post.user.name %> </div>
+    </div>
+  </div>
 
-body: <%= @post.body %>
+  body: <%= @post.body %>
+  lalallala
+</div>
