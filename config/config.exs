@@ -21,7 +21,7 @@ config :logger, :console,
 
 config :guardian, Guardian,
   allowed_algos: ["HS512"], # optional
-  verify_module: Guardian.JWT,  # optional
+  #verify_module: Guardian.JWT,  # optional
   hooks: GuardianDb,
   issuer: "ElixirTW",
   ttl: { 30, :days },

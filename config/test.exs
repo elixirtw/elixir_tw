@@ -17,8 +17,6 @@ config :elixir_tw, ElixirTw.Repo,
   pool: Ecto.Adapters.SQL.Sandbox
 
 config :guardian, Guardian,
-  allowed_algos: ["HS512"], # optional
-  verify_module: Guardian.JWT,  # optional
   issuer: "ElixirTW",
   ttl: { 30, :days },
   verify_issuer: true,

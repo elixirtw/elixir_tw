@@ -7,13 +7,6 @@ defmodule ElixirTw.SessionController do
   alias ElixirTw.OauthQuery
   alias ElixirTw.OauthCommand
 
-  # def create(conn, params = %{}) do
-    # conn
-    # |> put_flash(:info, "Logged in.")
-    # |> Guardian.Plug.sign_in(verified_user)
-    # |> redirect(to: user_path(conn, :index))
-  # end
-
   def new(conn, params) do
     origin_url = Map.get(params, "origin_url", "/")
 
