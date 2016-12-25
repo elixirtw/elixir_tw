@@ -6,6 +6,7 @@ defmodule ElixirTw.User.PostView do
     ~E"""
       <script type="text/javascript" charset="utf-8">
         $('.ui.dropdown').dropdown()
+        var simplemde = new SimpleMDE();
       </script>
     """
   end
