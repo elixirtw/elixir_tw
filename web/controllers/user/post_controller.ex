@@ -5,9 +5,8 @@ defmodule ElixirTw.User.PostController do
   import PipeTo
   alias ElixirTw.Post
 
-  def new(conn, _params, %{id: _user_id}, _claim) do
+  def new(conn, _params, _user, _claim) do
     changeset = Post.changeset(%Post{})
-
     render(conn, "new.html", changeset: changeset)
   end
 
