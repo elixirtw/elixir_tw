@@ -23,10 +23,8 @@ defmodule ElixirTw.Post do
   end
 
   defp build_slug(changeset = %{changes: changes}) when changes == %{}, do: changeset
-  defp build_slug(changeset = %{changes: %{slug: slug}}), do: changeset
-  defp build_slug(changeset = %{changes: %{ title: title}}) do
-    put_change(changeset, :slug, title_to_slug(title))
-  end
+  defp build_slug(changeset = %{changes: %{title: title}}), do: put_change(changeset, :slug, title_to_slug(title))
+  defp build_slug(changeset), do: changeset
 
   defp title_to_slug(title), do: "#{slugify_time}-#{slugify_title(title)}"
 
