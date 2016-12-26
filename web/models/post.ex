@@ -6,6 +6,7 @@ defmodule ElixirTw.Post do
     field :slug, :string
     field :body, :string
     belongs_to :user, ElixirTw.User
+    has_many :comments, ElixirTw.Comment
 
     timestamps()
   end

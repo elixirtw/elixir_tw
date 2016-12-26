@@ -5,6 +5,7 @@ defmodule ElixirTw.PostController do
 
   def index(conn, _params) do
     posts = fetch_posts
+            |> Enum.map( &update_comments_count/1 )
     render(conn, "index.html", posts: posts)
   end
 
@@ -16,7 +17,9 @@ defmodule ElixirTw.PostController do
   defp fetch_posts do
     query = from p in Post,
             order_by: [asc: p.pinned, desc: p.inserted_at],
-            preload: [:user]
+            preload: [:user, :comments]
     Repo.all(query)
   end
+
+  defp update_comments_count(post), do: Map.put(post, :comments_count, Enum.count(post.comments))
 end
