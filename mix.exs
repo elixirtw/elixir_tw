@@ -60,6 +60,7 @@ defmodule ElixirTw.Mixfile do
      {:distillery, "~> 0.10"},
      {:cowboy, "~> 1.0"},
      {:gravity, "~> 1.0"},
+     {:earmark, "~> 1.0"},
      {:pipe_to, "~> 0.1"},
    ]
   end

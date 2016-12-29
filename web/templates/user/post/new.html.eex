@@ -17,7 +17,7 @@
     </div>
 
     <div class="field">
-      <%= textarea f, :body, placeholder: "內容" %>
+      <%= textarea f, :markdown_body, placeholder: "內容" %>
     </div>
 
     <div class="field">

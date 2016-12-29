@@ -7,6 +7,6 @@
     </div>
   </div>
   <p id="post-body">
-    <%= @post.body %>
+    <%= raw(@post.body) %>
   </p>
 </div>
