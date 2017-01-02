@@ -25,7 +25,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 #RUN echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
 RUN apt-get update
-RUN apt-get install -y nodejs build-essential esl-erlang elixir
+RUN apt-get install -y nodejs build-essential esl-erlang elixir python
 
 # install the Phoenix Mix archive
 RUN mix archive.install --force https://github.com/phoenixframework/archives/raw/master/phoenix_new-$PHOENIX_VERSION.ez
@@ -39,10 +39,11 @@ RUN cd $(npm root -g)/npm \
   && npm install fs-extra \
   && sed -i -e s/graceful-fs/fs-extra/ -e s/fs\.rename/fs.move/ ./lib/utils/rename.js
 
+RUN sudo chown -R root /usr/local
+
 WORKDIR /app
 COPY . .
 
-RUN sudo chown -R root /usr/local
-RUN npm install --unsafe-perm
+RUN npm rebuild --unsafe-perm
 RUN ./node_modules/brunch/bin/brunch b -p \
   && MIX_ENV=prod mix do phoenix.digest, release --env=prod
