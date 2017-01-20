@@ -53,13 +53,14 @@ defmodule ElixirTw.Mixfile do
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
-     {:guardian, "~> 0.13"},
+     {:guardian, "~> 0.14"},
      {:guardian_db, "~> 0.7.0"},
      {:ueberauth_facebook, "~> 0.3"},
      {:ueberauth_github, "~> 0.2"},
      {:distillery, "~> 0.10"},
      {:cowboy, "~> 1.0"},
      {:gravity, "~> 1.0"},
+     {:earmark, "~> 1.0"},
      {:pipe_to, "~> 0.1"},
    ]
   end

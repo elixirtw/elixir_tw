@@ -12,6 +12,7 @@
     "phoenix_html": "file:deps/phoenix_html",
     "sass-brunch": "^2.7.0",
     "semantic-ui-css": "~2.2.0",
+    "simplemde": "^1.11.2",
     "uglify-js-brunch": "~1.7.0"
   }
 }

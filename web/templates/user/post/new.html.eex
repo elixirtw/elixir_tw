@@ -1,5 +1,4 @@
 <div class="ui raised segment">
-
   <%= form_for @changeset, "/user/posts", [class: "ui large form"], fn f -> %>
     <h2>新增文章</h2>
 
@@ -18,7 +17,7 @@
     </div>
 
     <div class="field">
-      <%= textarea f, :body, placeholder: "內容" %>
+      <%= textarea f, :markdown_body, placeholder: "內容" %>
     </div>
 
     <div class="field">

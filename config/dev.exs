@@ -42,6 +42,7 @@ config :elixir_tw, ElixirTw.Repo,
 
 # Configure Guardian
 config :guardian, Guardian,
+  allowed_algos: ["ES512"],
   secret_key: %{"crv" => "P-521",
     "d" => "CF9e9LqOnbsaW0sY06opq1gVg-5wefE8SJN30kx1lMmaz6-edFuNA0obU1KaZTKQBpXSLgjtoqMJHiKjwiQbCG4",
     "kty" => "EC",

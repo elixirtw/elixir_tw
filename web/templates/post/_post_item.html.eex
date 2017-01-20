@@ -1,0 +1,20 @@
+<div class="row" id= <%= @post.slug %>>
+  <div class="three wide header column">
+    <img class="ui bordered tiny circular image" src= <%= ElixirTw.LayoutView.avatar_url(@conn, @post.user) %>>
+  </div>
+  <div class="eleven wide title column">
+    <%= link to: post_path(@conn, :show, @post.id) do %>
+      <h3> <%= @post.title %></h3>
+    <% end %>
+    <strong> <%= @post.user.name %></strong> @ <%= @post.updated_at %>
+  </div>
+  <% if @post.comments_count > 0 do %>
+    <div class="two wide comments_count column">
+      <div class="ui mini blue statistic">
+        <div class="value">
+          @post.comments_count
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
