@@ -25,7 +25,10 @@ defmodule ElixirTw.Post do
     |> assoc_constraint(:user)
   end
 
-  defp translate_markdown(changeset = %{changes: %{markdown_body: md_body}}), do: put_change(changeset, :body, Earmark.to_html(md_body))
+  defp translate_markdown(changeset = %{changes: %{markdown_body: md_body}}) do
+    put_change(changeset, :body, md_body |> Earmark.to_html |> HtmlSanitizeEx.basic_html)
+  end
+
   defp translate_markdown(changeset), do: changeset
   # NOTE Earmark said to use as_html, but somehow it's not yet implemented, using the older to_html version for now
   #defp translate_markdown(changeset = %{changes: %{markdown_body: md_body}}) do
