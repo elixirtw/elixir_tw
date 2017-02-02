@@ -1,5 +1,7 @@
 # ElixirTw
 
+[![Ebert](https://ebertapp.io/github/elixirtw/elixir_tw.svg)](https://ebertapp.io/github/elixirtw/elixir_tw)
+
 To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`
