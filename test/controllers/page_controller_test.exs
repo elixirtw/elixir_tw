@@ -3,6 +3,6 @@ defmodule ElixirTw.PageControllerTest do
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"
-    assert html_response(conn, 200) =~ "Elixir 台灣"
+    assert html_response(conn, 200) =~ "Elixir |> Taiwan"
   end
 end
