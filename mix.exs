@@ -33,7 +33,8 @@ defmodule ElixirTw.Mixfile do
        :guardian,
        :guardian_db,
        :pipe_to,
-       :ueberauth_github
+       :ueberauth_github,
+       :html_sanitize_ex
      ]
    ]
   end
@@ -62,6 +63,7 @@ defmodule ElixirTw.Mixfile do
      {:gravity, "~> 1.0"},
      {:earmark, "~> 1.0"},
      {:pipe_to, "~> 0.1"},
+     {:html_sanitize_ex, "~> 1.0.0"}
    ]
   end
 
