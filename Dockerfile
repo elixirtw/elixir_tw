@@ -45,5 +45,7 @@ WORKDIR /app
 COPY . .
 
 RUN npm rebuild --unsafe-perm
+RUN mix deps.clean --all && mix deps.get
+
 RUN ./node_modules/brunch/bin/brunch b -p \
   && MIX_ENV=prod mix do phoenix.digest, release --env=prod
