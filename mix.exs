@@ -65,7 +65,8 @@ defmodule ElixirTw.Mixfile do
      {:earmark, "~> 1.1"},
      {:pipe_to, "~> 0.1"},
      {:html_sanitize_ex, "~> 1.1"},
-     {:edeliver, "~> 1.4"}
+     {:edeliver, "~> 1.4"},
+     {:credo, "~> 0.6", only: [:dev, :test]}
    ]
   end
 
