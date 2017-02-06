@@ -48,24 +48,24 @@ defmodule ElixirTw.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.2.0"},
-     {:postgrex, ">= 0.0.0"},
-     {:phoenix_ecto, "~> 3.0"},
-     {:phoenix_html, "~> 2.4"},
+    [{:phoenix, "~> 1.2.1"},
      {:phoenix_pubsub, "~> 1.0"},
+     {:phoenix_ecto, "~> 3.0"},
+     {:postgrex, ">= 0.0.0"},
+     {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:gettext, "~> 0.9"},
-     {:guardian, "~> 0.14"},
-     {:guardian_db, "~> 0.7.0"},
-     {:ueberauth_facebook, "~> 0.3"},
-     {:ueberauth_github, "~> 0.2"},
-     {:distillery, "~> 1.1.0"},
+     {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
+     {:guardian, "~> 0.14"},
+     {:guardian_db, "~> 0.8"},
+     {:ueberauth_facebook, "~> 0.6"},
+     {:ueberauth_github, "~> 0.4"},
+     {:distillery, "~> 1.1.0"},
      {:gravity, "~> 1.0"},
-     {:earmark, "~> 1.0"},
+     {:earmark, "~> 1.1"},
      {:pipe_to, "~> 0.1"},
-     {:html_sanitize_ex, "~> 1.0.0"},
-     {:edeliver, "~> 1.4.0"}
+     {:html_sanitize_ex, "~> 1.1"},
+     {:edeliver, "~> 1.4"}
    ]
   end
 
