@@ -25,4 +25,7 @@ erl_crash.dump
 /config/dev.secret.exs
 
 # Release Folder
-/rel
+/rel/*
+!/rel/config.exs
+.deliver/releases/
+.deliver/config

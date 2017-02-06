@@ -1,0 +1,32 @@
+APP="elixir_tw"
+
+BUILD_HOST=""
+BUILD_USER=""
+BUILD_AT=""
+
+STAGING_HOSTS=""
+STAGING_USER=""
+DELIVER_TO=""
+
+# For *Phoenix* projects, symlink prod.secret.exs to our tmp source
+pre_erlang_get_and_update_deps() {
+  local _prod_secret_path=""
+  if [ "$TARGET_MIX_ENV" = "prod" ]; then
+    __sync_remote "
+      ln -sfn '$_prod_secret_path' '$BUILD_AT/config/prod.secret.exs'
+    "
+  fi
+}
+
+pre_erlang_clean_compile() {
+  status "Preparing assets with: brunch build and phoenix.digest"
+  __sync_remote "
+    [ -f ~/.profile ] && source ~/.profile # load profile (optional)
+    set -e # fail if any command fails (recommended)
+    cd '$BUILD_AT'
+    mkdir -p priv/static
+    npm install
+    ./node_modules/brunch/bin/brunch b -p
+    APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $MIX_CMD phoenix.digest $SILENCE
+  "
+}
