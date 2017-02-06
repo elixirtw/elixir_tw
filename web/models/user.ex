@@ -10,7 +10,7 @@ defmodule ElixirTw.User do
     field :email, :string
     field :crypted_password, :string
 
-    timestamps
+    timestamps()
   end
 
   @doc """
