@@ -25,7 +25,7 @@ pre_erlang_clean_compile() {
     set -e # fail if any command fails (recommended)
     cd '$BUILD_AT'
     mkdir -p priv/static
-    npm install
+    if hash yarn 2>/dev/null; then yarn install; else npm install; fi
     ./node_modules/brunch/bin/brunch b -p
     APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $MIX_CMD phoenix.digest $SILENCE
   "
