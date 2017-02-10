@@ -2,11 +2,11 @@
   <div class="column">
     <div class="ui one column stackable grid segment">
       <div class="column">
-        <%#<div class="ui github button">%>
-          <%#<i class="github icon"></i>%>
-          <%#Github 登 入%>
-        <%#</div>%>
-      <a href="/auth/facebook" class="ui facebook button">
+        <a href="/auth/github" class="ui github button">
+          <i class="github icon"></i>
+          GitHub 登 入
+        </a>
+        <a href="/auth/facebook" class="ui facebook button">
           <i class="facebook icon"></i>
           Facebook 登 入
         </a>
@@ -39,4 +39,3 @@
     </div>
   </div>
 </div>
-

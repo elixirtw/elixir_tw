@@ -27,6 +27,7 @@ defmodule ElixirTw.Mixfile do
        :gettext,
        :phoenix_ecto,
        :ueberauth_facebook,
+       :ueberauth_github,
        :postgrex,
        :edeliver
      ],
@@ -36,8 +37,7 @@ defmodule ElixirTw.Mixfile do
        :guardian,
        :guardian_db,
        :html_sanitize_ex,
-       :pipe_to,
-       :ueberauth_github
+       :pipe_to
      ]
    ]
   end

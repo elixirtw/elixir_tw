@@ -24,7 +24,7 @@ config :guardian, Guardian,
   #verify_module: Guardian.JWT,  # optional
   hooks: GuardianDb,
   issuer: "ElixirTW",
-  ttl: { 30, :days },
+  ttl: {30, :days},
   verify_issuer: true,
   serializer: ElixirTw.GuardianSerializer
 
@@ -47,6 +47,6 @@ config :guardian_db, GuardianDb,
 # Uberauth's Oauth Settings
 config :ueberauth, Ueberauth,
   providers: [
-    facebook: { Ueberauth.Strategy.Facebook, [profile_fields: "email,name"] },
-    github: { Ueberauth.Strategy.Github, [] }
+    facebook: {Ueberauth.Strategy.Facebook, [profile_fields: "email,name"]},
+    github: {Ueberauth.Strategy.Github, [default_scope: "user:email"]}
   ]
