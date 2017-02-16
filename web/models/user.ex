@@ -4,7 +4,7 @@ defmodule ElixirTw.User do
   # alias Ueberauth.Auth
 
   schema "users" do
-    has_many :oauth_infos, ElixirTw.OauthProvider
+    has_many :oauth_infos, ElixirTw.OAuthInfo
     has_many :posts, ElixirTw.Post
     field :name, :string
     field :email, :string

@@ -4,11 +4,11 @@ defmodule ElixirTw.OauthQuery do
   use ElixirTw.Web, :query
 
   alias ElixirTw.User
-  alias ElixirTw.OauthProvider
+  alias ElixirTw.OAuthInfo
 
   def identify_user(auth) do
     query = from u in User,
-            join: o in OauthProvider,
+            join: o in OAuthInfo,
             on: u.id == o.user_id,
             where: o.uid == ^auth.uid and o.provider == ^Atom.to_string(auth.provider)
 
