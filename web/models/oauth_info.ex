@@ -1,4 +1,6 @@
-defmodule ElixirTw.OauthProvider do
+defmodule ElixirTw.OAuthInfo do
+  @moduledoc false
+
   use ElixirTw.Web, :model
 
   schema "oauth_infos" do

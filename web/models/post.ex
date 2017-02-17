@@ -1,5 +1,8 @@
 defmodule ElixirTw.Post do
+  @moduledoc false
+
   use ElixirTw.Web, :model
+  use PipeTo.Override
 
   schema "posts" do
     field :title, :string
@@ -27,7 +30,10 @@ defmodule ElixirTw.Post do
 
   defp translate_markdown(changeset = %{changes: %{markdown_body: md_body}}) do
     case Earmark.as_html(md_body) do
-      {:ok, html_body, []} -> put_change(changeset, :body, html_body)
+      {:ok, html_body, []} ->
+        html_body
+        |> HtmlSanitizeEx.basic_html
+        |> put_change(changeset, :body, _)
       {:error, _, _} -> add_error(changeset, :body, "markdown 轉換失敗")
     end
   end
