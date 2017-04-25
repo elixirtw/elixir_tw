@@ -48,14 +48,14 @@ defmodule ElixirTw.Web do
 
   def controller do
     quote do
-      use Phoenix.Controller
+      use Phoenix.Controller, namespace: ElixirTw.Web
 
       alias ElixirTw.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
 
-      import ElixirTw.Router.Helpers
-      import ElixirTw.Gettext
+      import ElixirTw.Web.Router.Helpers
+      import ElixirTw.Web.Gettext
 
       import Guardian.Plug, only: [current_resource: 1]
     end
@@ -63,7 +63,7 @@ defmodule ElixirTw.Web do
 
   def view do
     quote do
-      use Phoenix.View, root: "web/templates"
+      use Phoenix.View, root: "web/templates", namespace: ElixirTw.Web
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 1, get_flash: 2, view_module: 1]
@@ -71,9 +71,9 @@ defmodule ElixirTw.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import ElixirTw.Router.Helpers
-      import ElixirTw.ErrorHelpers
-      import ElixirTw.Gettext
+      import ElixirTw.Web.Router.Helpers
+      import ElixirTw.Web.WebErrorHelpers
+      import ElixirTw.Web.Gettext
 
       import Guardian.Plug, only: [current_resource: 1]
     end
@@ -92,12 +92,12 @@ defmodule ElixirTw.Web do
       alias ElixirTw.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
-      import ElixirTw.Gettext
+      import ElixirTw.Web.Gettext
     end
   end
 
   @doc """
-  When used, dispatch to the appropriate controller/view/etc.
+  When used, dispatch to the appropriate controllen/view/etc.
   """
   defmacro __using__(which) when is_atom(which) do
     apply(__MODULE__, which, [])
