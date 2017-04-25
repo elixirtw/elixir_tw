@@ -1,4 +1,4 @@
-defmodule ElixirTw.User.ConfigController do
+defmodule ElixirTw.Web.User.ConfigController do
   use ElixirTw.Web, :controller
   use Guardian.Phoenix.Controller
 

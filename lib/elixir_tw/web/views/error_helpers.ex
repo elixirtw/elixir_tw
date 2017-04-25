@@ -1,4 +1,4 @@
-defmodule ElixirTw.ErrorHelpers do
+defmodule ElixirTw.Web.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """

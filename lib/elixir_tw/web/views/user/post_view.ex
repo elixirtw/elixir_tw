@@ -1,4 +1,4 @@
-defmodule ElixirTw.User.PostView do
+defmodule ElixirTw.Web.User.PostView do
   use ElixirTw.Web, :view
 
   # Inline Script

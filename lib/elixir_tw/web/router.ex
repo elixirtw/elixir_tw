@@ -1,4 +1,4 @@
-defmodule ElixirTw.Router do
+defmodule ElixirTw.Web.Router do
   use ElixirTw.Web, :router
 
   pipeline :browser do

@@ -1,4 +1,4 @@
-defmodule ElixirTw.User.PostController do
+defmodule ElixirTw.Web.User.PostController do
   use ElixirTw.Web, :controller
   use Guardian.Phoenix.Controller
 

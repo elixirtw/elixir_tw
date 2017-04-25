@@ -1,4 +1,4 @@
-defmodule ElixirTw.Endpoint do
+defmodule ElixirTw.Web.Endpoint do
   use Phoenix.Endpoint, otp_app: :elixir_tw
 
   socket "/socket", ElixirTw.UserSocket

@@ -1,4 +1,4 @@
-defmodule ElixirTw.SessionController do
+defmodule ElixirTw.Web.SessionController do
   use ElixirTw.Web, :controller
 
   plug Ueberauth

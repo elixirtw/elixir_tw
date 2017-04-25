@@ -1,4 +1,4 @@
-defmodule ElixirTw.ErrorView do
+defmodule ElixirTw.Web.ErrorView do
   use ElixirTw.Web, :view
 
   def render("404.html", _assigns) do

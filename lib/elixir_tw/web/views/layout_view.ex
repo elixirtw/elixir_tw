@@ -1,4 +1,4 @@
-defmodule ElixirTw.LayoutView do
+defmodule ElixirTw.Web.LayoutView do
   use ElixirTw.Web, :view
 
   def show_flash(conn) do
