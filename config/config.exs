@@ -10,7 +10,7 @@ config :elixir_tw, ElixirTw.Web.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "C9+8f85LKUz7MBf92Ot1F6Y94Q4PcCS88hllNo7JCUB1dYsiMD0MRs1qpGNI5p7L",
-  render_errors: [accepts: ~w(html json)],
+  render_errors: [view: ElixirTw.Web.ErrorView, accepts: ~w(html json)],
   pubsub: [name: ElixirTw.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
@@ -26,7 +26,7 @@ config :guardian, Guardian,
   issuer: "ElixirTW",
   ttl: {30, :days},
   verify_issuer: true,
-  serializer: ElixirTw.GuardianSerializer
+  serializer: ElixirTw.Web.GuardianSerializer
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

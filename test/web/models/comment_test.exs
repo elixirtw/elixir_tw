@@ -1,7 +1,7 @@
-defmodule ElixirTw.CommentTest do
-  use ElixirTw.ModelCase
+defmodule ElixirTw.Web.CommentTest do
+  use ElixirTw.Web.ModelCase
 
-  alias ElixirTw.Comment
+  alias ElixirTw.Web.Comment
 
   @valid_attrs %{body: "some content", position: 42}
   @invalid_attrs %{}

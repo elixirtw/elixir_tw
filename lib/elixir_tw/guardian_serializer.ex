@@ -1,4 +1,4 @@
-defmodule ElixirTw.GuardianSerializer do
+defmodule ElixirTw.Web.GuardianSerializer do
   @behaviour Guardian.Serializer
 
   alias ElixirTw.Repo

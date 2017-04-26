@@ -1,7 +1,7 @@
-defmodule ElixirTw.UserTest do
-  use ElixirTw.ModelCase
+defmodule ElixirTw.Web.UserTest do
+  use ElixirTw.Web.ModelCase
 
-  alias ElixirTw.User
+  alias ElixirTw.Web.User
 
   @valid_attrs %{email: "some content", crypted_password: "some content", name: "some content"}
   @invalid_attrs %{}

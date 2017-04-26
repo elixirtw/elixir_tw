@@ -1,7 +1,7 @@
-defmodule ElixirTw.PostTest do
-  use ElixirTw.ModelCase
+defmodule ElixirTw.Web.PostTest do
+  use ElixirTw.Web.ModelCase
 
-  alias ElixirTw.Post
+  alias ElixirTw.Web.Post
 
   @valid_attrs %{user_id: "1", markdown_body: "some content", title: "some title"}
   @invalid_attrs %{}

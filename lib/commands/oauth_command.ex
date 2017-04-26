@@ -1,4 +1,4 @@
-defmodule ElixirTw.OauthCommand do
+defmodule ElixirTw.OAuthCommand do
   @moduledoc false
 
   use ElixirTw.Web, :command

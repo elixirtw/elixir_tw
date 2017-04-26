@@ -1,4 +1,4 @@
-defmodule ElixirTw.OauthQuery do
+defmodule ElixirTw.OAuthQuery do
   @moduledoc false
 
   use ElixirTw.Web, :query

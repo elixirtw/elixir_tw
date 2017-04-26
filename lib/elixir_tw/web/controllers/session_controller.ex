@@ -4,8 +4,8 @@ defmodule ElixirTw.Web.SessionController do
   plug Ueberauth
   plug :scrub_params, "user" when action in [:create]
 
-  alias ElixirTw.OauthQuery
-  alias ElixirTw.OauthCommand
+  alias ElixirTw.OAuthQuery
+  alias ElixirTw.OAuthInfo
 
   def new(conn, params) do
     origin_url = Map.get(params, "origin_url", "/")
@@ -37,8 +37,8 @@ defmodule ElixirTw.Web.SessionController do
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
     user_result = auth
-    |> OauthQuery.identify_user
-    |> OauthCommand.persist_user
+    |> OAuthQuery.identify_user
+    |> OAuthInfo.persist_user
 
     redirect_url = get_session(conn, :origin_url)
 
