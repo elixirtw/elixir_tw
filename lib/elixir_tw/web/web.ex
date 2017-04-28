@@ -63,7 +63,7 @@ defmodule ElixirTw.Web do
 
   def view do
     quote do
-      use Phoenix.View, root: "web/templates", namespace: ElixirTw.Web
+      use Phoenix.View, root: "lib/elixir_tw/web/templates", namespace: ElixirTw.Web
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 1, get_flash: 2, view_module: 1]
@@ -72,7 +72,7 @@ defmodule ElixirTw.Web do
       use Phoenix.HTML
 
       import ElixirTw.Web.Router.Helpers
-      import ElixirTw.Web.WebErrorHelpers
+      import ElixirTw.Web.ErrorHelpers
       import ElixirTw.Web.Gettext
 
       import Guardian.Plug, only: [current_resource: 1]
