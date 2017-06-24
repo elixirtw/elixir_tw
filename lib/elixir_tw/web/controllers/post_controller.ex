@@ -4,13 +4,14 @@ defmodule ElixirTw.Web.PostController do
   alias ElixirTw.Post
 
   def index(conn, _params) do
-    posts = fetch_posts()
-            |> Enum.map( &update_comments_count/1 )
+    posts = Enum.map(fetch_posts, &update_comments_count/1)
     render(conn, "index.html", posts: posts)
   end
 
   def show(conn, %{"id" => id}) do
-    post = Repo.get(Post, id) |> Repo.preload(:user)
+    post = Post
+           |> Repo.get(id)
+           |> Repo.preload(:user)
     render(conn, "show.html", post: post)
   end
 

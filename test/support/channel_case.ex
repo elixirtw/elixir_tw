@@ -25,7 +25,6 @@ defmodule ElixirTw.Web.ChannelCase do
       import Ecto.Changeset
       import Ecto.Query, only: [from: 1, from: 2]
 
-
       # The default endpoint for testing
       @endpoint ElixirTw.Web.Endpoint
     end

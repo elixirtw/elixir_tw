@@ -1,4 +1,6 @@
 defmodule ElixirTw.User do
+  @moduledoc nil
+
   use ElixirTw.Web, :model
 
   # alias Ueberauth.Auth

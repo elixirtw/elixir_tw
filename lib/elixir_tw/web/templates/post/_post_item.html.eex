@@ -1,6 +1,6 @@
 <div class="row" id= <%= @post.slug %>>
   <div class="three wide header column">
-    <img class="ui bordered tiny circular image" src= <%= ElixirTw.LayoutView.avatar_url(@conn, @post.user) %>>
+    <img class="ui bordered tiny circular image" src= <%= ElixirTw.Web.LayoutView.avatar_url(@conn, @post.user) %>>
   </div>
   <div class="eleven wide title column">
     <%= link to: post_path(@conn, :show, @post.id) do %>

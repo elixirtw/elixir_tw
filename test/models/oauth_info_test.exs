@@ -1,5 +1,5 @@
 defmodule ElixirTw.OAuthInfoTest do
-  use ElixirTw.ModelCase
+  use ElixirTw.DataCase
 
   alias ElixirTw.OAuthInfo
 
