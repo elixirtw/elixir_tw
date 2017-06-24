@@ -43,14 +43,14 @@ defmodule ElixirTw.Mixfile do
   end
 
   # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "web", "test/support"]
-  defp elixirc_paths(_),     do: ["lib", "web"]
+  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(_),     do: ["lib"]
 
   # Specifies your project dependencies.
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.2.1"},
+    [{:phoenix, "~> 1.3.0-rc", override: true},
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_ecto, "~> 3.0"},
      {:postgrex, ">= 0.0.0"},
@@ -62,13 +62,13 @@ defmodule ElixirTw.Mixfile do
      {:guardian_db, "~> 0.8"},
      {:ueberauth_facebook, "~> 0.6"},
      {:ueberauth_github, "~> 0.4"},
-     {:distillery, "~> 1.1.0"},
+     {:distillery, "~> 1.4.0"},
      {:gravity, "~> 1.0"},
      {:earmark, "~> 1.1"},
      {:pipe_to, "~> 0.1"},
      {:html_sanitize_ex, "~> 1.1"},
      {:edeliver, "~> 1.4"},
-     {:credo, "~> 0.6", only: [:dev, :test]}
+     {:credo, "~> 0.8", only: [:dev, :test], runtime: false}
    ]
   end
 
