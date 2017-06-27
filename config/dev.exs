@@ -53,7 +53,7 @@ config :mix_test_watch,
   clear: true,
   tasks: [
     "test",
-    "credo --strict",
+    "credo --strict"
   ]
 
 import_config "dev.secret.exs"
