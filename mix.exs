@@ -31,7 +31,8 @@ defmodule ElixirTw.Mixfile do
        :ueberauth_github,
        :postgrex,
        :edeliver,
-       :ex_machina
+       :ex_machina,
+       :faker
      ],
      included_applications: [
        :earmark,
@@ -70,7 +71,8 @@ defmodule ElixirTw.Mixfile do
      {:pipe_to, "~> 0.1"},
      {:html_sanitize_ex, "~> 1.1"},
      {:edeliver, "~> 1.4"},
-     {:ex_machina, "~> 2.0", only: [:test]},
+     {:ex_machina, "~> 2.0", only: [:dev, :test]},
+     {:faker, "~> 0.8", only: [:dev, :test]},
      {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
      {:dialyxir, "~> 0.5.0", only: [:dev, :test], runtime: false},
      {:mix_test_watch, "~> 0.3", only: :dev, runtime: false}

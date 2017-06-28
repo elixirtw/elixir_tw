@@ -1,12 +1,12 @@
-defmodule ElixirTw.OAuthInfo do
+defmodule ElixirTw.Account.OAuthInfo do
   @moduledoc false
 
-  use ElixirTw.Web, :model
+  use ElixirTw.Web, :schema
 
   schema "oauth_infos" do
     field :provider, :string
     field :uid, :string
-    belongs_to :user, ElixirTw.User
+    belongs_to :user, ElixirTw.Account.User
 
     timestamps()
   end

@@ -4,7 +4,7 @@ defmodule ElixirTw.Web.PostController do
   alias ElixirTw.Post
 
   def index(conn, _params) do
-    posts = Enum.map(fetch_posts, &update_comments_count/1)
+    posts = Enum.map(fetch_posts(), &update_comments_count/1)
     render(conn, "index.html", posts: posts)
   end
 

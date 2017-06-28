@@ -1,10 +1,10 @@
-defmodule ElixirTw.Web.GuardianSerializer do
+defmodule ElixirTw.Account.GuardianSerializer do
   @moduledoc nil
 
   @behaviour Guardian.Serializer
 
   alias ElixirTw.Repo
-  alias ElixirTw.User
+  alias ElixirTw.Account.User
 
   def for_token(%User{} = user), do: {:ok, "User:#{user.id}"}
   def for_token(_), do: {:error, "Unknown resource type"}

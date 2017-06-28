@@ -1,7 +1,7 @@
 defmodule ElixirTw.Comment do
   @moduledoc nil
 
-  use ElixirTw.Web, :model
+  use ElixirTw.Web, :schema
 
   schema "comments" do
     field :body, :string

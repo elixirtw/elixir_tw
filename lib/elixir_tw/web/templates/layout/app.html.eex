@@ -21,7 +21,7 @@
         <!-- Sidebars -->
         <div class="four wide column">
           <%= if current_resource(@conn) do %>
-            <%= render(ElixirTw.LayoutView, "_user_sidebar.html", conn: @conn)%>
+            <%= render(ElixirTw.Web.LayoutView, "_user_sidebar.html", conn: @conn)%>
           <% end %>
         </div>
       </div>
