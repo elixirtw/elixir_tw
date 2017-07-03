@@ -14,6 +14,17 @@ To start your Phoenix app:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
+## Testing
+
+This project includes `test.watch`, `credo`, and `dialyxer`. You can run the test simply with:
+`mix test.watch`
+
+to run type checking with `dialyxer`:
+`mix dialyzer --plt`
+first, then simply
+`mix dialyzer`
+after.
+
 <!--Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).-->
 ## Building a release
   * `docker build -t elixir_tw .`

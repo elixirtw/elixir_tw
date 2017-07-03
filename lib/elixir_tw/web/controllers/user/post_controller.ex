@@ -11,8 +11,7 @@ defmodule ElixirTw.Web.User.PostController do
   end
 
   def create(conn, %{"post" => post_params}, %{id: user_id}, _claim) do
-    changeset = post_params
-                |> Map.put("user_id", user_id)
+    changeset = Map.put(post_params, "user_id", user_id)
                 ~> Post.changeset(%Post{}, _)
 
     case Repo.insert(changeset) do

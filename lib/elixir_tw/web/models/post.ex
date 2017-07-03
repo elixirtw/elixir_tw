@@ -1,7 +1,7 @@
 defmodule ElixirTw.Post do
   @moduledoc false
 
-  use ElixirTw.Web, :model
+  use ElixirTw.Web, :schema
   use PipeTo.Override
 
   schema "posts" do
@@ -9,7 +9,7 @@ defmodule ElixirTw.Post do
     field :slug, :string
     field :body, :string
     field :markdown_body, :string
-    belongs_to :user, ElixirTw.User
+    belongs_to :user, ElixirTw.Account.User
     has_many :comments, ElixirTw.Comment
 
     timestamps()

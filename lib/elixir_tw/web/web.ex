@@ -16,7 +16,7 @@ defmodule ElixirTw.Web do
   below.
   """
 
-  def model do
+  def schema do
     quote do
       use Ecto.Schema
 
@@ -26,23 +26,15 @@ defmodule ElixirTw.Web do
     end
   end
 
-  def query do
+  def context do
     quote do
       use Ecto.Schema
 
-      alias ElixirTw.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
-    end
-  end
-
-  def command do
-    quote do
-      use Ecto.Schema
+      import Ecto.Changeset
 
       alias ElixirTw.Repo
-      import Ecto
-      import Ecto.Changeset
     end
   end
 
