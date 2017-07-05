@@ -1,6 +1,7 @@
 # ElixirTw
 
 [![Ebert](https://ebertapp.io/github/elixirtw/elixir_tw.svg)](https://ebertapp.io/github/elixirtw/elixir_tw)
+[![travis-ci](https://travis-ci.org/elixirtw/elixir_tw.svg?branch=master)](https://travis-ci.org/elixirtw/elixir_tw)
 
 To start your Phoenix app:
 
