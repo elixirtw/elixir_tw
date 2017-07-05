@@ -1,7 +1,8 @@
 defmodule ElixirTw.Web.PostController do
   use ElixirTw.Web, :controller
 
-  alias ElixirTw.Post
+  # TODO refactor to context
+  alias ElixirTw.Board.Post
 
   def index(conn, _params) do
     posts = Enum.map(fetch_posts(), &update_comments_count/1)

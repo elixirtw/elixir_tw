@@ -3,7 +3,9 @@ defmodule ElixirTw.Web.User.PostController do
   use Guardian.Phoenix.Controller
 
   import PipeTo
-  alias ElixirTw.Post
+
+  #TODO refactor to context
+  alias ElixirTw.Board.Post
 
   def new(conn, _params, _user, _claim) do
     changeset = Post.changeset(%Post{})

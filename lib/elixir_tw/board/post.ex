@@ -1,4 +1,4 @@
-defmodule ElixirTw.Post do
+defmodule ElixirTw.Board.Post do
   @moduledoc false
 
   use ElixirTw.Web, :schema

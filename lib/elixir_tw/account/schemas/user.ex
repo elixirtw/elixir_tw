@@ -4,10 +4,12 @@ defmodule ElixirTw.Account.User do
   use ElixirTw.Web, :schema
 
   # alias Ueberauth.Auth
+  alias ElixirTw.Account.OAuthInfo
+  alias ElixirTw.Board.Post
 
   schema "users" do
-    has_many :oauth_infos, ElixirTw.Account.OAuthInfo
-    has_many :posts, ElixirTw.Post
+    has_many :oauth_infos, OAuthInfo
+    has_many :posts, Post
     field :name, :string
     field :email, :string
     field :crypted_password, :string

@@ -1,4 +1,4 @@
-defmodule ElixirTw.Comment do
+defmodule ElixirTw.Board.Comment do
   @moduledoc nil
 
   use ElixirTw.Web, :schema
