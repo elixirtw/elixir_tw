@@ -4,7 +4,6 @@ defmodule ElixirTw.Web.User.PostController do
 
   import PipeTo
 
-  #TODO refactor to context
   alias ElixirTw.Board.Post
 
   def new(conn, _params, _user, _claim) do

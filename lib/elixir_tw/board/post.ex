@@ -10,7 +10,7 @@ defmodule ElixirTw.Board.Post do
     field :body, :string
     field :markdown_body, :string
     belongs_to :user, ElixirTw.Account.User
-    has_many :comments, ElixirTw.Comment
+    has_many :comments, ElixirTw.Board.Comment
 
     timestamps()
   end
@@ -23,7 +23,7 @@ defmodule ElixirTw.Board.Post do
     |> cast(params, [:title, :markdown_body, :user_id])
     |> build_slug
     |> translate_markdown
-    |> validate_required([:title, :markdown_body, :user_id])
+    |> validate_required([:title, :markdown_body, :body, :user_id])
     |> unique_constraint(:slug)
     |> assoc_constraint(:user)
   end

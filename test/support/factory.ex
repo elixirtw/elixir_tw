@@ -7,6 +7,7 @@ defmodule ElixirTw.Factory do
 
   alias ElixirTw.Account.User
   alias ElixirTw.Account.OAuthInfo
+  alias ElixirTw.Board.Post
 
   def user_factory do
     %User{
@@ -20,6 +21,17 @@ defmodule ElixirTw.Factory do
       provider: Faker.Company.name,
       uid: sequence("allyourbasearemy"),
       user: insert(:user)
+    }
+  end
+
+  def post_factory do
+    simple_body = Faker.Lorem.paragraph
+    %Post{
+      title: Faker.Lorem.sentence,
+      body: simple_body,
+      markdown_body: simple_body,
+      user: insert(:user),
+      slug: sequence(:slug_time, &"#{&1}-sluged-title")
     }
   end
 end
