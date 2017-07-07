@@ -22,12 +22,12 @@ defmodule ElixirTw.Board.Post do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :markdown_body, :user_id])
+    |> cast(params, [:title, :markdown_body])
     |> build_slug
     |> translate_markdown
-    |> validate_required([:title, :markdown_body, :body, :user_id])
-    |> unique_constraint(:slug)
+    |> validate_required([:title, :markdown_body, :body])
     |> assoc_constraint(:user)
+    |> unique_constraint(:slug)
   end
 
   defp translate_markdown(changeset = %{changes: %{markdown_body: md_body}}) do

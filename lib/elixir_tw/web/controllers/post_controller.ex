@@ -2,7 +2,6 @@ defmodule ElixirTw.Web.PostController do
   use ElixirTw.Web, :controller
 
   alias ElixirTw.Board
-  alias ElixirTw.Board.Post
 
   def index(conn, _params) do
     posts = Board.get_posts
