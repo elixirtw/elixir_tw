@@ -10,7 +10,7 @@ defmodule ElixirTw.Web.PostController do
   end
 
   def show(conn, %{"slug" => slug}) do
-    post = Board.get_post(slug)
+    post = Board.get_post(slug, preload: :user)
     render(conn, "show.html", post: post)
   end
 end

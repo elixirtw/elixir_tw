@@ -21,18 +21,23 @@ defmodule ElixirTw.BoardTest do
       %{post: insert(:post)}
     end
 
-    test "get post by id", context do
-      post = Board.get_post(context.post.id)
-
-      assert post.id == context.post.id
-      assert post.user_id == context.post.user_id
-    end
-
     test "get post by slug", context do
       post = Board.get_post(context.post.slug)
 
       assert post.id == context.post.id
       assert post.user_id == context.post.user_id
+    end
+  end
+
+  describe "get_post/2" do
+    setup do
+      %{post: insert(:post)}
+    end
+
+    test "preloads user", context do
+      post = Board.get_post(context.post.slug, preload: :user)
+
+      assert post.user == context.post.user
     end
   end
 end

@@ -19,7 +19,7 @@ defmodule ElixirTw.Web.User.PostController do
       {:ok, post} ->
         conn
         |> put_flash(:info, "Post created successfully")
-        |> redirect(to: post_path(conn, :show, post.id))
+        |> redirect(to: post_path(conn, :show, post.slug))
       {:error, changeset} ->
         conn
         |> put_flash(:error, "Something went wrong, please recheck your post.")

@@ -4,6 +4,8 @@ defmodule ElixirTw.Board.Post do
   use ElixirTw.Web, :schema
   use PipeTo.Override
 
+  @derive {Phoenix.Param, key: :slug}
+
   schema "posts" do
     field :title, :string
     field :slug, :string
