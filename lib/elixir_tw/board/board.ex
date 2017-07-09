@@ -23,16 +23,26 @@ defmodule ElixirTw.Board do
     |> Repo.preload(preload)
   end
 
+  def get_post_by_user(user, slug) do
+    Repo.get_by(Post, slug: slug, user_id: user.id)
+  end
+
   def post_changeset, do: post_changeset(%{})
   def post_changeset(struct \\ %Post{}, post_params)
   def post_changeset(struct, post_params) do
     Post.changeset(struct, post_params)
   end
 
-  def create_post(post_params, user_id) do
-    %Post{user_id: user_id}
+  def create_post(user, post_params) do
+    %Post{user: user}
     |> post_changeset(post_params)
     |> Repo.insert
+  end
+
+  def update_post(user, slug, post_params) do
+    get_post_by_user(user, slug)
+    |> post_changeset(post_params)
+    |> Repo.update
   end
 
   defp update_comments_count(post), do: Map.put(post, :comments_count, Enum.count(post.comments))

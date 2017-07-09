@@ -80,9 +80,21 @@ defmodule ElixirTw.BoardTest do
     end
 
     test "creates post from param with given user", context do
-      assert {:ok, post} = Board.create_post(context.post_param, context.user.id)
+      assert {:ok, post} = Board.create_post(context.user, context.post_param)
       assert post.user_id == context.user.id
       assert post.slug
+    end
+  end
+
+  describe "update_post/3" do
+    setup do
+      %{post: insert(:post)}
+    end
+
+    test "creates post from param with given user", context do
+      post_param = %{markdown_body: "hmmmm foo foo bar bar"}
+      assert {:ok, post} = Board.update_post(context.post.user, context.post.slug, post_param)
+      assert post.user_id == context.post.user_id
     end
   end
 end

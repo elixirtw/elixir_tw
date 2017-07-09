@@ -42,6 +42,6 @@ defmodule ElixirTw.Web.Router do
     pipe_through [:browser, :guardian_session, :guardian_authorization]
 
     get "/", ConfigController, :dashboard
-    resources "/posts", PostController
+    resources "/posts", PostController, only: [:new, :create, :edit, :update]
   end
 end
