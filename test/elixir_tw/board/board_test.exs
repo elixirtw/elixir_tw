@@ -50,27 +50,47 @@ defmodule ElixirTw.BoardTest do
     end
   end
 
+  describe "get_post_by_user/2" do
+    setup do
+      %{post: insert(:post)}
+    end
+
+    test "get the post scoping to the user", context do
+      assert Board.get_post_by_user(context.post.user, context.post.slug)
+    end
+
+    test "does not get post from another user", context do
+      refute Board.get_post_by_user(insert(:user), context.post.slug)
+    end
+  end
+
+  describe "post_changeset/0" do
+    test "build an empty post changeset" do
+      cs = Board.post_changeset()
+      assert cs.__struct__() == Ecto.Changeset
+      assert cs.data.__struct__() == ElixirTw.Board.Post
+    end
+  end
+
   describe "post_changeset/1" do
     test "builds an empty post changeset" do
-      with post_params <- params_for(:post),
-        post_changeset <- Board.post_changeset(post_params)
-      do
-        assert post_changeset.changes.title == post_params.title
-        assert post_changeset.data.slug == nil
-      end
+      post_params = params_for(:post)
+      cs = Board.post_changeset(post_params)
+
+      assert cs.changes.title == post_params.title
+      assert cs.data.slug == nil
     end
   end
 
   describe "post_changeset/2" do
     test "builds a post changeset with existing post struct" do
-      with post_params <- params_for(:post),
-        user <- insert(:user),
-        post_changeset <- Board.post_changeset(%Post{user_id: user.id, slug: "42-answer-to-life"}, post_params)
-      do
-        assert post_changeset.data.slug == "42-answer-to-life"
-        assert post_changeset.data.user_id == user.id
-        assert post_changeset.changes.title == post_params.title
-      end
+      post_params = params_for(:post)
+      user = insert(:user)
+      cs = Board.post_changeset(%Post{user_id: user.id, slug: "42-answer-to-life"}, post_params)
+
+      assert cs.data.slug == "42-answer-to-life"
+      assert cs.data.user_id == user.id
+      assert cs.changes.title == post_params.title
     end
   end
 
