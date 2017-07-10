@@ -1,8 +1,10 @@
-defmodule ElixirTw.Post do
+defmodule ElixirTw.Board.Post do
   @moduledoc false
 
   use ElixirTw.Web, :schema
   use PipeTo.Override
+
+  @derive {Phoenix.Param, key: :slug}
 
   schema "posts" do
     field :title, :string
@@ -10,7 +12,7 @@ defmodule ElixirTw.Post do
     field :body, :string
     field :markdown_body, :string
     belongs_to :user, ElixirTw.Account.User
-    has_many :comments, ElixirTw.Comment
+    has_many :comments, ElixirTw.Board.Comment
 
     timestamps()
   end
@@ -20,12 +22,12 @@ defmodule ElixirTw.Post do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :markdown_body, :user_id])
+    |> cast(params, [:title, :markdown_body])
     |> build_slug
     |> translate_markdown
-    |> validate_required([:title, :markdown_body, :user_id])
-    |> unique_constraint(:slug)
+    |> validate_required([:title, :markdown_body, :body])
     |> assoc_constraint(:user)
+    |> unique_constraint(:slug)
   end
 
   defp translate_markdown(changeset = %{changes: %{markdown_body: md_body}}) do

@@ -31,7 +31,7 @@ defmodule ElixirTw.Web do
       use Ecto.Schema
 
       import Ecto
-      import Ecto.Query, only: [from: 1, from: 2]
+      import Ecto.Query
       import Ecto.Changeset
 
       alias ElixirTw.Repo

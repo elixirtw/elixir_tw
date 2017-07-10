@@ -3,7 +3,7 @@
     <img class="ui bordered tiny circular image" src= <%= ElixirTw.Web.LayoutView.avatar_url(@conn, @post.user.email) %>>
   </div>
   <div class="eleven wide title column">
-    <%= link to: post_path(@conn, :show, @post.id) do %>
+    <%= link to: post_path(@conn, :show, @post.slug) do %>
       <h3> <%= @post.title %></h3>
     <% end %>
     <strong> <%= @post.user.name %></strong> @ <%= @post.updated_at %>

@@ -27,7 +27,7 @@ defmodule ElixirTw.Web.Router do
     get "/login", SessionController, :new
     delete "/logout", SessionController, :delete
 
-    resources "/posts", PostController, only: [:index, :show]
+    resources "/posts", PostController, param: "slug", only: [:index, :show]
   end
 
   scope "/auth", ElixirTw.Web do
@@ -42,6 +42,6 @@ defmodule ElixirTw.Web.Router do
     pipe_through [:browser, :guardian_session, :guardian_authorization]
 
     get "/", ConfigController, :dashboard
-    resources "/posts", PostController
+    resources "/posts", PostController, only: [:new, :create, :edit, :update]
   end
 end
