@@ -42,14 +42,6 @@ defmodule ElixirTw.BoardTest do
     end
   end
 
-  describe "post_changeset/0" do
-    test "output an empty post changeset" do
-      changeset = Board.post_changeset
-      assert changeset.__struct__ == Ecto.Changeset
-      assert changeset.data.__struct__ == Post
-    end
-  end
-
   describe "get_post_by_user/2" do
     setup do
       %{post: insert(:post)}
