@@ -12,7 +12,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y curl wget make
 
 # change version can force rebuild image layers from here
-ENV PHOENIX_VERSION 1.2.0
+ENV PHOENIX_VERSION 1.3.0
 
 # download and install Erlang package
 RUN wget http://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb \

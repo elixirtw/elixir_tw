@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/elixir_tw
+    docker:
+      - image: library/elixir:1.5.1
+      - image: postgres:9.6.5
+        environment:
+          POSTGRES_USER: ubuntu
+    steps:
+      - checkout
+      - run: mix deps.get
+      - run: mix ecto.create
+      - run: mix test
+
