@@ -72,7 +72,7 @@ defmodule ElixirTw.Mixfile do
      {:html_sanitize_ex, "~> 1.1"},
      {:edeliver, "~> 1.4"},
      {:ex_machina, "~> 2.0", only: [:dev, :test]},
-     {:faker, "~> 0.8", only: [:dev, :test]},
+     {:faker, "~> 0.9", only: [:dev, :test]},
      {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
      {:dialyxir, "~> 0.5.0", only: [:dev, :test], runtime: false},
      {:mix_test_watch, "~> 0.3", only: :dev, runtime: false}
