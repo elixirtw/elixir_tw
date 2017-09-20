@@ -65,7 +65,7 @@ defmodule ElixirTw.Mixfile do
      {:guardian_db, "~> 0.8"},
      {:ueberauth_facebook, "~> 0.6"},
      {:ueberauth_github, "~> 0.4"},
-     {:distillery, "~> 1.4.0"},
+     {:distillery, "~> 1.5.0"},
      {:gravity, "~> 1.0"},
      {:earmark, "~> 1.1"},
      {:pipe_to, "~> 0.1"},
