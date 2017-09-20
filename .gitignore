@@ -29,3 +29,5 @@ erl_crash.dump
 !/rel/config.exs
 .deliver/releases/
 .deliver/config
+
+yarn-error.log
