@@ -21,7 +21,10 @@ exports.config = {
       // }
     },
     stylesheets: {
-      joinTo: 'css/app.css'
+      joinTo: 'css/app.css',
+      order: {
+        after: ['web/static/css/app.css'] // concat app.css last
+      }
     },
     templates: {
       joinTo: 'js/app.js'
@@ -52,6 +55,12 @@ exports.config = {
     babel: {
       // Do not use ES6 compiler in vendor code
       ignore: [/web\/static\/vendor/]
+    },
+    sass: {
+      options: {
+        includePaths: ["node_modules/bootstrap/scss"],
+        precision: 8
+      }
     }
   },
 
@@ -66,11 +75,11 @@ exports.config = {
     globals: {
       $: 'jquery',
       jQuery: 'jquery',
+      bootstrap: 'bootstrap',
       SimpleMDE: 'simplemde'
     },
-    static: ['node_modules/semantic-ui-css/semantic.min.js'],
+    static: [],
     styles: {
-      'semantic-ui-css': ['semantic.css'],
       'simplemde': ['dist/simplemde.min.css']
     },
     // Whitelist the npm deps to be pulled in as front-end assets.

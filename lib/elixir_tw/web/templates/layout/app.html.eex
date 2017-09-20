@@ -6,20 +6,20 @@
     <%= render_existing @view_module, "style.html", assigns %>
   </head>
 
-  <body class="Site">
+  <body class="site">
     <%= render "_main_nav.html", conn: @conn %>
 
-    <div class="ui main container">
+    <div class="container">
       <%= show_flash(@conn) %>
-      <div class="ui stackable grid">
+      <div class="">
 
         <!-- Main Section-->
-        <main role="main" class="twelve wide column">
+        <main role="main" class="">
           <%= render @view_module, @view_template, assigns %>
         </main>
 
         <!-- Sidebars -->
-        <div class="four wide column">
+        <div class="">
           <%= if current_resource(@conn) do %>
             <%= render(ElixirTw.Web.LayoutView, "_user_sidebar.html", conn: @conn)%>
           <% end %>
@@ -28,9 +28,9 @@
     </div>
 
     <!-- Footer -->
-    <footer class="ui inverted vertical footer segment">
-      <div class="ui container">
-        I'm the footer
+    <footer class="">
+      <div class="">
+        Elixir.tw @ 2017
       </div>
     </footer>
 

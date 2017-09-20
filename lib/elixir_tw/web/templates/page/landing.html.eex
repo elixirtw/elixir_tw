@@ -1,25 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
   <head>
     <%= render ElixirTw.Web.LayoutView, "_head.html", conn: @conn %>
   </head>
 
   <body id="landing-page">
-    <div id="page-center" class="ui three column middle aligned centered doubling grid">
-      <div class="column">
-        <div id="landing-message" class="ui raised purple segment">
-          <h1> <i class="configure violet icon"></i> 建構中！</h1>
-          <a href="https://elixirtw.herokuapp.com/" target="_blank">
-            <button class="ui violet button">先來 slack 聊聊天吧</button>
-          </a>
-
-          <h3>學習資源</h3>
-          <ul>
-            <li><a href="http://elixir-lang.org/" target="_blank">Elixir 官 網</a></li>
-            <li><a href="http://phoenixframework.org/" target="_blank">Phoenix 官 網</a></li>
-            <li><a href="https://github.com/elixirtw/elixir_tw/" target="_blank">ElixirTW Github Repo</a></li>
-          </ul>
-        </div>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-3">Elixir Taiwan</h1>
       </div>
     </div>
   </body>
