@@ -3,7 +3,9 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "4.0.0-beta",
+    "copycat-brunch": "^1.1.0",
     "css-brunch": "~2.6.1",
+    "font-awesome": "^4.7.0",
     "javascript-brunch": "~2.0.0",
     "jquery": "^3.2.1",
     "phoenix": "file:deps/phoenix",
@@ -18,5 +20,4 @@
     "clean-css-brunch": "2.10.0",
     "uglify-js-brunch": "2.10.0"
   }
-
 }
