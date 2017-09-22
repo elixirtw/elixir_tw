@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/elixir_tw
+    docker:
+      - image: circleci/elixir:1.5.1
+        environment:
+          MIX_ENV: test
+      - image: circleci/postgres:9.6.5
+        environment:
+          POSTGRES_USER: ubuntu
+    steps:
+      - checkout
+      - run: mix local.hex --force
+      - run: mix local.rebar --force
+      - run: mix deps.get
+      - run: mix compile
+      - run: mix ecto.create
+      - run: mix test
