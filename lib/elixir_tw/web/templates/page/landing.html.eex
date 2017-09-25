@@ -4,7 +4,7 @@
     <%= render ElixirTw.Web.LayoutView, "_head.html", conn: @conn %>
   </head>
 
-  <body id="landing-page">
+  <body class="landing-page">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-auto mx-auto">
