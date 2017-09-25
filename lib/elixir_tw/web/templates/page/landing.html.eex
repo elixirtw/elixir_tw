@@ -6,26 +6,35 @@
 
   <body id="landing-page">
     <div class="container">
-      <div class="jumbotron">
-        <h1 class="display-3">Elixir Taiwan</h1>
+      <div class="row align-items-center">
+        <div class="col-auto mx-auto">
+          <div class="jumbotron">
+            <h1 class="display-3">Elixir Taiwan</h1>
+            <h2 class="constructing">
+              <i class="fa fa-tint" aria-hidden="true"></i>
+              建構中！
+            </h2>
 
-        <h2>
-          <i class="fa fa-tint" aria-hidden="true"></i>
-          建構中！
-        </h2>
+            <hr class="my-4">
 
-        <a href="https://elixirtw.herokuapp.com/" target="_blank">
-          <button class="btn">先來 slack 聊聊天吧</button>
-        </a>
+            <p>
+              <h3>學習資源</h3>
+              <ul>
+                <li><a href="http://elixir-lang.org/" target="_blank">Elixir 官 網</a></li>
+                <li><a href="http://phoenixframework.org/" target="_blank">Phoenix 官 網</a></li>
+                <li>
+                  <a href="https://github.com/elixirtw/elixir_tw/" target="_blank">ElixirTW Github Repo</a>
+                </li>
+              </ul>
+            </p>
 
-        <h3>學習資源</h3>
-        <ul>
-          <li><a href="http://elixir-lang.org/" target="_blank">Elixir 官 網</a></li>
-          <li><a href="http://phoenixframework.org/" target="_blank">Phoenix 官 網</a></li>
-          <li>
-            <a href="https://github.com/elixirtw/elixir_tw/" target="_blank">ElixirTW Github Repo</a>
-          </li>
-        </ul>
+            <p class="lead">
+              <a href="https://elixirtw.herokuapp.com/" target="_blank">
+                <button class="btn btn-success">先來 slack 聊聊天吧</button>
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </body>
