@@ -66,12 +66,12 @@ exports.config = {
     },
     copycat: {
       // copies to priv/static/fonts/
-      "fonts": ["node_modules/bootstrap-sass/assets/fonts/bootstrap"],
-      "fonts": ["node_modules/font-awesome/fonts"]
+      'fonts': ['node_modules/bootstrap-sass/assets/fonts/bootstrap'],
+      'fonts': ['node_modules/font-awesome/fonts']
     },
     sass: {
       options: {
-        includePaths: ["node_modules/bootstrap/scss"],
+        includePaths: ['node_modules/bootstrap/scss'],
         precision: 8
       }
     }
