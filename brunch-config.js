@@ -21,7 +21,10 @@ exports.config = {
       // }
     },
     stylesheets: {
-      joinTo: 'css/app.css'
+      joinTo: 'css/app.css',
+      order: {
+        after: ['web/static/css/app.css'] // concat app.css last
+      }
     },
     templates: {
       joinTo: 'js/app.js'
@@ -32,7 +35,10 @@ exports.config = {
     // This option sets where we should place non-css and non-js assets in.
     // By default, we set this to '/web/static/assets'. Files in this directory
     // will be copied to `paths.public`, which is 'priv/static' by default.
-    assets: /^(web\/static\/assets)/
+    assets: [
+      /^(web\/static\/assets)/,
+      /^(node_modules\/font-awesome)/
+    ]
   },
 
   // Phoenix paths configuration
@@ -40,7 +46,12 @@ exports.config = {
     // Dependencies and current project directories to watch
     watched: [
       'lib/elixir_tw/web/static',
-      'lib/elixir_tw/test/static'
+      'lib/elixir_tw/test/static',
+      'node_modules/font-awesome/fonts/fontawesome-webfont.eot',
+      'node_modules/font-awesome/fonts/fontawesome-webfont.svg',
+      'node_modules/font-awesome/fonts/fontawesome-webfont.ttf',
+      'node_modules/font-awesome/fonts/fontawesome-webfont.woff',
+      'node_modules/font-awesome/fonts/fontawesome-webfont.woff2'
     ],
 
     // Where to compile files to
@@ -52,6 +63,17 @@ exports.config = {
     babel: {
       // Do not use ES6 compiler in vendor code
       ignore: [/web\/static\/vendor/]
+    },
+    copycat: {
+      // copies to priv/static/fonts/
+      'fonts': ['node_modules/bootstrap-sass/assets/fonts/bootstrap'],
+      'fonts': ['node_modules/font-awesome/fonts']
+    },
+    sass: {
+      options: {
+        includePaths: ['node_modules/bootstrap/scss'],
+        precision: 8
+      }
     }
   },
 
@@ -66,11 +88,11 @@ exports.config = {
     globals: {
       $: 'jquery',
       jQuery: 'jquery',
+      bootstrap: 'bootstrap',
       SimpleMDE: 'simplemde'
     },
-    static: ['node_modules/semantic-ui-css/semantic.min.js'],
+    static: [],
     styles: {
-      'semantic-ui-css': ['semantic.css'],
       'simplemde': ['dist/simplemde.min.css']
     },
     // Whitelist the npm deps to be pulled in as front-end assets.

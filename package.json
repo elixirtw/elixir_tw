@@ -1,18 +1,23 @@
 {
-  "scripts": {
-    "postinstall": "mkdir -p priv/static/css/ && cp -r node_modules/semantic-ui-css/themes priv/static/css/"
-  },
+  "repository": {},
+  "license": "MIT",
   "dependencies": {
-    "babel-brunch": "~6.0.0",
-    "brunch": "~2.10.6",
-    "clean-css-brunch": "~2.0.0",
+    "bootstrap": "4.0.0-beta",
+    "copycat-brunch": "^1.1.0",
     "css-brunch": "~2.6.1",
+    "font-awesome": "^4.7.0",
     "javascript-brunch": "~2.0.0",
+    "jquery": "^3.2.1",
     "phoenix": "file:deps/phoenix",
     "phoenix_html": "file:deps/phoenix_html",
+    "popper.js": "^1.12.2",
     "sass-brunch": "^2.7.0",
-    "semantic-ui-css": "~2.2.0",
-    "simplemde": "^1.11.2",
-    "uglify-js-brunch": "~2.1.0"
+    "simplemde": "^1.11.2"
+  },
+  "devDependencies": {
+    "babel-brunch": "6.1.1",
+    "brunch": "2.10.9",
+    "clean-css-brunch": "2.10.0",
+    "uglify-js-brunch": "2.10.0"
   }
 }
