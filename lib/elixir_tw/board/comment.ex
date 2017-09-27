@@ -3,11 +3,14 @@ defmodule ElixirTw.Board.Comment do
 
   use ElixirTw.Web, :schema
 
+  alias ElixirTw.Board
+  alias ElixirTw.Account
+
   schema "comments" do
     field :body, :string
     field :position, :integer
-    belongs_to :post, ElixirTw.Post
-    belongs_to :user, ElixirTw.User
+    belongs_to :post, Board.Post
+    belongs_to :user, Account.User
 
     timestamps()
   end

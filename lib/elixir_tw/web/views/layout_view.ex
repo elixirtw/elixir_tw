@@ -13,5 +13,4 @@ defmodule ElixirTw.Web.LayoutView do
   def flash_html(_), do: nil
 
   def avatar_url(conn, email), do: Gravity.image(email, d: "#{ElixirTw.Web.Router.Helpers.url(conn)}/images/elixir_taiwan_small.png")
-  def avatar_url(_, _), do: "/images/elixir_taiwan_small.png"
 end
