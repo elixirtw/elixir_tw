@@ -31,8 +31,8 @@ defmodule ElixirTw.Mixfile do
        :ueberauth_github,
        :postgrex,
        :edeliver,
-       #:ex_machina,
-       #:faker
+       :ex_machina,
+       :faker
      ],
      included_applications: [
        :earmark,
