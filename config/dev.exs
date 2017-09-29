@@ -52,7 +52,10 @@ config :guardian, Guardian,
 config :mix_test_watch,
   clear: true,
   tasks: [
-    "test",
+    # NOTE args passed in to mix test.watch is applied to all tasks,
+    # so --stale switch would break credo task
+    # hopefully this gets updated after
+    "test --stale",
     "credo --strict"
   ]
 
