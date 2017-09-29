@@ -21,7 +21,6 @@ config :logger, :console,
 
 config :guardian, Guardian,
   allowed_algos: ["HS512"], # optional
-  #verify_module: Guardian.JWT,  # optional
   hooks: GuardianDb,
   issuer: "ElixirTW",
   ttl: {30, :days},
@@ -42,7 +41,7 @@ config :elixir_tw, ecto_repos: [ElixirTw.Repo]
 
 config :guardian_db, GuardianDb,
   repo: ElixirTw.Repo,
-  sweep_interval: 120 # 120 min
+  sweep_interval: 120 # min
 
 # Uberauth's Oauth Settings
 config :ueberauth, Ueberauth,

@@ -19,29 +19,7 @@ defmodule ElixirTw.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {ElixirTw, []},
-     applications: [
-       :phoenix,
-       :phoenix_pubsub,
-       :phoenix_html,
-       :cowboy,
-       :logger,
-       :gettext,
-       :phoenix_ecto,
-       :ueberauth_facebook,
-       :ueberauth_github,
-       :postgrex,
-       :edeliver,
-       :ex_machina,
-       :faker
-     ],
-     included_applications: [
-       :earmark,
-       :gravity,
-       :guardian,
-       :guardian_db,
-       :html_sanitize_ex,
-       :pipe_to
-     ]
+     extra_applications: [:logger, :runtime_tools]
    ]
   end
 
