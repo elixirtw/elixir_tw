@@ -1,3 +1,3 @@
-defmodule ElixirTw.Web.User.ConfigView do
-  use ElixirTw.Web, :view
+defmodule ElixirTwWeb.User.ConfigView do
+  use ElixirTwWeb, :view
 end

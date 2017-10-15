@@ -1,4 +1,4 @@
-defmodule ElixirTw.Web.UserSocket do
+defmodule ElixirTwWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels

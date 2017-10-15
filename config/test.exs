@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :elixir_tw, ElixirTw.Web.Endpoint,
+config :elixir_tw, ElixirTwWeb.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -13,8 +13,6 @@ config :logger, level: :warn
 config :elixir_tw, ElixirTw.Repo,
   adapter: Ecto.Adapters.Postgres,
   database: "elixir_tw_test",
-  username: "postgres",
-  password: "postgres",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 
@@ -27,4 +25,6 @@ config :guardian, Guardian,
     "kty" => "EC",
     "x" => "AWXnRMCaj96pL33ZhTw5mW8vjcvYPRLbWLfIO21Aig5qBs7ymegVGZWAThWfZcBa13sgBXTBm6rv7RvKKTx8qZGW",
     "y" => "AFWQhP0skj9iODTS4zn8vGcAAouvJ5HkLoBl72TNlh9WM6p0Cpc4Cf1XwRYkMzi-vVLpCEq27M22vZu__8FEV9io"},
-  serializer: ElixirTw.Web.GuardianSerializer
+  serializer: ElixirTwWeb.GuardianSerializer
+
+import_config "test*.secret.exs"

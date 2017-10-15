@@ -1,4 +1,4 @@
-defmodule ElixirTw.Web.ConnCase do
+defmodule ElixirTwWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -26,10 +26,10 @@ defmodule ElixirTw.Web.ConnCase do
       import Ecto.Query, only: [from: 1, from: 2]
 
       import ElixirTw.Factory
-      import ElixirTw.Web.Router.Helpers
+      import ElixirTwWeb.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint ElixirTw.Web.Endpoint
+      @endpoint ElixirTwWeb.Endpoint
     end
   end
 

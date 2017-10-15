@@ -3,7 +3,7 @@ defmodule ElixirTw.Board do
   Interface for Board context.
   """
 
-  use ElixirTw.Web, :context
+  use ElixirTwWeb, :context
 
   alias ElixirTw.Board.Post
 

@@ -11,7 +11,7 @@ defmodule ElixirTw.Repo.Migrations.AddingGuardianTokens do
       add :exp, :bigint
       add :jwt, :text
       add :claims, :map
-      timestamps
+      timestamps()
     end
     create unique_index(:guardian_tokens, [:jti, :aud])
   end

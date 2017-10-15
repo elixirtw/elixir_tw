@@ -1,3 +1,3 @@
-defmodule ElixirTw.Web.LayoutViewTest do
-  use ElixirTw.Web.ConnCase, async: true
+defmodule ElixirTwWeb.LayoutViewTest do
+  use ElixirTwWeb.ConnCase, async: true
 end

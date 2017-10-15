@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
   <head>
-    <%= render ElixirTw.Web.LayoutView, "_head.html", conn: @conn %>
+    <%= render ElixirTwWeb.LayoutView, "_head.html", conn: @conn %>
   </head>
 
   <body class="landing-page">

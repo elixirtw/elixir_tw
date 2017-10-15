@@ -1,4 +1,4 @@
-defmodule ElixirTw.Web.ChannelCase do
+defmodule ElixirTwWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -26,7 +26,7 @@ defmodule ElixirTw.Web.ChannelCase do
       import Ecto.Query, only: [from: 1, from: 2]
 
       # The default endpoint for testing
-      @endpoint ElixirTw.Web.Endpoint
+      @endpoint ElixirTwWeb.Endpoint
     end
   end
 

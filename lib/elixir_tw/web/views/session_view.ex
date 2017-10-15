@@ -1,3 +1,3 @@
-defmodule ElixirTw.Web.SessionView do
-  use ElixirTw.Web, :view
+defmodule ElixirTwWeb.SessionView do
+  use ElixirTwWeb, :view
 end

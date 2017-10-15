@@ -1,12 +1,12 @@
-defmodule ElixirTw.Web do
+defmodule ElixirTwWeb do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use ElixirTw.Web, :controller
-      use ElixirTw.Web, :view
+      use ElixirTwWeb, :controller
+      use ElixirTwWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -40,14 +40,14 @@ defmodule ElixirTw.Web do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: ElixirTw.Web
+      use Phoenix.Controller, namespace: ElixirTwWeb
 
       alias ElixirTw.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
 
-      import ElixirTw.Web.Router.Helpers
-      import ElixirTw.Web.Gettext
+      import ElixirTwWeb.Router.Helpers
+      import ElixirTwWeb.Gettext
 
       import Guardian.Plug, only: [current_resource: 1]
     end
@@ -55,7 +55,7 @@ defmodule ElixirTw.Web do
 
   def view do
     quote do
-      use Phoenix.View, root: "lib/elixir_tw/web/templates", namespace: ElixirTw.Web
+      use Phoenix.View, root: "lib/elixir_tw/web/templates", namespace: ElixirTwWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 1, get_flash: 2, view_module: 1]
@@ -63,9 +63,9 @@ defmodule ElixirTw.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import ElixirTw.Web.Router.Helpers
-      import ElixirTw.Web.ErrorHelpers
-      import ElixirTw.Web.Gettext
+      import ElixirTwWeb.Router.Helpers
+      import ElixirTwWeb.ErrorHelpers
+      import ElixirTwWeb.Gettext
 
       import Guardian.Plug, only: [current_resource: 1]
     end
@@ -84,7 +84,7 @@ defmodule ElixirTw.Web do
       alias ElixirTw.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
-      import ElixirTw.Web.Gettext
+      import ElixirTwWeb.Gettext
     end
   end
 

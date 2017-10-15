@@ -6,11 +6,11 @@
 use Mix.Config
 
 # Configures the endpoint
-config :elixir_tw, ElixirTw.Web.Endpoint,
+config :elixir_tw, ElixirTwWeb.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "C9+8f85LKUz7MBf92Ot1F6Y94Q4PcCS88hllNo7JCUB1dYsiMD0MRs1qpGNI5p7L",
-  render_errors: [view: ElixirTw.Web.ErrorView, accepts: ~w(html json)],
+  render_errors: [view: ElixirTwWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: ElixirTw.PubSub,
            adapter: Phoenix.PubSub.PG2]
 

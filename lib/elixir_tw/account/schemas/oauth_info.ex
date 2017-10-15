@@ -1,7 +1,7 @@
 defmodule ElixirTw.Account.OAuthInfo do
   @moduledoc false
 
-  use ElixirTw.Web, :schema
+  use ElixirTwWeb, :schema
 
   schema "oauth_infos" do
     field :provider, :string
