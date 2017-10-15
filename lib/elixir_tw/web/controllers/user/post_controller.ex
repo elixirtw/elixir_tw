@@ -1,5 +1,5 @@
-defmodule ElixirTw.Web.User.PostController do
-  use ElixirTw.Web, :controller
+defmodule ElixirTwWeb.User.PostController do
+  use ElixirTwWeb, :controller
   use Guardian.Phoenix.Controller
 
   alias ElixirTw.Board

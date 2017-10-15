@@ -1,7 +1,7 @@
 defmodule ElixirTw.Board.Comment do
   @moduledoc nil
 
-  use ElixirTw.Web, :schema
+  use ElixirTwWeb, :schema
 
   alias ElixirTw.Board
   alias ElixirTw.Account

@@ -1,5 +1,5 @@
-defmodule ElixirTw.Web.SessionController do
-  use ElixirTw.Web, :controller
+defmodule ElixirTwWeb.SessionController do
+  use ElixirTwWeb, :controller
 
   plug Ueberauth
   plug :scrub_params, "user" when action in [:create]

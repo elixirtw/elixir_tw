@@ -1,5 +1,5 @@
-defmodule ElixirTw.Web.User.PostView do
-  use ElixirTw.Web, :view
+defmodule ElixirTwWeb.User.PostView do
+  use ElixirTwWeb, :view
 
   # Inline Script
   def render("script.html", _assigns) do

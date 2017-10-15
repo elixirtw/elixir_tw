@@ -1,5 +1,5 @@
-defmodule ElixirTw.Web.PageController do
-  use ElixirTw.Web, :controller
+defmodule ElixirTwWeb.PageController do
+  use ElixirTwWeb, :controller
 
   def landing(conn, _params) do
     conn

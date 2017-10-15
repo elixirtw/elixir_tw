@@ -1,7 +1,7 @@
 defmodule ElixirTw.Account.User do
   @moduledoc nil
 
-  use ElixirTw.Web, :schema
+  use ElixirTwWeb, :schema
 
   # alias Ueberauth.Auth
   alias ElixirTw.Account.OAuthInfo

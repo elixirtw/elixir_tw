@@ -21,7 +21,7 @@
         <!-- Sidebars -->
         <div class="">
           <%= if current_resource(@conn) do %>
-            <%= render(ElixirTw.Web.LayoutView, "_user_sidebar.html", conn: @conn)%>
+            <%= render(ElixirTwWeb.LayoutView, "_user_sidebar.html", conn: @conn)%>
           <% end %>
         </div>
       </div>

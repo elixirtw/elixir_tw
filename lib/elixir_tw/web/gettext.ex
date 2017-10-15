@@ -1,4 +1,4 @@
-defmodule ElixirTw.Web.Gettext do
+defmodule ElixirTwWeb.Gettext do
   @moduledoc """
   A module providing Internationalization with a gettext-based API.
 

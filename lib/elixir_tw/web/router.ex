@@ -1,5 +1,5 @@
-defmodule ElixirTw.Web.Router do
-  use ElixirTw.Web, :router
+defmodule ElixirTwWeb.Router do
+  use ElixirTwWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -18,7 +18,7 @@ defmodule ElixirTw.Web.Router do
     #plug Guardian.Plug.EnsureAuthenticated
   end
 
-  scope "/", ElixirTw.Web do
+  scope "/", ElixirTwWeb do
     pipe_through [:browser, :guardian_session]
 
     #get "/", PostController, :index
@@ -30,7 +30,7 @@ defmodule ElixirTw.Web.Router do
     resources "/posts", PostController, param: "slug", only: [:index, :show]
   end
 
-  scope "/auth", ElixirTw.Web do
+  scope "/auth", ElixirTwWeb do
     pipe_through [:browser, :guardian_session]
 
     get "/:provider", SessionController, :request
@@ -38,7 +38,7 @@ defmodule ElixirTw.Web.Router do
     post "/:provider/callback", SessionController, :callback
   end
 
-  scope "/user", ElixirTw.Web.User, as: :user do
+  scope "/user", ElixirTwWeb.User, as: :user do
     pipe_through [:browser, :guardian_session, :guardian_authorization]
 
     get "/", ConfigController, :dashboard

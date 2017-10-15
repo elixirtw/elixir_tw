@@ -1,3 +1,3 @@
-defmodule ElixirTw.Web.PageView do
-  use ElixirTw.Web, :view
+defmodule ElixirTwWeb.PageView do
+  use ElixirTwWeb, :view
 end

@@ -1,5 +1,5 @@
-defmodule ElixirTw.Web.User.ConfigController do
-  use ElixirTw.Web, :controller
+defmodule ElixirTwWeb.User.ConfigController do
+  use ElixirTwWeb, :controller
   use Guardian.Phoenix.Controller
 
   def dashboard(conn, _params, user, _claim) do

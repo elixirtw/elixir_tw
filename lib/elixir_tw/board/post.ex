@@ -1,7 +1,7 @@
 defmodule ElixirTw.Board.Post do
   @moduledoc false
 
-  use ElixirTw.Web, :schema
+  use ElixirTwWeb, :schema
   use PipeTo.Override
 
   @derive {Phoenix.Param, key: :slug}
@@ -30,7 +30,7 @@ defmodule ElixirTw.Board.Post do
     |> unique_constraint(:slug)
   end
 
-  defp translate_markdown(changeset = %{changes: %{markdown_body: md_body}}) do
+  defp translate_markdown(%{changes: %{markdown_body: md_body}} = changeset) do
     case Earmark.as_html(md_body) do
       {:ok, html_body, []} ->
         html_body
@@ -41,7 +41,7 @@ defmodule ElixirTw.Board.Post do
   end
   defp translate_markdown(changeset), do: changeset
 
-  defp build_slug(changeset = %{changes: %{title: title}}), do: put_change(changeset, :slug, title_to_slug(title))
+  defp build_slug(%{changes: %{title: title}} = changeset), do: put_change(changeset, :slug, title_to_slug(title))
   defp build_slug(changeset), do: changeset
 
   defp title_to_slug(title), do: "#{slugify_time()}-#{slugify_title(title)}"

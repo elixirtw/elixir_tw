@@ -1,7 +1,7 @@
-defmodule ElixirTw.Web.Endpoint do
+defmodule ElixirTwWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :elixir_tw
 
-  socket "/socket", ElixirTw.Web.UserSocket
+  socket "/socket", ElixirTwWeb.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -35,5 +35,5 @@ defmodule ElixirTw.Web.Endpoint do
     key: "_elixir_tw_key",
     signing_salt: "FlC//Xzo"
 
-  plug ElixirTw.Web.Router
+  plug ElixirTwWeb.Router
 end

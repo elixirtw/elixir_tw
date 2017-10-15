@@ -1,5 +1,5 @@
-defmodule ElixirTw.Web.ErrorView do
-  use ElixirTw.Web, :view
+defmodule ElixirTwWeb.ErrorView do
+  use ElixirTwWeb, :view
 
   def render("404.html", _assigns) do
     "Page not found"
