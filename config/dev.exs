@@ -20,8 +20,8 @@ config :elixir_tw, ElixirTwWeb.Endpoint,
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
-      ~r{lib/elixir_tw/web/views/.*(ex)$},
-      ~r{lib/elixir_tw/web/templates/.*(eex)$}
+      ~r{lib/elixir_tw_web/views/.*(ex)$},
+      ~r{lib/elixir_tw_web/templates/.*(eex)$}
     ]
   ]
 
