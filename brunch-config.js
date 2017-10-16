@@ -45,7 +45,7 @@ exports.config = {
   paths: {
     // Dependencies and current project directories to watch
     watched: [
-      'lib/elixir_tw/web/static',
+      'lib/elixir_tw_web/static',
       'lib/elixir_tw/test/static',
       'node_modules/font-awesome/fonts/fontawesome-webfont.eot',
       'node_modules/font-awesome/fonts/fontawesome-webfont.svg',
