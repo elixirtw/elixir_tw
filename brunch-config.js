@@ -23,7 +23,7 @@ exports.config = {
     stylesheets: {
       joinTo: 'css/app.css',
       order: {
-        after: ['web/static/css/app.css'] // concat app.css last
+        after: ['priv/static/css/app.css'] // concat app.css last
       }
     },
     templates: {
@@ -71,7 +71,7 @@ exports.config = {
     },
     sass: {
       options: {
-        includePaths: ['node_modules/bootstrap/scss'],
+        includePaths: ['node_modules/bootstrap/scss' , "node_modules/font-awesome/scss"],
         precision: 8
       }
     }
@@ -79,7 +79,7 @@ exports.config = {
 
   modules: {
     autoRequire: {
-      'js/app.js': ['web/static/js/app']
+      'js/app.js': ['js/app']
     }
   },
 
