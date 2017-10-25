@@ -1,11 +1,13 @@
 <div class="ui raised segment">
   <%= form_for @changeset, "/user/posts", [class: "ui large form"], fn f -> %>
-    <h2>新增文章</h2>
 
+    
+<%#
     <div class="ui divider"></div>
 
     <div class="field">
       <%= text_input f, :title, placeholder: "文章主題" %>
+<%#
     </div>
 
     <div class="field">
@@ -18,10 +20,50 @@
 
     <div class="field">
       <%= textarea f, :markdown_body, placeholder: "內容" %>
+<%#
     </div>
 
     <div class="field">
       <%= submit "儲存", class: "ui green button" %>
+<%#
     </div>
+    %>
+
+    <div class="card">    
+        <div class="card-header deep-orange lighten-1 white-text">
+            <h2>新增文章</h2>
+        </div>    
+
+      <div class="card-body">    
+        <form>
+          <div class="form-group">
+            <%= label f, :主題, class: "control-label" %>
+            <%= text_input f, :title, class: "form-control" %>
+          </div>    
+
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">標籤</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>標籤1</option>
+                <option>標籤2</option>
+                <option>標籤3</option>
+                <option>標籤4</option>
+                <option>標籤5</option>
+              </select>
+          </div>    
+
+          <div class="form-group">
+            <%= label f, :內容, class: "control-label" %>
+            <%= textarea f, :markdown_body, class: "form-control" %>
+          </div>    
+
+          <button type="submit" class="btn btn-primary">儲存</button>
+        </form>    
+
+      </div>
+    </div>
+
   <% end %>
 </div>
+
+
