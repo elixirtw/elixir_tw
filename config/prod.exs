@@ -13,7 +13,9 @@ use Mix.Config
 # which you typically run after static files are built.
 config :elixir_tw, ElixirTwWeb.Endpoint,
   #load_from_system_env: true,
-  url: [host: "elixir.tw", port: {:system, 80}],
+  #url: [host: "elixir.tw", port: {:system, 80}],
+  http: [port: 4000],
+  url: [host: "elixir.tw", port: 80],
   #version: Mix.Project.config[:version],
   server: true,
   code_reloader: false,
