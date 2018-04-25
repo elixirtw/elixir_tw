@@ -6,7 +6,7 @@ BUILD_AT="/home/builder/builds"
 
 PRODUCTION_HOSTS="elixirtw"
 PRODUCTION_USER="app"
-DELIVER_TO="/home/app"
+DELIVER_TO="/home/app/app_release"
 
 # For *Phoenix* projects, symlink prod.secret.exs to our tmp source
 pre_erlang_get_and_update_deps() {
