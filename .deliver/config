@@ -18,7 +18,7 @@ pre_erlang_get_and_update_deps() {
   fi
 }
 
-pre_erlang_clean_compile() {
+post_erlang_clean_compile() {
   status "Preparing assets with: brunch build and phoenix.digest"
   __sync_remote "
     [ -f ~/.profile ] && source ~/.profile # load profile (optional)
@@ -27,6 +27,6 @@ pre_erlang_clean_compile() {
     mkdir -p priv/static
     if hash yarn 2>/dev/null; then yarn install; else npm install; fi
     ./node_modules/brunch/bin/brunch b -p
-    APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $MIX_CMD phoenix.digest $SILENCE
+    APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $MIX_CMD phx.digest $SILENCE
   "
 }

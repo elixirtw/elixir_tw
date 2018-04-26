@@ -37,7 +37,7 @@ environment :prod do
   set include_erts: true
   set include_src: false
   set cookie: :"&lsXO48ad5QK)e]%Y&K4:OqL=2*jbeLeQ@9H9;V7=&t?6pGhM&&@9*9G,`S_|%e*"
-  set output_dir: "rel/elixirtw"
+  set output_dir: "rel/elixir_tw"
 end
 
 # You may define one or more releases in this file.
