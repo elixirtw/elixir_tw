@@ -19,7 +19,7 @@ defmodule ElixirTw.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {ElixirTw, []},
-     extra_applications: [:logger, :runtime_tools]
+     extra_applications: [:logger, :runtime_tools, :edeliver]
    ]
   end
 

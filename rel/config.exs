@@ -15,6 +15,7 @@ use Mix.Releases.Config,
 # For a full list of config options for both releases
 # and environments, visit https://hexdocs.pm/distillery/configuration.html
 
+
 # You may define one or more environments in this file,
 # an environment's settings will override those of a release
 # when building in that environment, this combination of release
@@ -29,13 +30,14 @@ environment :dev do
   # dev mode.
   set dev_mode: true
   set include_erts: false
-  set cookie: :test
+  set cookie: :"0mHY&29]Uziy?OUA/eD7^q>ZUDONZiyEEmrUC!_uC|=g.>J&joMtQ?[{QLHTDxlu"
 end
 
 environment :prod do
   set include_erts: true
   set include_src: false
-  set cookie: :"#{System.get_env("COOKIE")}"
+  set cookie: :"&lsXO48ad5QK)e]%Y&K4:OqL=2*jbeLeQ@9H9;V7=&t?6pGhM&&@9*9G,`S_|%e*"
+  set output_dir: "rel/elixir_tw"
 end
 
 # You may define one or more releases in this file.
@@ -47,6 +49,9 @@ release :elixir_tw do
   set version: current_version(:elixir_tw)
   set applications: [
     :runtime_tools
+  ]
+  set commands: [
+    "migrate": "rel/commands/migrate.sh"
   ]
 end
 

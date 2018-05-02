@@ -25,8 +25,8 @@ erl_crash.dump
 
 # Release Folder
 /rel/*
+!/rel/commands
 !/rel/config.exs
 .deliver/releases/
-.deliver/config
 
 yarn-error.log
