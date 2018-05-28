@@ -1,0 +1,31 @@
+# App deployment settings
+# See roles.galaxy/cogini.elixir-release/defaults/main.yml for all the options
+
+# External name of the app, used to name directories and the systemd process
+elixir_release_name: elixirtw
+
+# Internal "Elixir" name of the app, used to by Distillery to name directories
+elixir_release_name_code: elixir_tw
+
+# Name of your organization or overall project, used to make a unique dir prefix
+elixir_release_org: elixir_tw
+
+# OS user the app runs under
+elixir_release_app_user: app
+elixir_release_app_group: "{{ elixir_release_app_user }}"
+
+# OS user for deploy
+elixir_release_deploy_user: builder
+elixir_release_deploy_group: "{{ elixir_release_deploy_user }}"
+
+# Port that Phoenix listens on
+elixir_release_http_listen_port: 4001
+
+# Same as above, but configuring firewall
+iptables_http_app_port: "{{ elixir_release_http_listen_port }}"
+
+# Config dir
+elixir_release_conf_dir: "/etc/{{ elixir_release_name }}"
+
+# Path to conform conf file
+elixir_release_conform_conf_path: "{{ elixir_release_conf_dir }}/{{ elixir_release_name_code }}.conf"
