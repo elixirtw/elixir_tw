@@ -1,0 +1,30 @@
+---
+# Configure build
+# ansible-playbook --vault-password-file vault.key -u $USER -v -l web-servers playbooks/config-build.yml -D
+
+- name: Configure build
+  hosts: '*'
+  become: true
+  gather_facts: true
+  no_log: true
+  tasks:
+    - name: Set db_pass
+      set_fact:
+        db_pass: "{{ lookup('password', '/tmp/db_pass.txt length=16') }}"
+      when: db_pass is not defined
+
+    - name: Configure prod.secret.exs
+      template:
+        src: ../templates/config/prod.secret.exs.j2
+        dest: "/home/{{ elixir_release_deploy_user }}/build/{{ elixir_release_name }}/config/prod.secret.exs"
+        owner: "{{ elixir_release_deploy_user }}"
+        group: "{{ elixir_release_deploy_group }}"
+        mode: "0640"
+
+    # - name: Set Erlang cookie file
+    #   copy:
+    #     content: "{{ erlang_cookie }}"
+    #     dest: "/home/{{ elixir_release_deploy_user }}/build/{{ elixir_release_name }}/config/cookie.txt"
+    #     owner: "{{ elixir_release_deploy_user }}"
+    #     group: "{{ elixir_release_deploy_group }}"
+    #     mode: "0640"
