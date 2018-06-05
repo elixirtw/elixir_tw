@@ -1,0 +1,7 @@
+# install_roles.yml
+
+# ansible-galaxy install --roles-path roles.galaxy -r install_roles.yml
+
+- src: cogini.users
+- src: cogini.elixir-release
+- src: ANXS.postgresql
