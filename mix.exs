@@ -11,6 +11,7 @@ defmodule ElixirTw.Mixfile do
      start_permanent: Mix.env == :prod,
      aliases: aliases(),
      dialyzer: [plt_add_deps: :transitive],
+     deploy_dir: "/opt/elixirtw/elixir_tw/",
      deps: deps()]
   end
 
