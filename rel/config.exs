@@ -30,14 +30,16 @@ environment :dev do
   # dev mode.
   set dev_mode: true
   set include_erts: false
-  set cookie: :"0mHY&29]Uziy?OUA/eD7^q>ZUDONZiyEEmrUC!_uC|=g.>J&joMtQ?[{QLHTDxlu"
+  set cookie: :dev
+  set vm_args: "rel/vm.args.eex"
 end
 
 environment :prod do
   set include_erts: true
   set include_src: false
-  set cookie: :"&lsXO48ad5QK)e]%Y&K4:OqL=2*jbeLeQ@9H9;V7=&t?6pGhM&&@9*9G,`S_|%e*"
-  set output_dir: "rel/elixir_tw"
+  set cookie: :prod
+  #set output_dir: "rel/elixir_tw"
+  set vm_args: "rel/vm.args.eex"
 end
 
 # You may define one or more releases in this file.
@@ -50,8 +52,6 @@ release :elixir_tw do
   set applications: [
     :runtime_tools
   ]
-  set commands: [
-    "migrate": "rel/commands/migrate.sh"
-  ]
+  plugin Conform.ReleasePlugin
 end
 
