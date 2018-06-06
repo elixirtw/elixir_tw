@@ -2,7 +2,7 @@
 # See roles.galaxy/cogini.elixir-release/defaults/main.yml for all the options
 
 # External name of the app, used to name directories and the systemd process
-elixir_release_name: elixirtw
+elixir_release_name: elixir_tw
 
 # Internal "Elixir" name of the app, used to by Distillery to name directories
 elixir_release_name_code: elixir_tw
