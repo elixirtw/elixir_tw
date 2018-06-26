@@ -3,7 +3,7 @@
 # Deploy app to local server
 
 export MIX_ENV=prod
-APP_NAME=deploy-template
+APP_NAME=elixir_tw
 
 # Exit on errors
 set -e
