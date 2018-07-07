@@ -52,7 +52,7 @@ config :logger, level: :info
 # If you are doing OTP releases, you need to instruct Phoenix
 # to start the server for all endpoints:
 #
-#     config :phoenix, :serve_endpoints, true
+config :phoenix, :serve_endpoints, true
 #
 # Alternatively, you can configure exactly which server to
 # start per endpoint:
@@ -63,6 +63,10 @@ config :logger, level: :info
 # for the new static assets to be served after a hot upgrade:
 #
 #     config :elixir_tw, ElixirTw.Endpoint, root: "."
+
+config :shutdown_flag,
+  flag_file: "/var/tmp/deploy/elixir_tw/shutdown.flag",
+  check_delay: 10_000
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
