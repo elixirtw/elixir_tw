@@ -23,7 +23,7 @@ exports.config = {
     stylesheets: {
       joinTo: 'css/app.css',
       order: {
-        after: ['web/static/css/app.css'] // concat app.css last
+        after: ['assets/scss/app.css'] // concat app.css last
       }
     },
     templates: {
@@ -36,7 +36,7 @@ exports.config = {
     // By default, we set this to '/web/static/assets'. Files in this directory
     // will be copied to `paths.public`, which is 'priv/static' by default.
     assets: [
-      /^(web\/static\/assets)/,
+      /^(assets\/static)/,
       /^(node_modules\/font-awesome)/
     ]
   },
@@ -62,7 +62,7 @@ exports.config = {
   plugins: {
     babel: {
       // Do not use ES6 compiler in vendor code
-      ignore: [/web\/static\/vendor/]
+      ignore: [/assets\/vendor/]
     },
     copycat: {
       // copies to priv/static/fonts/
@@ -79,7 +79,7 @@ exports.config = {
 
   modules: {
     autoRequire: {
-      'js/app.js': ['web/static/js/app']
+      'js/app.js': ['assets/js/app']
     }
   },
 

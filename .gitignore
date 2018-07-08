@@ -24,9 +24,6 @@ erl_crash.dump
 /config/*.secret.exs
 
 # Release Folder
-/rel/*
-!/rel/commands
-!/rel/config.exs
 .deliver/releases/
 
 yarn-error.log

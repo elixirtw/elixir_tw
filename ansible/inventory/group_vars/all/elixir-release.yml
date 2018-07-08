@@ -2,20 +2,20 @@
 # See roles.galaxy/cogini.elixir-release/defaults/main.yml for all the options
 
 # External name of the app, used to name directories and the systemd process
-elixir_release_name: elixirtw
+elixir_release_name: elixir_tw
 
 # Internal "Elixir" name of the app, used to by Distillery to name directories
 elixir_release_name_code: elixir_tw
 
 # Name of your organization or overall project, used to make a unique dir prefix
-elixir_release_org: elixir_tw
+elixir_release_org: elixirtw
 
 # OS user the app runs under
-elixir_release_app_user: app
+elixir_release_app_user: web
 elixir_release_app_group: "{{ elixir_release_app_user }}"
 
 # OS user for deploy
-elixir_release_deploy_user: builder
+elixir_release_deploy_user: deploy
 elixir_release_deploy_group: "{{ elixir_release_deploy_user }}"
 
 # Port that Phoenix listens on

@@ -1,7 +1,8 @@
 ---
 # OS packages
 
-tools_other_packages: []
+tools_other_packages:
+  - gcc-c++
 
 # PIP packages
 tools_other_pip: []

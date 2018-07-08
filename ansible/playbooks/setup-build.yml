@@ -96,3 +96,5 @@
       git:
         repo: "{{ app_repo }}"
         dest: "{{ build_dir }}"
+        version: "{{ app_version | default('HEAD') }}"
+        force: 1

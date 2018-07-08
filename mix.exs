@@ -7,10 +7,11 @@ defmodule ElixirTw.Mixfile do
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
-     build_embedded: Mix.env == :prod,
+     #build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      aliases: aliases(),
      dialyzer: [plt_add_deps: :transitive],
+     deploy_dir: "/opt/elixirtw/elixir_tw/",
      deps: deps()]
   end
 
@@ -43,15 +44,15 @@ defmodule ElixirTw.Mixfile do
      {:guardian_db, "~> 0.8"},
      {:ueberauth_facebook, "~> 0.6"},
      {:ueberauth_github, "~> 0.4"},
-     {:distillery, "~> 1.5.0"},
+     {:distillery, "~> 1.5.0", runtime: false},
      {:gravity, "~> 1.0"},
      {:earmark, "~> 1.1"},
      {:pipe_to, "~> 0.1"},
      {:html_sanitize_ex, "~> 1.1"},
      {:edeliver, "~> 1.4"},
+     {:conform, "~> 2.2"},
      {:ex_machina, "~> 2.0", only: [:dev, :test]},
      {:faker, "~> 0.9", only: [:dev, :test]},
-     {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
      {:dialyxir, "~> 0.5.0", only: [:dev, :test], runtime: false},
      {:mix_test_watch, "~> 0.3", only: :dev, runtime: false}
    ]
