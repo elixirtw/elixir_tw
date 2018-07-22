@@ -1,23 +1,38 @@
 {
   "repository": {},
   "license": "MIT",
+  "scripts": {
+    "start": "npm run watch",
+    "watch": "MIX_ENV=dev webpack-dev-server --inline --hot --stdin --colors --public localhost:4000",
+    "deploy": "MIX_ENV=prod webpack -p"
+  },
   "dependencies": {
-    "bootstrap": "4.0.0-beta",
-    "copycat-brunch": "^1.1.0",
-    "css-brunch": "~2.6.1",
-    "font-awesome": "^4.7.0",
     "javascript-brunch": "~2.0.0",
     "jquery": "^3.2.1",
     "phoenix": "file:../deps/phoenix",
     "phoenix_html": "file:../deps/phoenix_html",
-    "popper.js": "^1.12.2",
     "sass-brunch": "^2.7.0",
     "simplemde": "^1.11.2"
   },
   "devDependencies": {
-    "babel-brunch": "6.1.1",
-    "brunch": "2.10.9",
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/preset-env": "^7.0.0-beta.54",
+    "babel-loader": "^8.0.0-beta",
+    "babel-plugin-dynamic-import-webpack": "^1.0.2",
     "clean-css-brunch": "2.10.0",
-    "uglify-js-brunch": "2.10.0"
+    "clean-css-loader": "^1.0.1",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "file-loader": "^1.1.11",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.2",
+    "postcss-loader": "^2.1.6",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "uglify-js-brunch": "2.10.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.4"
   }
 }
