@@ -1,2 +1,6 @@
+@import "./scss/bulmaswatch/_variables.scss";
 @import "./node_modules/bulma/bulma.sass";
-@import "./scss/bulmaswatch/bulmaswatch.scss";
+@import "./scss/bulmaswatch/_overrides.scss";
+@import "forum.css";
+
+@import "layout.scss";
