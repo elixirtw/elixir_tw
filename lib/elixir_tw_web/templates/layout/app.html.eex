@@ -3,7 +3,6 @@
   <head>
     <%= render "_head.html", conn: @conn %>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-    <%= render_existing @view_module, "style.html", assigns %>
   </head>
 
   <body class="site">
