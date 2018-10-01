@@ -33,7 +33,7 @@ echo "Compiling"
 mix compile
 
 echo "Updating node libraries"
-(cd assets && npm install && node node_modules/brunch/bin/brunch build)
+(cd assets && yarn install && yarn run deploy)
 
 echo "Building release"
 mix deps.get --only "$MIX_ENV"
