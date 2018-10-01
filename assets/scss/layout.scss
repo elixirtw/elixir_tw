@@ -1,13 +1,3 @@
-.Site {
-  background-color: hsl(52, 1%, 92%);
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-#main-nav {
-  a {
-    color: white;
-    font-weight: bold;
-  }
+.topNav {
+  border-top: none;
 }

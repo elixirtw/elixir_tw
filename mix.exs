@@ -20,7 +20,7 @@ defmodule ElixirTw.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {ElixirTw, []},
-     extra_applications: [:logger, :runtime_tools, :edeliver]
+     extra_applications: [:logger, :runtime_tools]
    ]
   end
 
@@ -49,7 +49,6 @@ defmodule ElixirTw.Mixfile do
      {:earmark, "~> 1.1"},
      {:pipe_to, "~> 0.1"},
      {:html_sanitize_ex, "~> 1.1"},
-     {:edeliver, "~> 1.4"},
      {:conform, "~> 2.2"},
      {:ex_machina, "~> 2.0", only: [:dev, :test]},
      {:faker, "~> 0.9", only: [:dev, :test]},

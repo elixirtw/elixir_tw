@@ -1,3 +1,6 @@
-$icon-font-path: '/fonts/'; /* use fonts from priv/static/fonts/ */
-@import 'node_modules/font-awesome/scss/font-awesome';
-@import 'bootstrap'; /* imports node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss */
+@import "./scss/bulmaswatch/_variables.scss";
+@import "./node_modules/bulma/bulma.sass";
+@import "./scss/bulmaswatch/_overrides.scss";
+@import "forum.css";
+
+@import "layout.scss";

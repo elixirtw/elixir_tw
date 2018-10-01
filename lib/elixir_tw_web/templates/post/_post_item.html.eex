@@ -1,20 +1,27 @@
-<div class="row" id= <%= @post.slug %>>
-  <div class="three wide header column">
-    <img class="ui bordered tiny circular image" src= <%= ElixirTwWeb.LayoutView.avatar_url(@conn, @post.user.email) %>>
-  </div>
-  <div class="eleven wide title column">
-    <%= link to: post_path(@conn, :show, @post.slug) do %>
-      <h3> <%= @post.title %></h3>
-    <% end %>
-    <strong> <%= @post.user.name %></strong> @ <%= @post.updated_at %>
-  </div>
-  <% if @post.comments_count > 0 do %>
-    <div class="two wide comments_count column">
-      <div class="ui mini blue statistic">
-        <div class="value">
-          @post.comments_count
-        </div>
+<article class="post">
+  <h4>Bulma: How do you center a button in a box?</h4>
+  <div class="media">
+    <div class="media-left">
+      <p class="image is-32x32">
+        <img src="<%= ElixirTwWeb.LayoutView.avatar_url(@conn, @post.user.email) %>">
+      </p>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <a href="user account link">
+            @<%= @post.user.name #change this to last comment username %>
+          </a>
+          replied <%= #calculate current time - replied time %> minutes ago &nbsp;
+          <%= if false do %>
+            <!-- Tags -->
+            <span class="tag">Question</span>
+          <% end %>
+        </p>
       </div>
     </div>
-  <% end %>
-</div>
+    <div class="media-right">
+      <span class="has-text-grey-light"><i class="fa fa-comments"></i> <%= #comment count %></span>
+    </div>
+  </div>
+</article>

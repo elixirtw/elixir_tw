@@ -1,12 +1,53 @@
-<div id="main-nav" class="ui fixed purple inverted large menu">
-  <div class="ui container">
-    <a class="header item" href="/">Elixir 台灣</a>
-    <div class="right item">
-      <%= if current_resource(@conn) do %>
-        <%= link("登出", to: "/logout", class: "inverted", method: :delete)%>
-      <% else %>
-        <%= link("登入", to: "/login?origin_url=#{@conn.request_path}")%>
-      <% end %>
+<nav class="navbar topNav">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../">
+        ElixirTw
+      </a>
+      <div class="navbar-burger burger" data-target="topNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div id="topNav" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="cover.html">Home</a>
+        <a class="navbar-item" href="landing.html">Landing</a>
+        <a class="navbar-item" href="blog.html">Blog</a>
+        <a class="navbar-item" href="instaAlbum.html">Album</a>
+        <a class="navbar-item" href="kanban[search].html">Kanban</a>
+        <a class="navbar-item" href="search.html">Search</a>
+        <a class="navbar-item" href="tabs.html">Tabs</a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="button is-small">
+                <span class="icon">
+                  <i class="fa fa-user-plus"></i>
+                </span>
+                <span>
+                  Register
+                </span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-small is-info is-outlined">
+                <span class="icon">
+                  <i class="fa fa-user"></i>
+                </span>
+                <%= if current_resource(@conn) do %>
+                  <%= link("登出", to: "/logout", class: "inverted", method: :delete)%>
+                <% else %>
+                  <%= link("登入", to: "/login?origin_url=#{@conn.request_path}")%>
+                <% end %>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</nav>

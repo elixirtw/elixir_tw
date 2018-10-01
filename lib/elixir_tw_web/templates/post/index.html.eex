@@ -1,13 +1,3 @@
-<!-- Posts Listing -->
-
-<!-- Forumn Title -->
-<div class="ui top attached secondary violet inverted segment"> This is the board </div>
-
-<!-- Post Segment -->
-<div class="ui attached bottom padded segment">
-  <div class="ui vertically divided grid">
-
-    <!-- Individual Post -->
-    <%= render_many(@posts, __MODULE__, "_post_item.html", conn: @conn)%>
-  </div>
+<div class="box content">
+  <%= render_many(@posts, __MODULE__, "_post_item.html", conn: @conn)%>
 </div>
