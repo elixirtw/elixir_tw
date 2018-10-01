@@ -11,6 +11,7 @@
     <section class="container">
       <div class="columns">
         <div class="column is-9">
+          <%= show_flash(@conn) %>
           <%= render @view_module, @view_template, assigns %>
         </div>
 
@@ -23,15 +24,37 @@
         <div class="content has-text-centered">
           <div class="columns is-mobile is-centered">
             <div class="field is-grouped is-grouped-multiline">
+
               <div class="control">
                 <div class="tags has-addons">
-                  <a class="tag is-link" href="https://github.com/dansup/bulma-templates">Bulma Templates</a>
+                  <a class="tag is-link">
+                    <%= Date.utc_today |> Map.get(:year) %>
+                  </a>
+                  <span class="tag is-light">
+                    Elixir 台灣
+                  </span>
+                </div>
+              </div>
+
+              <div class="control">
+                <div class="tags has-addons">
+                  <a class="tag is-link" href="https://github.com/dansup/bulma-templates">Template By</a>
                   <span class="tag is-light">Daniel Supernault</span>
                 </div>
               </div>
+
               <div class="control">
                 <div class="tags has-addons">
-                  <a class="tag is-link">The source code is licensed</a>
+                  <a class="tag is-link">Made with Love</a>
+                  <span class="tag is-light">Mickey Chen</span>
+                </div>
+              </div>
+
+              <div class="control">
+                <div class="tags has-addons">
+                  <a class="tag is-link" href="https://github.com/elixirtw/elixir_tw" target="new">
+                    Source Code
+                  </a>
                   <span class="tag is-light">MIT &nbsp;<i class="fa fa-github"></i></span>
                 </div>
               </div>
@@ -40,36 +63,5 @@
         </div>
       </div>
     </footer>
-
-    <% if false do %>
-
-      <div class="container">
-        <%= show_flash(@conn) %>
-        <div class="">
-
-          <!-- Main Section-->
-          <main role="main" class="">
-          </main>
-
-          <!-- Sidebars -->
-          <div class="">
-            <%= if current_resource(@conn) do %>
-              <%= render(ElixirTwWeb.LayoutView, "_user_sidebar.html", conn: @conn)%>
-            <% end %>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <footer class="">
-        <div class="">
-          Elixir.tw @ 2017
-        </div>
-      </footer>
-
-      <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-      <!-- Inline scripting -->
-      <%= render_existing @view_module, "script.html", assigns %>
-    <% end %>
   </body>
 </html>
