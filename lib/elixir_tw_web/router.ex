@@ -7,19 +7,16 @@ defmodule ElixirTwWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+
+    plug Auth.UserPipeline
   end
 
-  pipeline :guardian_session do
-    plug Guardian.Plug.VerifySession
-    plug Guardian.Plug.LoadResource
-  end
-
-  pipeline :guardian_authorization do
-    # plug Guardian.Plug.EnsureAuthenticated
+  pipeline :authed do
+    plug Guardian.Plug.EnsureAuthenticated
   end
 
   scope "/", ElixirTwWeb do
-    pipe_through [:browser, :guardian_session]
+    pipe_through [:browser]
 
     # get "/", PostController, :index
     get "/", PageController, :landing
@@ -31,7 +28,7 @@ defmodule ElixirTwWeb.Router do
   end
 
   scope "/auth", ElixirTwWeb do
-    pipe_through [:browser, :guardian_session]
+    pipe_through [:browser]
 
     get "/:provider", SessionController, :request
     get "/:provider/callback", SessionController, :callback
@@ -39,7 +36,7 @@ defmodule ElixirTwWeb.Router do
   end
 
   scope "/user", ElixirTwWeb.User, as: :user do
-    pipe_through [:browser, :guardian_session, :guardian_authorization]
+    pipe_through [:browser, :authed]
 
     get "/", ConfigController, :dashboard
     resources "/posts", PostController, only: [:new, :create, :edit, :update]

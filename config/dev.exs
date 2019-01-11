@@ -59,14 +59,4 @@ config :guardian, Guardian,
       "AFWQhP0skj9iODTS4zn8vGcAAouvJ5HkLoBl72TNlh9WM6p0Cpc4Cf1XwRYkMzi-vVLpCEq27M22vZu__8FEV9io"
   }
 
-config :mix_test_watch,
-  clear: true,
-  tasks: [
-    # NOTE args passed in to mix test.watch is applied to all tasks,
-    # so --stale switch would break credo task
-    # hopefully this gets updated after
-    "test --stale",
-    "credo --strict"
-  ]
-
 import_config "dev.secret.exs"

@@ -23,6 +23,8 @@ defmodule ElixirTwWeb do
       import Ecto
       import Ecto.Changeset
       import Ecto.Query, only: [from: 1, from: 2]
+
+      ElixirTwWeb.aliases()
     end
   end
 
@@ -35,6 +37,8 @@ defmodule ElixirTwWeb do
       import Ecto.Changeset
 
       alias ElixirTw.Repo
+
+      ElixirTwWeb.aliases()
     end
   end
 
@@ -50,6 +54,8 @@ defmodule ElixirTwWeb do
       import ElixirTwWeb.Gettext
 
       import Guardian.Plug, only: [current_resource: 1]
+
+      ElixirTwWeb.aliases()
     end
   end
 
@@ -67,14 +73,17 @@ defmodule ElixirTwWeb do
       import ElixirTwWeb.Router.Helpers
       import ElixirTwWeb.ErrorHelpers
       import ElixirTwWeb.Gettext
-
       import Guardian.Plug, only: [current_resource: 1]
+
+      ElixirTwWeb.aliases()
     end
   end
 
   def router do
     quote do
       use Phoenix.Router
+
+      ElixirTwWeb.aliases()
     end
   end
 
@@ -86,6 +95,8 @@ defmodule ElixirTwWeb do
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
       import ElixirTwWeb.Gettext
+
+      ElixirTwWeb.aliases()
     end
   end
 
@@ -94,5 +105,11 @@ defmodule ElixirTwWeb do
   """
   defmacro __using__(which) when is_atom(which) do
     apply(__MODULE__, which, [])
+  end
+
+  defmacro aliases do
+    quote do
+      alias ElixirTw.Auth
+    end
   end
 end
