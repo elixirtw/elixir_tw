@@ -23,6 +23,8 @@ defmodule ElixirTwWeb do
       import Ecto
       import Ecto.Changeset
       import Ecto.Query, only: [from: 1, from: 2]
+
+      ElixirTwWeb.aliases()
     end
   end
 
@@ -35,6 +37,8 @@ defmodule ElixirTwWeb do
       import Ecto.Changeset
 
       alias ElixirTw.Repo
+
+      ElixirTwWeb.aliases()
     end
   end
 
@@ -50,6 +54,8 @@ defmodule ElixirTwWeb do
       import ElixirTwWeb.Gettext
 
       import Guardian.Plug, only: [current_resource: 1]
+
+      ElixirTwWeb.aliases()
     end
   end
 
@@ -58,7 +64,8 @@ defmodule ElixirTwWeb do
       use Phoenix.View, root: "lib/elixir_tw_web/templates", namespace: ElixirTwWeb
 
       # Import convenience functions from controllers
-      import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 1, get_flash: 2, view_module: 1]
+      import Phoenix.Controller,
+        only: [get_csrf_token: 0, get_flash: 1, get_flash: 2, view_module: 1]
 
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
@@ -66,14 +73,17 @@ defmodule ElixirTwWeb do
       import ElixirTwWeb.Router.Helpers
       import ElixirTwWeb.ErrorHelpers
       import ElixirTwWeb.Gettext
-
       import Guardian.Plug, only: [current_resource: 1]
+
+      ElixirTwWeb.aliases()
     end
   end
 
   def router do
     quote do
       use Phoenix.Router
+
+      ElixirTwWeb.aliases()
     end
   end
 
@@ -85,6 +95,8 @@ defmodule ElixirTwWeb do
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
       import ElixirTwWeb.Gettext
+
+      ElixirTwWeb.aliases()
     end
   end
 
@@ -93,5 +105,11 @@ defmodule ElixirTwWeb do
   """
   defmacro __using__(which) when is_atom(which) do
     apply(__MODULE__, which, [])
+  end
+
+  defmacro aliases do
+    quote do
+      alias ElixirTw.Auth
+    end
   end
 end

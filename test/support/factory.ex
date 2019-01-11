@@ -11,23 +11,24 @@ defmodule ElixirTw.Factory do
 
   def user_factory do
     %User{
-      name: Faker.Name.name,
-      email: Faker.Internet.email
+      name: Faker.Name.name(),
+      email: Faker.Internet.email()
     }
   end
 
   def oauth_info_factory do
     %OAuthInfo{
-      provider: Faker.Company.name,
+      provider: Faker.Company.name(),
       uid: sequence("allyourbasearemy"),
       user: insert(:user)
     }
   end
 
   def post_factory do
-    simple_body = Faker.Lorem.paragraph
+    simple_body = Faker.Lorem.paragraph()
+
     %Post{
-      title: Faker.Lorem.sentence,
+      title: Faker.Lorem.sentence(),
       body: simple_body,
       markdown_body: simple_body,
       user: insert(:user),

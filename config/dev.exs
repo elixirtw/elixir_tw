@@ -7,13 +7,14 @@ use Mix.Config
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
 config :elixir_tw, ElixirTwWeb.Endpoint,
-  http: [port: 4001],
+  http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
   watchers: [
     yarn: [
-      "run", "watch",
+      "run",
+      "watch",
       cd: Path.expand("../assets", __DIR__)
     ]
   ]
@@ -47,20 +48,15 @@ config :elixir_tw, ElixirTw.Repo,
 # Configure Guardian
 config :guardian, Guardian,
   allowed_algos: ["ES512"],
-  secret_key: %{"crv" => "P-521",
-    "d" => "CF9e9LqOnbsaW0sY06opq1gVg-5wefE8SJN30kx1lMmaz6-edFuNA0obU1KaZTKQBpXSLgjtoqMJHiKjwiQbCG4",
+  secret_key: %{
+    "crv" => "P-521",
+    "d" =>
+      "CF9e9LqOnbsaW0sY06opq1gVg-5wefE8SJN30kx1lMmaz6-edFuNA0obU1KaZTKQBpXSLgjtoqMJHiKjwiQbCG4",
     "kty" => "EC",
-    "x" => "AWXnRMCaj96pL33ZhTw5mW8vjcvYPRLbWLfIO21Aig5qBs7ymegVGZWAThWfZcBa13sgBXTBm6rv7RvKKTx8qZGW",
-    "y" => "AFWQhP0skj9iODTS4zn8vGcAAouvJ5HkLoBl72TNlh9WM6p0Cpc4Cf1XwRYkMzi-vVLpCEq27M22vZu__8FEV9io"}
-
-config :mix_test_watch,
-  clear: true,
-  tasks: [
-    # NOTE args passed in to mix test.watch is applied to all tasks,
-    # so --stale switch would break credo task
-    # hopefully this gets updated after
-    "test --stale",
-    "credo --strict"
-  ]
+    "x" =>
+      "AWXnRMCaj96pL33ZhTw5mW8vjcvYPRLbWLfIO21Aig5qBs7ymegVGZWAThWfZcBa13sgBXTBm6rv7RvKKTx8qZGW",
+    "y" =>
+      "AFWQhP0skj9iODTS4zn8vGcAAouvJ5HkLoBl72TNlh9WM6p0Cpc4Cf1XwRYkMzi-vVLpCEq27M22vZu__8FEV9io"
+  }
 
 import_config "dev.secret.exs"

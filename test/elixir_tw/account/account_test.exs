@@ -39,11 +39,17 @@ defmodule ElixirTw.AccountTest do
           email: "bogus@mail.com",
           first_name: nil,
           image: "http://graph.facebook.com/0000000000000000/picture?type=square",
-          last_name: nil, location: nil, name: "Banana Man", nickname: nil, phone: nil,
-          urls: %{facebook: nil, website: nil}},
+          last_name: nil,
+          location: nil,
+          name: "Banana Man",
+          nickname: nil,
+          phone: nil,
+          urls: %{facebook: nil, website: nil}
+        },
         provider: :facebook,
         strategy: Ueberauth.Strategy.Facebook,
-        uid: "10157894562480206"}
+        uid: "10157894562480206"
+      }
 
       %{oauth_stub: auth_stub}
     end

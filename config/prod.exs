@@ -14,10 +14,10 @@ use Mix.Config
 config :elixir_tw, ElixirTwWeb.Endpoint,
   load_from_system_env: true,
   url: [host: "elixir.tw", port: {:system, 80}],
-  #version: Mix.Project.config[:version],
-  #server: true,
-  #root: ".",
-  #code_reloader: false,
+  # version: Mix.Project.config[:version],
+  # server: true,
+  # root: ".",
+  # code_reloader: false,
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production

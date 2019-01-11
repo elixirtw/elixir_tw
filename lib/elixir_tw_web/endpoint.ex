@@ -8,7 +8,9 @@ defmodule ElixirTwWeb.Endpoint do
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :elixir_tw, gzip: false,
+    at: "/",
+    from: :elixir_tw,
+    gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -37,7 +39,7 @@ defmodule ElixirTwWeb.Endpoint do
 
   plug ElixirTwWeb.Router
 
-    @doc """
+  @doc """
   Callback invoked for dynamically configuring the endpoint.
 
   It receives the endpoint configuration and checks if

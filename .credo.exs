@@ -38,7 +38,6 @@
         # Disabled for now as they are also checked by Code Climate
         {Credo.Check.Design.TagTODO, false},
         {Credo.Check.Design.TagFIXME, false},
-
         {Credo.Check.Readability.FunctionNames},
         {Credo.Check.Readability.LargeNumbers},
         {Credo.Check.Readability.MaxLineLength, false},
@@ -53,12 +52,13 @@
         {Credo.Check.Readability.VariableNames},
         {Credo.Check.Readability.RedundantBlankLines},
         {Credo.Check.Readability.SinglePipe},
-        {Credo.Check.Readability.Specs, false}, # This is the job of dialyzer
+        # This is the job of dialyzer
+        {Credo.Check.Readability.Specs, false},
         {Credo.Check.Readability.StringSigils},
-
         {Credo.Check.Refactor.ABCSize, false},
         {Credo.Check.Refactor.CondStatements},
-        {Credo.Check.Refactor.DoubleBooleanNegation, false}, # That's a feature!
+        # That's a feature!
+        {Credo.Check.Refactor.DoubleBooleanNegation, false},
         {Credo.Check.Refactor.FunctionArity},
         {Credo.Check.Refactor.MatchInCondition},
         {Credo.Check.Refactor.PipeChainStart, false},
@@ -67,8 +67,8 @@
         {Credo.Check.Refactor.NegatedConditionsWithElse},
         {Credo.Check.Refactor.Nesting},
         {Credo.Check.Refactor.UnlessWithElse},
-        {Credo.Check.Refactor.VariableRebinding, false}, # That's a feature!
-
+        # That's a feature!
+        {Credo.Check.Refactor.VariableRebinding, false},
         {Credo.Check.Warning.IExPry},
         {Credo.Check.Warning.IoInspect, false},
 
@@ -77,7 +77,6 @@
         {Credo.Check.Warning.NameRedeclarationByCase, false},
         {Credo.Check.Warning.NameRedeclarationByDef, false},
         {Credo.Check.Warning.NameRedeclarationByFn, false},
-
         {Credo.Check.Warning.OperationOnSameValues},
         {Credo.Check.Warning.BoolOperationOnSameValues},
         {Credo.Check.Warning.UnusedEnumOperation},
@@ -85,7 +84,7 @@
         {Credo.Check.Warning.UnusedListOperation},
         {Credo.Check.Warning.UnusedStringOperation},
         {Credo.Check.Warning.UnusedTupleOperation},
-        {Credo.Check.Warning.OperationWithConstantResult},
+        {Credo.Check.Warning.OperationWithConstantResult}
 
         # Custom checks can be created using `mix credo.gen.check`.
         #

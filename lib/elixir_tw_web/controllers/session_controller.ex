@@ -25,7 +25,9 @@ defmodule ElixirTwWeb.SessionController do
   end
 
   def request(conn, params) do
-    render(conn, "request.html", callback_url: "/auth/#{conn.params["provider"]}/callback?origin_url=#{params[:origin_url]}")
+    render(conn, "request.html",
+      callback_url: "/auth/#{conn.params["provider"]}/callback?origin_url=#{params[:origin_url]}"
+    )
   end
 
   def callback(%{assigns: %{ueberauth_failure: _fails}} = conn, _params) do
@@ -36,9 +38,9 @@ defmodule ElixirTwWeb.SessionController do
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
     IO.inspect(auth, label: "auth")
+
     with user <- Account.get_user(auth.provider, auth.uid),
-      {:ok, user} <- Account.create_user_with_oauth(user, auth)
-    do
+         {:ok, user} <- Account.create_user_with_oauth(user, auth) do
       conn
       |> Guardian.Plug.sign_in(user)
       |> put_flash(:info, "驗證成功！")
