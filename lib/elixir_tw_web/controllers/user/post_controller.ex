@@ -5,7 +5,7 @@ defmodule ElixirTwWeb.User.PostController do
   alias ElixirTw.Board
 
   def new(conn, _params, _user, _claim) do
-    changeset = Board.post_changeset
+    changeset = Board.post_changeset()
     render(conn, "new.html", changeset: changeset)
   end
 
@@ -15,6 +15,7 @@ defmodule ElixirTwWeb.User.PostController do
         conn
         |> put_flash(:info, "文章成功建立")
         |> redirect(to: post_path(conn, :show, post.slug))
+
       {:error, changeset} ->
         conn
         |> put_flash(:error, "文章有錯誤")
@@ -28,6 +29,7 @@ defmodule ElixirTwWeb.User.PostController do
         conn
         |> put_flash(:error, "不能修改文章")
         |> redirect(to: post_path(conn, :show, slug))
+
       post ->
         changeset = Board.post_changeset(post)
         render(conn, "edit.html", changeset: changeset)
@@ -40,6 +42,7 @@ defmodule ElixirTwWeb.User.PostController do
         conn
         |> put_flash(:info, "文章成功更新")
         |> redirect(to: post_path(conn, :show, post.slug))
+
       {:error, changeset} ->
         conn
         |> put_flash(:error, "文章有錯誤")

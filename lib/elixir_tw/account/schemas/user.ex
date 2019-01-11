@@ -28,5 +28,4 @@ defmodule ElixirTw.Account.User do
     |> cast(params, [:name, :email])
     |> validate_required([:name, :email])
   end
-
 end

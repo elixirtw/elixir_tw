@@ -8,11 +8,10 @@ use Mix.Config
 # Configures the endpoint
 config :elixir_tw, ElixirTwWeb.Endpoint,
   url: [host: "localhost"],
-  #root: Path.dirname(__DIR__),
+  # root: Path.dirname(__DIR__),
   secret_key_base: "C9+8f85LKUz7MBf92Ot1F6Y94Q4PcCS88hllNo7JCUB1dYsiMD0MRs1qpGNI5p7L",
   render_errors: [view: ElixirTwWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: ElixirTw.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: ElixirTw.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -20,7 +19,8 @@ config :logger, :console,
   metadata: [:request_id]
 
 config :guardian, Guardian,
-  allowed_algos: ["HS512"], # optional
+  # optional
+  allowed_algos: ["HS512"],
   hooks: GuardianDb,
   issuer: "ElixirTW",
   ttl: {30, :days},
@@ -29,7 +29,7 @@ config :guardian, Guardian,
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"
 
 # Configure phoenix generators
 config :phoenix, :generators,
@@ -41,7 +41,8 @@ config :elixir_tw, ecto_repos: [ElixirTw.Repo]
 
 config :guardian_db, GuardianDb,
   repo: ElixirTw.Repo,
-  sweep_interval: 120 # min
+  # min
+  sweep_interval: 120
 
 # Uberauth's Oauth Settings
 config :ueberauth, Ueberauth,

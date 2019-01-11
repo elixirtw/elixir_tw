@@ -15,13 +15,13 @@ defmodule ElixirTwWeb.Router do
   end
 
   pipeline :guardian_authorization do
-    #plug Guardian.Plug.EnsureAuthenticated
+    # plug Guardian.Plug.EnsureAuthenticated
   end
 
   scope "/", ElixirTwWeb do
     pipe_through [:browser, :guardian_session]
 
-    #get "/", PostController, :index
+    # get "/", PostController, :index
     get "/", PageController, :landing
 
     get "/login", SessionController, :new
