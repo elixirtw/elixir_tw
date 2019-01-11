@@ -21,7 +21,6 @@ config :logger, :console,
 config :guardian, Guardian,
   # optional
   allowed_algos: ["HS512"],
-  hooks: GuardianDb,
   issuer: "ElixirTW",
   ttl: {30, :days},
   verify_issuer: true,
@@ -38,11 +37,6 @@ config :phoenix, :generators,
 
 # Ecto 2.0 config
 config :elixir_tw, ecto_repos: [ElixirTw.Repo]
-
-config :guardian_db, GuardianDb,
-  repo: ElixirTw.Repo,
-  # min
-  sweep_interval: 120
 
 # Uberauth's Oauth Settings
 config :ueberauth, Ueberauth,
