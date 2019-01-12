@@ -10,7 +10,7 @@ To start your Phoenix app:
     * Start PostgreSQL server with `docker-compose up -d`
     * Override default usename for Phoenix to log in PostgreSQL with `export PGUSER=postgres`
   * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `npm install`
+  * Install Node.js dependencies with `cd assets;yarn install;cd -`
   * Start Phoenix endpoint with `mix phoenix.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
