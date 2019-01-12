@@ -12,6 +12,7 @@ config :logger, level: :warn
 # Configure your database
 config :elixir_tw, ElixirTw.Repo,
   adapter: Ecto.Adapters.Postgres,
+  username: System.get_env("PGUSER") || "postgres",
   database: "elixir_tw_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
