@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/elixir_tw
     docker:
-      - image: circleci/elixir:1.5.1
+      - image: circleci/elixir:1.6.6-otp-21
         environment:
           MIX_ENV: test
       - image: circleci/postgres:9.6.5
