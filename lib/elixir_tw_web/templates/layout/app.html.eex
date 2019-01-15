@@ -2,7 +2,7 @@
 <html lang="zh-tw">
   <head>
     <%= render "_head.html", conn: @conn %>
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body class="site">
@@ -63,5 +63,6 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

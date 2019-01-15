@@ -13,7 +13,7 @@ defmodule ElixirTwWeb.User.PostController do
       {:ok, post} ->
         conn
         |> put_flash(:info, "文章成功建立")
-        |> redirect(to: post_path(conn, :show, post.slug))
+        |> redirect(to: Routes.post_path(conn, :show, post.slug))
 
       {:error, changeset} ->
         conn
@@ -27,7 +27,7 @@ defmodule ElixirTwWeb.User.PostController do
       nil ->
         conn
         |> put_flash(:error, "不能修改文章")
-        |> redirect(to: post_path(conn, :show, slug))
+        |> redirect(to: Routes.post_path(conn, :show, slug))
 
       post ->
         changeset = Board.post_changeset(post)
@@ -40,7 +40,7 @@ defmodule ElixirTwWeb.User.PostController do
       {:ok, post} ->
         conn
         |> put_flash(:info, "文章成功更新")
-        |> redirect(to: post_path(conn, :show, post.slug))
+        |> redirect(to: Routes.post_path(conn, :show, post.slug))
 
       {:error, changeset} ->
         conn

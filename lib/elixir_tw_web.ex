@@ -51,7 +51,7 @@ defmodule ElixirTwWeb do
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
 
-      import ElixirTwWeb.Router.Helpers
+      alias ElixirTwWeb.Router.Helpers, as: Routes
       import ElixirTwWeb.Gettext
 
       import ElixirTw.Auth.Guardian.Plug, only: [current_resource: 1]
@@ -71,10 +71,10 @@ defmodule ElixirTwWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import ElixirTwWeb.Router.Helpers
+      alias ElixirTwWeb.Router.Helpers, as: Routes
       import ElixirTwWeb.ErrorHelpers
       import ElixirTwWeb.Gettext
-      import Guardian.Plug, only: [current_resource: 1]
+      import ElixirTw.Auth.Guardian.Plug, only: [current_resource: 1]
 
       ElixirTwWeb.aliases()
     end
