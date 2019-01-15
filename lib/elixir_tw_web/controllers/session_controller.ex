@@ -40,10 +40,9 @@ defmodule ElixirTwWeb.SessionController do
     Logger.info("ueberauth callback auth: #{inspect(auth)}")
 
     with user <- Account.get_user(auth.provider, auth.uid),
-         {:ok, user} <- Account.create_user_with_oauth(user, auth) do
+         {:ok, user} <- Account.create_user_with_oauth(user, auth),
+         %{state: :unset} = conn <- Auth.Guardian.Plug.sign_in(conn, user) do
       conn
-      |> Auth.Guardian.Plug.sign_in(user)
-      # TODO: When sign in failed, it will be redirected in UserErrorHandler before return. The following pipeline should be stopped.
       |> put_flash(:info, "驗證成功！")
       |> put_session(:current_user, user)
       |> redirect(to: get_session(conn, :origin_url))
@@ -52,6 +51,9 @@ defmodule ElixirTwWeb.SessionController do
         conn
         |> put_flash(:error, reason)
         |> redirect(to: "/")
+
+      conn ->
+        conn
     end
   end
 end
