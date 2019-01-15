@@ -48,7 +48,7 @@ defmodule ElixirTw.AccountTest do
         },
         provider: :facebook,
         strategy: Ueberauth.Strategy.Facebook,
-        uid: "10157894562480206"
+        uid: 10_157_894_562_480_206
       }
 
       %{oauth_stub: auth_stub}

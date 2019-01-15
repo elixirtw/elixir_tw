@@ -47,7 +47,7 @@ config :elixir_tw, ElixirTw.Repo,
   pool_size: 10
 
 # Configure Guardian
-config :guardian, Guardian,
+config :elixir_tw, ElixirTw.Auth.Guardian,
   allowed_algos: ["ES512"],
   secret_key: %{
     "crv" => "P-521",

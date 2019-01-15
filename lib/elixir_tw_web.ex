@@ -45,6 +45,7 @@ defmodule ElixirTwWeb do
   def controller do
     quote do
       use Phoenix.Controller, namespace: ElixirTwWeb
+      require Logger
 
       alias ElixirTw.Repo
       import Ecto
@@ -53,7 +54,7 @@ defmodule ElixirTwWeb do
       import ElixirTwWeb.Router.Helpers
       import ElixirTwWeb.Gettext
 
-      import Guardian.Plug, only: [current_resource: 1]
+      import ElixirTw.Auth.Guardian.Plug, only: [current_resource: 1]
 
       ElixirTwWeb.aliases()
     end

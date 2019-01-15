@@ -18,13 +18,12 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-config :guardian, Guardian,
+config :elixir_tw, ElixirTw.Auth.Guardian,
   # optional
-  allowed_algos: ["HS512"],
+  allowed_algos: ["ES512"],
   issuer: "ElixirTW",
   ttl: {30, :days},
-  verify_issuer: true,
-  serializer: ElixirTw.Account.GuardianSerializer
+  verify_issuer: true
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
