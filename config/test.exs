@@ -11,13 +11,12 @@ config :logger, level: :warn
 
 # Configure your database
 config :elixir_tw, ElixirTw.Repo,
-  adapter: Ecto.Adapters.Postgres,
   username: System.get_env("PGUSER") || "postgres",
   database: "elixir_tw_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 
-config :guardian, Guardian,
+config :elixir_tw, ElixirTw.Auth.Guardian,
   issuer: "ElixirTW",
   ttl: {30, :days},
   verify_issuer: true,
@@ -30,7 +29,6 @@ config :guardian, Guardian,
       "AWXnRMCaj96pL33ZhTw5mW8vjcvYPRLbWLfIO21Aig5qBs7ymegVGZWAThWfZcBa13sgBXTBm6rv7RvKKTx8qZGW",
     "y" =>
       "AFWQhP0skj9iODTS4zn8vGcAAouvJ5HkLoBl72TNlh9WM6p0Cpc4Cf1XwRYkMzi-vVLpCEq27M22vZu__8FEV9io"
-  },
-  serializer: ElixirTwWeb.GuardianSerializer
+  }
 
 import_config "test*.secret.exs"

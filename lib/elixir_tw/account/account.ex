@@ -16,6 +16,10 @@ defmodule ElixirTw.Account do
     get_user(Atom.to_string(provider), uid)
   end
 
+  def get_user(provider, uid) when is_integer(uid) do
+    get_user(provider, Integer.to_string(uid))
+  end
+
   def get_user(provider, uid) do
     query =
       from u in User,
@@ -33,13 +37,20 @@ defmodule ElixirTw.Account do
 
   def create_user_with_oauth(nil, auth) do
     Repo.transaction(fn ->
-      User.changeset(%User{}, %{
-        name: auth.info.name || auth.info.nickname,
-        email: auth.info.email
+      user =
+        User.changeset(%User{}, %{
+          name: auth.info.name || auth.info.nickname,
+          email: auth.info.email
+        })
+        |> Repo.insert!()
+
+      Ecto.build_assoc(user, :oauth_infos, %{
+        provider: Atom.to_string(auth.provider),
+        uid: Integer.to_string(auth.uid)
       })
       |> Repo.insert!()
-      |> Ecto.build_assoc(:oauth_infos, %{provider: Atom.to_string(auth.provider), uid: auth.uid})
-      |> Repo.insert!()
+
+      user
     end)
   end
 end

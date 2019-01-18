@@ -1,7 +1,9 @@
 defmodule ElixirTwWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :elixir_tw
 
-  socket "/socket", ElixirTwWeb.UserSocket
+  socket "/socket", ElixirTwWeb.UserSocket,
+    websocket: true,
+    longpoll: false
 
   # Serve at "/" the static files from "priv/static" directory.
   #

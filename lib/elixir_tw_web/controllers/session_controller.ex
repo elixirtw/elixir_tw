@@ -4,7 +4,7 @@ defmodule ElixirTwWeb.SessionController do
   plug Ueberauth
   plug :scrub_params, "user" when action in [:create]
 
-  alias ElixirTw.Account
+  alias ElixirTw.{Account, Auth}
 
   def new(conn, params) do
     origin_url = Map.get(params, "origin_url", "/")
@@ -19,7 +19,7 @@ defmodule ElixirTwWeb.SessionController do
   end
 
   def delete(conn, _params) do
-    Guardian.Plug.sign_out(conn)
+    Auth.Guardian.Plug.sign_out(conn)
     |> put_flash(:info, "Logged out successfully")
     |> redirect(to: "/")
   end
@@ -37,12 +37,12 @@ defmodule ElixirTwWeb.SessionController do
   end
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
-    IO.inspect(auth, label: "auth")
+    Logger.info("ueberauth callback auth: #{inspect(auth)}")
 
     with user <- Account.get_user(auth.provider, auth.uid),
-         {:ok, user} <- Account.create_user_with_oauth(user, auth) do
+         {:ok, user} <- Account.create_user_with_oauth(user, auth),
+         %{state: :unset} = conn <- Auth.Guardian.Plug.sign_in(conn, user) do
       conn
-      |> Guardian.Plug.sign_in(user)
       |> put_flash(:info, "驗證成功！")
       |> put_session(:current_user, user)
       |> redirect(to: get_session(conn, :origin_url))
@@ -51,6 +51,9 @@ defmodule ElixirTwWeb.SessionController do
         conn
         |> put_flash(:error, reason)
         |> redirect(to: "/")
+
+      conn ->
+        conn
     end
   end
 end

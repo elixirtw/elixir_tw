@@ -40,14 +40,13 @@ config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
 config :elixir_tw, ElixirTw.Repo,
-  adapter: Ecto.Adapters.Postgres,
   username: System.get_env("PGUSER") || "postgres",
   database: "elixir_tw_dev",
   hostname: "localhost",
   pool_size: 10
 
 # Configure Guardian
-config :guardian, Guardian,
+config :elixir_tw, ElixirTw.Auth.Guardian,
   allowed_algos: ["ES512"],
   secret_key: %{
     "crv" => "P-521",

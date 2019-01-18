@@ -4,6 +4,6 @@ defmodule ElixirTw.Auth.UserPipeline do
     error_handler: ElixirTw.Auth.UserErrorHandler,
     module: ElixirTw.Auth.Guardian
 
-  plug Guardian.Plug.VerifySession, key: :user
+  plug Guardian.Plug.VerifySession
   plug Guardian.Plug.LoadResource, allow_blank: true
 end
