@@ -3,12 +3,13 @@ defmodule ElixirTw.Repo.Migrations.MakingPostsUserIdNotNull do
 
   def up do
     alter table(:posts) do
-      modify :user_id, :integer, null: false
+      modify(:user_id, :bigint, null: false)
     end
   end
+
   def down do
     alter table(:posts) do
-      modify :user_id, :integer, null: true
+      modify(:user_id, :bigint, null: true)
     end
   end
 end
