@@ -23,10 +23,10 @@ const IndexPage = () => (
 
       <h2>英文學習資源</h2>
       <ul>
-        <li><a href="https://elixir-lang.org/getting-started/introduction.html" target="_blank"> Elixir 官方教學</a></li>
-        <li><a href="https://hexdocs.pm/elixir/Kernel.html" target="_blank"> Elixir 官方文件</a></li>
-        <li><a href="https://hexdocs.pm/phoenix/overview.html" target="_blank"> Phoenix 官方教學</a></li>
-        <li><a href="https://hexdocs.pm/phoenix/Phoenix.html" target="_blank"> Phoenix 官方文件</a></li>
+        <li><a href="https://elixir-lang.org/getting-started/introduction.html" target="_blank" rel="noopener noreferrer"> Elixir 官方教學</a></li>
+        <li><a href="https://hexdocs.pm/elixir/Kernel.html" target="_blank" rel="noopener noreferrer"> Elixir 官方文件</a></li>
+        <li><a href="https://hexdocs.pm/phoenix/overview.html" target="_blank" rel="noopener noreferrer"> Phoenix 官方教學</a></li>
+        <li><a href="https://hexdocs.pm/phoenix/Phoenix.html" target="_blank" rel="noopener noreferrer"> Phoenix 官方文件</a></li>
         // Elixir Slack
         // Forum
         // Awesome Elixir
