@@ -3,6 +3,7 @@ module.exports = {
     title: `Elixir.Tw`,
     description: `Elixir 台灣的第一個家！`,
     author: `Mickey Chen`,
+    siteUrl: `https://elixir.tw`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
