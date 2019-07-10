@@ -4,7 +4,9 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const externalLink = (text, link) => (<a href={link} target="_blank" rel="noopener noreferrer">{text}</a>);
+const externalLink = (text, link) => (
+  <a href={link} title={text} target="_blank" rel="noopener noreferrer">{text}</a>
+);
 
 const ChildBox = ({ items }) => (
   items.map(
@@ -22,25 +24,21 @@ const ChildBox = ({ items }) => (
   )
 )
 
+const ParentContainer = ({ items }) => (
+  <div className="tile is-parent">
+    <ChildBox items={items} />
+  </div>
+)
+
 const IndexPage = () => (
     <Layout>
       <SEO title="Home" keywords={[`elixir`, `taiwan`, `erlang`, `homepage`]} />
       <div className="content">
         <h1>Elixir |> Taiwan</h1>
-
         <div className="tile is-ancestor is-vertical">
-          <div className="tile is-parent">
-            <ChildBox items={data.slice(0, 3)} />
-          </div>
-
-          <div className="tile is-parent">
-            <ChildBox items={data.slice(3, 6)} />
-          </div>
-
-          <div className="tile is-parent">
-            <ChildBox items={data.slice(6, 9)} />
-          </div>
-
+            <ParentContainer items={data.slice(0, 3)} />
+            <ParentContainer items={data.slice(3, 6)} />
+            <ParentContainer items={data.slice(6, 9)} />
         </div>
       </div>
     </Layout>
