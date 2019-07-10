@@ -30,18 +30,24 @@ const ParentContainer = ({ items }) => (
   </div>
 )
 
+const IndexContainer = props => (
+  <div className="content">
+    <h1>{props.title}</h1>
+    <div className="tile is-ancestor is-vertical">
+      {props.children}
+    </div>
+  </div>
+)
+
 const IndexPage = () => (
-    <Layout>
-      <SEO title="Home" keywords={[`elixir`, `taiwan`, `erlang`, `homepage`]} />
-      <div className="content">
-        <h1>Elixir |> Taiwan</h1>
-        <div className="tile is-ancestor is-vertical">
-            <ParentContainer items={data.slice(0, 3)} />
-            <ParentContainer items={data.slice(3, 6)} />
-            <ParentContainer items={data.slice(6, 9)} />
-        </div>
-      </div>
-    </Layout>
+  <Layout>
+    <SEO title="Home" keywords={[`elixir`, `taiwan`, `erlang`, `homepage`]} />
+    <IndexContainer title={'Elixir |> Taiwan'}>
+      <ParentContainer items={data.slice(0, 3)} />
+      <ParentContainer items={data.slice(3, 6)} />
+      <ParentContainer items={data.slice(6, 9)} />
+    </IndexContainer>
+  </Layout>
 )
 export default IndexPage
 
