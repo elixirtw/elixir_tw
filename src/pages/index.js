@@ -4,46 +4,57 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const externalLink = (text, link) => (<a href={link} target="_blank" rel="noopener noreferrer">{text}</a>);
+const externalLink = (text, link) => (
+  <a href={link} title={text} target="_blank" rel="noopener noreferrer">{text}</a>
+);
 
-const ChildBox = ({ items }) => (
+const Tiles = ({ items }) => (
   items.map(
     (item, index) => (
-      <div key={index} className="tile is-child box">
-        <h2>{item.title}</h2>
-        <ul>
-          {item.links.map(
-            (link, index) =>
-              <li key={index}>{externalLink(link.title, link.url)}</li>
-          )}
-        </ul>
+      <div className="tile is-parent">
+        <div key={index} className="tile is-child box">
+          <h2>{item.title}</h2>
+          <ul>
+            {item.links.map(
+              (link, index) =>
+                <li key={index}>{externalLink(link.title, link.url)}</li>
+            )}
+          </ul>
+        </div>
       </div>
     )
   )
 )
 
-const IndexPage = () => (
-    <Layout>
-      <SEO title="Home" keywords={[`elixir`, `taiwan`, `erlang`, `homepage`]} />
-      <div className="content">
-        <h1>Elixir |> Taiwan</h1>
+const TileContainer = ({ items }) => (
+  <div className="tile">
+    <Tiles items={items} />
+  </div>
+)
 
-        <div className="tile is-ancestor is-vertical">
-          <div className="tile is-parent">
-            <ChildBox items={data.slice(0, 3)} />
-          </div>
-
-          <div className="tile is-parent">
-            <ChildBox items={data.slice(3, 6)} />
-          </div>
-
-          <div className="tile is-parent">
-            <ChildBox items={data.slice(6, 9)} />
-          </div>
-
-        </div>
+const IndexContainer = props => (
+  <div className="content">
+    <section class="section">
+      <div class="container">
+        <h1>{props.title}</h1>
       </div>
-    </Layout>
+
+    <div className="tile is-ancestor is-vertical">
+      {props.children}
+    </div>
+    </section>
+  </div>
+)
+
+const IndexPage = () => (
+  <Layout>
+    <SEO title="Home" keywords={[`elixir`, `taiwan`, `erlang`, `homepage`]} />
+    <IndexContainer title={'Elixir |> Taiwan'}>
+      <TileContainer items={data.slice(0, 3)} />
+      <TileContainer items={data.slice(3, 6)} />
+      <TileContainer items={data.slice(6, 9)} />
+    </IndexContainer>
+  </Layout>
 )
 export default IndexPage
 
