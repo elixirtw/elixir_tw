@@ -33,22 +33,20 @@ const TileContainer = ({ items }) => (
 )
 
 const IndexContainer = props => (
-  <div className="content">
-    <section class="section">
-      <div class="container">
-        <h1>{props.title}</h1>
-      </div>
+  <section className="section content">
+    <div className="container">
+      <h1>{props.title}</h1>
+    </div>
 
     <div className="tile is-ancestor is-vertical">
       {props.children}
     </div>
-    </section>
-  </div>
+  </section>
 )
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`elixir`, `taiwan`, `erlang`, `homepage`]} />
+    <SEO keywords={[`elixir`, `taiwan`, `erlang`, `homepage`]} />
     <IndexContainer title={'Elixir |> Taiwan'}>
       <TileContainer items={data.slice(0, 3)} />
       <TileContainer items={data.slice(3, 6)} />
