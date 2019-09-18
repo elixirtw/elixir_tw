@@ -6,7 +6,6 @@ module.exports = {
     siteUrl: `https://elixir.tw`
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -14,7 +13,16 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`,
+      },
+    },
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
