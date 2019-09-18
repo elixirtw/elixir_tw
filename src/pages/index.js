@@ -1,8 +1,8 @@
 import React from "react"
 //import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/Layout"
+import SEO from "../components/SEO"
 
 const externalLink = (text, link) => (
   <a href={link} title={text} target="_blank" rel="noopener noreferrer">{text}</a>
