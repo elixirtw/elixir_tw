@@ -5,3 +5,10 @@
 #header {
   background-color: $p-elixirtw;
 }
+
+.content {
+  a {
+    color: $text;
+    text-decoration: underline;
+  }
+}
