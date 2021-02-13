@@ -70,7 +70,7 @@ const data =
     {
       title: '中文學習資源',
       links: [
-        { title: 'Elixir 台灣 Slack', url: 'http://elixirtw.herokuapp.com/' },
+        { title: 'Elixir 台灣 Slack', url: 'https://ln.elixir.tw/join-slack' },
         { title: 'Elixir 台灣 Meetup', url: 'https://hexdocs.pm/elixir/Kernel.html' },
         { title: 'Elixir School 繁體中文', url: 'https://elixirschool.com/zh-hant/' },
         { title: 'Elixir 台灣臉書群組', url: 'https://www.facebook.com/groups/elixir.tw' }
